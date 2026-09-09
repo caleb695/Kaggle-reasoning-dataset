@@ -1,0 +1,57 @@
+{
+  "seed": 20260909,
+  "target_size": 2400,
+  "counts": {
+    "transition": 1200,
+    "reasoning": 600,
+    "negative": 600
+  },
+  "total": 2400,
+  "per_category": {
+    "plot_architecture": {
+      "transition": 133,
+      "reasoning": 66,
+      "negative": 67
+    },
+    "conflict_escalation": {
+      "transition": 133,
+      "reasoning": 67,
+      "negative": 66
+    },
+    "character_decisions": {
+      "transition": 134,
+      "reasoning": 67,
+      "negative": 67
+    },
+    "information_management": {
+      "transition": 133,
+      "reasoning": 67,
+      "negative": 66
+    },
+    "scene_construction": {
+      "transition": 133,
+      "reasoning": 66,
+      "negative": 67
+    },
+    "chapter_arcs": {
+      "transition": 134,
+      "reasoning": 67,
+      "negative": 67
+    },
+    "setup_payoff": {
+      "transition": 134,
+      "reasoning": 67,
+      "negative": 66
+    },
+    "tension": {
+      "transition": 133,
+      "reasoning": 66,
+      "negative": 67
+    },
+    "momentum": {
+      "transition": 133,
+      "reasoning": 67,
+      "negative": 67
+    }
+  }
+}
