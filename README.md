@@ -40,7 +40,7 @@ generating* — always forward-oriented: here is the temptation, here is the dam
 would do downstream, here is the replacement reasoning and the decisions to carry into
 the writing. Never backward-looking diagnosis.
 
-## Craft categories (9)
+## Craft categories (10)
 
 1. `plot_architecture` — plot construction and architecture
 2. `conflict_escalation` — escalation across scenes and arcs
@@ -51,9 +51,12 @@ the writing. Never backward-looking diagnosis.
 7. `setup_payoff` — long-range setup and payoff
 8. `tension` — tension maintenance
 9. `momentum` — narrative momentum
+10. `epic_scale` — epic fantasy scale: worldbuilding as pressure, magic as a priced
+    economy, prophecy vs. agency, cast/canvas sprawl control, and series-level
+    architecture (book contracts, promise ledgers, the middle-book problem)
 
-Each category contributes examples of all three types (45 distinct craft problems, 45
-traps, and 18 arc-level reasoning themes across the dataset).
+Each category contributes examples of all three types (50 distinct craft problems, 50
+traps, and 20 arc-level reasoning themes across the dataset).
 
 ## Data format
 
@@ -107,14 +110,42 @@ python -m generator.build_dataset --size 2400 --seed 20260909
 different (equally valid) sample of the combination space. Outputs are written to
 `data/`.
 
+## Publishing this repo as a Kaggle dataset
+
+Kaggle can create a dataset directly from a GitHub repository: on
+[kaggle.com/datasets/new](https://www.kaggle.com/datasets/new), pick the
+**GitHub repository** source and paste this repo's URL. Kaggle downloads the
+repo's **default branch** into its own storage. For that to work:
+
+1. **The repo must be public.** Kaggle fetches the repository anonymously, so a
+   private repo cannot be imported (GitHub -> repo Settings -> General -> Danger
+   Zone -> Change visibility -> Public).
+2. **The data must be on `main`** (the default branch). Kaggle does not offer a
+   branch picker; it imports whatever `main` holds. Merge the PR carrying the
+   dataset into `main` before creating the Kaggle dataset.
+3. **License:** choose *CC0 1.0 / Public Domain* in Kaggle's dropdown to match
+   the `LICENSE` file in this repo.
+
+After creation you can enable **automatic interval updates** in the dataset's
+Settings tab (or press Update manually), so the Kaggle dataset re-syncs whenever
+`main` changes -- regenerate the data, push to `main`, and Kaggle picks it up.
+
+The import mirrors the repository layout; the training files are under `data/`.
+Inside a Kaggle notebook they land at:
+
+```
+/kaggle/input/<dataset-slug>/data/dataset.jsonl
+```
+
 ## Repository layout
 
 ```
+LICENSE                 CC0 1.0 public-domain dedication
 generator/
   common.py              shared infrastructure: marker, instruction banks, helpers
   build_dataset.py       deterministic composition engine (CLI above)
-  categories/            nine authored craft libraries (moves, problems, traps, themes)
+  categories/            ten authored craft libraries (moves, problems, traps, themes)
 validation/
   validate_dataset.py    machine-checks every hard constraint
-data/                    generated dataset (JSONL + manifest)
+data/                    generated dataset (JSONL + manifest + data/README)
 ```
