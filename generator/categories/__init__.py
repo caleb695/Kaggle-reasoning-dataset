@@ -20,6 +20,7 @@ from . import chapter_arcs
 from . import setup_payoff
 from . import tension
 from . import momentum
+from . import epic_scale
 
 CATEGORIES = [
     plot_architecture.CAT,
@@ -31,4 +32,5 @@ CATEGORIES = [
     setup_payoff.CAT,
     tension.CAT,
     momentum.CAT,
+    epic_scale.CAT,
 ]

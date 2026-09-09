@@ -10,8 +10,10 @@ All responses are **purely structural and conceptual**: craft reasoning about ho
 narrative choices work. There is zero prose — no illustrative passages, no sample lines,
 no written-out examples anywhere in the responses.
 
-Designed to accompany pretraining on a corpus of high-quality novels; the craft framing is
-deliberately genre-neutral.
+Designed to accompany pretraining on a corpus of high-quality novels; the core craft
+framing is deliberately genre- and voice-neutral, with a dedicated category for the
+scale-specific problems of **epic fantasy** (worldbuilding pressure, magic economies,
+prophecy vs. agency, sprawl control, series architecture).
 
 ---
 

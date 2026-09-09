@@ -13,8 +13,15 @@ Usage:
 """
 
 import json
+import os
 import sys
 from collections import Counter, defaultdict
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from generator.categories import CATEGORIES
+
+EXPECTED_CATEGORIES = {c["id"] for c in CATEGORIES}
 
 MARKER = "Given the above, the scene begins."
 

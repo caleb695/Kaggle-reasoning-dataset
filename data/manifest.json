@@ -9,49 +9,54 @@
   "total": 2400,
   "per_category": {
     "plot_architecture": {
-      "transition": 133,
-      "reasoning": 66,
-      "negative": 67
+      "transition": 120,
+      "reasoning": 60,
+      "negative": 60
     },
     "conflict_escalation": {
-      "transition": 133,
-      "reasoning": 67,
-      "negative": 66
+      "transition": 120,
+      "reasoning": 60,
+      "negative": 60
     },
     "character_decisions": {
-      "transition": 134,
-      "reasoning": 67,
-      "negative": 67
+      "transition": 120,
+      "reasoning": 60,
+      "negative": 60
     },
     "information_management": {
-      "transition": 133,
-      "reasoning": 67,
-      "negative": 66
+      "transition": 120,
+      "reasoning": 60,
+      "negative": 60
     },
     "scene_construction": {
-      "transition": 133,
-      "reasoning": 66,
-      "negative": 67
+      "transition": 120,
+      "reasoning": 60,
+      "negative": 60
     },
     "chapter_arcs": {
-      "transition": 134,
-      "reasoning": 67,
-      "negative": 67
+      "transition": 120,
+      "reasoning": 60,
+      "negative": 60
     },
     "setup_payoff": {
-      "transition": 134,
-      "reasoning": 67,
-      "negative": 66
+      "transition": 120,
+      "reasoning": 60,
+      "negative": 60
     },
     "tension": {
-      "transition": 133,
-      "reasoning": 66,
-      "negative": 67
+      "transition": 120,
+      "reasoning": 60,
+      "negative": 60
     },
     "momentum": {
-      "transition": 133,
-      "reasoning": 67,
-      "negative": 67
+      "transition": 120,
+      "reasoning": 60,
+      "negative": 60
+    },
+    "epic_scale": {
+      "transition": 120,
+      "reasoning": 60,
+      "negative": 60
     }
   }
 }
