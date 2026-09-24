@@ -62,6 +62,7 @@ from generator.common import (
 )
 from generator import stages as ST
 from generator.lenses import CATEGORY_LENSES, LENSES, LENS_ORDER, PRESSURE_LENS, TYPE_LENSES
+from generator.lenses_stage import STAGE_LENSES, lens_bank
 from generator.rules import RULES, rules_for_category
 from generator.strategies import STRATEGIES, TYPE_STRATEGIES
 
@@ -141,12 +142,15 @@ def choose_lenses(rng, cat, rec_type, stage, lens_use, quota, lead=None,
     every lens in the registry leads its share of the dataset. `lens_use` counts
     lead assignments only.
     """
+    permitted = set(STAGE_LENSES[stage])
     candidates = []
     ordering = ([lead] if lead else []) + list(ST.LENS_AFFINITY[stage]) \
         + list(CATEGORY_LENSES[cat["id"]]) + list(TYPE_LENSES[rec_type])
     for lens in ordering:
-        if lens and lens not in candidates:
+        if lens and lens not in candidates and lens in permitted:
             candidates.append(lens)
+    if not candidates:  # defensive: never leave a record without a lens
+        candidates = [lens for lens in ordering if lens]
     weight = {lens: 1.0 for lens in candidates}
     weight[candidates[0]] = 1.6 if not lead else 2.0
     scored = sorted(candidates, key=lambda lens: (lens_use[lens] / weight[lens],
@@ -218,8 +222,10 @@ def difficulty_for(depth):
     return DIFFICULTY_BY_DEPTH[depth]
 
 
-def lens_paragraphs(rng, lenses):
-    return [LENSES[lens][rng.randrange(len(LENSES[lens]))] for lens in lenses]
+def lens_paragraphs(rng, lenses, stage):
+    """Lens paragraphs at the height of the stage being reasoned about."""
+    banks = {lens: lens_bank(stage, lens, LENSES[lens]) for lens in lenses}
+    return [banks[lens][rng.randrange(len(banks[lens]))] for lens in lenses]
 
 
 def strategy_paragraphs(rng, names):
@@ -294,10 +300,11 @@ def build_transition(rng, cat, stage, ctx, used_text, used_combo, lens_use, quot
         paragraphs.append(problem["openers"][opener_i])
         paragraphs.extend(cat["moves"][key][idx] for key, idx in move_paras)
         paragraphs.extend(strategy_paragraphs(rng, strategies))
-        paragraphs.extend(lens_paragraphs(rng, lenses))
+        paragraphs.extend(lens_paragraphs(rng, lenses, stage))
         paragraphs.append(problem["closers"][closer_i])
         response = join_paragraphs(paragraphs) + "\n\n" + TRANSITION_LINE
-        if len(response.split()) < 190 and pad < 3:
+        minimum = {"terse": 190, "standard": 245, "deep": 285}[depth]
+        if len(response.split()) < minimum and pad < 3:
             pad += 1
             continue
         if response in used_text:
@@ -357,10 +364,11 @@ def build_reasoning(rng, cat, stage, ctx, used_text, used_combo, lens_use, quota
         paragraphs.extend(middles[i] for i in keep)
         paragraphs.append(cat["principles"][principle_i])
         paragraphs.extend(strategy_paragraphs(rng, strategies))
-        paragraphs.extend(lens_paragraphs(rng, lenses))
+        paragraphs.extend(lens_paragraphs(rng, lenses, stage))
         paragraphs.append(theme["closers"][closer_i])
         response = join_paragraphs(paragraphs)
-        if len(response.split()) < 190 and pad < 3:
+        minimum = {"terse": 190, "standard": 245, "deep": 285}[depth]
+        if len(response.split()) < minimum and pad < 3:
             pad += 1
             continue
         if response in used_text:
@@ -399,8 +407,11 @@ def build_negative(rng, cat, stage, ctx, used_text, used_combo, lens_use, quota,
         lenses = choose_lenses(rng, cat, "negative", stage, lens_use, quota, lead=lead,
                                max_lenses=1 if depth == "terse" else 3)
         if pad:
-            lenses = lenses + [lens for lens in CATEGORY_LENSES[cat["id"]]
-                               if lens not in lenses][:pad]
+            extra = [lens for lens in list(CATEGORY_LENSES[cat["id"]]) + list(ST.LENS_AFFINITY[stage])
+                     if lens not in lenses]
+            lenses = lenses + extra[:pad]
+            lenses = lenses[:3]
+            lenses = lenses[:1] + sorted(lenses[1:], key=LENS_ORDER.index)
         lens_paras = tuple(rng.randrange(len(LENSES[lens])) for lens in lenses)
         strategies = choose_strategies(rng, "negative", depth, strategy_use)
         strategy_paras = tuple(rng.randrange(len(STRATEGIES[name]["paragraphs"]))
@@ -422,10 +433,11 @@ def build_negative(rng, cat, stage, ctx, used_text, used_combo, lens_use, quota,
         paragraphs.append(cat["discipline"][discipline_i])
         paragraphs.append(trap["reason_past"])
         paragraphs.extend(strategy_paragraphs(rng, strategies))
-        paragraphs.extend(lens_paragraphs(rng, lenses))
+        paragraphs.extend(lens_paragraphs(rng, lenses, stage))
         paragraphs.append(trap["closers"][closer_i])
         response = join_paragraphs(paragraphs)
-        if len(response.split()) < 190 and pad < 3:
+        minimum = {"terse": 190, "standard": 245, "deep": 285}[depth]
+        if len(response.split()) < minimum and pad < 3:
             pad += 1
             continue
         if response in used_text:
@@ -479,18 +491,26 @@ def stage_counts(rec_type, total):
     return counts
 
 
-def stage_category_count(stage, total):
-    """How many records each category contributes inside one stage."""
+def stage_category_count(stage, total, rng):
+    """How many records each category contributes inside one stage.
+
+    Each stage reasons with its own libraries: the stage-native ones carry the
+    majority of its records, and the rest come from the categories that also
+    apply at that stage (for outlining, the structural libraries; for revision,
+    the repair, scene and continuity libraries).
+    """
     counts = Counter()
-    native = ST.NATIVE_CATEGORIES[stage]
+    allowed = list(ST.ALLOWED_CATEGORIES[stage])
+    native = [c for c in ST.NATIVE_CATEGORIES[stage] if c in allowed]
     if native:
         native_total = int(round(total * ST.NATIVE_SHARE))
-        for cat, n in distribute(native_total, [CATEGORY_BY_ID[c] for c in native], random.Random(0)):
+        for cat, n in distribute(native_total, [CATEGORY_BY_ID[c] for c in native], rng):
             counts[cat["id"]] += n
         general_total = total - native_total
     else:
         general_total = total
-    for cat, n in distribute(general_total, CATEGORIES, random.Random(1)):
+    general = [CATEGORY_BY_ID[c] for c in allowed if c not in native]
+    for cat, n in distribute(general_total, general, rng):
         counts[cat["id"]] += n
     return counts
 
@@ -542,7 +562,7 @@ def build_dataset(size, seed, with_outlines=False):
 
     for rec_type, total in counts.items():
         for stage, stage_total in stage_counts(rec_type, total):
-            plan = stage_category_count(stage, stage_total)
+            plan = stage_category_count(stage, stage_total, rng)
             for cat_id, n in distribute_stage_plan(plan, stage_total, rng):
                 cat = CATEGORY_BY_ID[cat_id]
                 for _ in range(n):

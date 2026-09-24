@@ -31,7 +31,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from generator.categories import CATEGORIES
 from generator.lenses import LENS_ORDER, PRESSURE_LENS
 from generator.rules import all_rule_ids
-from generator.stages import STAGES
+from generator.stages import ALLOWED_CATEGORIES, NATIVE_CATEGORIES, STAGES
 from generator.strategies import STRATEGIES
 
 EXPECTED_CATEGORIES = {c["id"] for c in CATEGORIES}
@@ -59,8 +59,9 @@ DEPTH_FIELDS = {
 DIFFICULTY_BY_DEPTH = {"terse": "foundational", "standard": "intermediate",
                        "deep": "advanced"}
 
-MIN_PER_STAGE_CATEGORY_RATIO = 0.0011  # ~8 at 7,200 records
-MIN_PER_TYPE_CATEGORY = 20
+MIN_PER_STAGE_CATEGORY_RATIO = 0.0015   # ~11 at 7,200 records
+MIN_PER_TYPE_CATEGORY_RATIO = 0.0015
+MAX_STAGE_CATEGORY_SPREAD = 1.9         # richest library vs thinnest inside a stage
 
 
 def fail(msg):
@@ -171,6 +172,9 @@ def main():
         cat = r["category"]
         if cat not in EXPECTED_CATEGORIES:
             fail("%s has unknown category %r" % (r["id"], cat))
+        if cat not in ALLOWED_CATEGORIES[stage]:
+            fail("%s reasons about %r at the %s stage, which does not use that library"
+                 % (r["id"], cat, stage))
         per_type_cat[r["type"]][cat] += 1
 
         lenses = r["lenses"]
@@ -239,22 +243,54 @@ def main():
     if stage_cells[("drafting", "transition")] != type_counts["transition"]:
         fail("every transition record should sit at the drafting stage")
 
+    # Coverage: a type carries every category that its stages use, and nothing else.
+    type_floor = max(1, int(round(n * MIN_PER_TYPE_CATEGORY_RATIO)))
     for rec_type in TYPE_SHARES:
+        used_stages = {s for s in STAGES if stage_cells[(s, rec_type)]}
+        expected = set()
+        for s in used_stages:
+            expected |= set(ALLOWED_CATEGORIES[s])
         covered = per_type_cat[rec_type]
-        if set(covered) != EXPECTED_CATEGORIES:
-            missing = sorted(EXPECTED_CATEGORIES - set(covered))
+        missing = sorted(expected - set(covered))
+        if missing:
             fail("type %s is missing categories %s" % (rec_type, missing))
-        thin = sorted(c for c, k in covered.items() if k < min(MIN_PER_TYPE_CATEGORY, n // 400))
+        stray = sorted(set(covered) - expected)
+        if stray:
+            fail("type %s carries categories from stages it does not use: %s" % (rec_type, stray))
+        thin = sorted(c for c, k in covered.items() if k < type_floor)
         if thin:
-            fail("type %s has thinly covered categories %s" % (rec_type, thin))
+            fail("type %s has thinly covered categories %s (floor %d)"
+                 % (rec_type, thin, type_floor))
 
+    # Stage balance: within a group of libraries the weights should be comparable,
+    # each stage should give most of its weight to its own libraries, and no
+    # stage/category cell should be a rounding artifact.
     for rec_type in TYPE_SHARES:
-        cells = Counter((r["stage"], r["category"]) for r in records if r["type"] == rec_type)
-        floor = max(1, int(round(n * MIN_PER_STAGE_CATEGORY_RATIO)))
-        thin = sorted(cell for cell, k in cells.items() if k < floor)
-        if thin:
-            fail("stage/category cells under %d records in %s: %s"
-                 % (floor, rec_type, thin[:6]))
+        for stage in STAGES:
+            cells = Counter(r["category"] for r in records
+                            if r["type"] == rec_type and r["stage"] == stage)
+            if not cells:
+                continue
+            native_ids = set(NATIVE_CATEGORIES[stage])
+            for label, group in (("library", {c: k for c, k in cells.items()
+                                              if c not in native_ids}),
+                                 ("native", {c: k for c, k in cells.items()
+                                             if c in native_ids})):
+                if len(group) < 2 or min(group.values()) < 8:
+                    continue  # small samples carry rounding noise
+                if max(group.values()) > MAX_STAGE_CATEGORY_SPREAD * min(group.values()):
+                    fail("%s records at the %s stage are unbalanced across its %s "
+                         "libraries: %s" % (rec_type, stage, label, dict(group)))
+            if native_ids:
+                share = sum(k for c, k in cells.items() if c in native_ids) / sum(cells.values())
+                if share < 0.5:
+                    fail("%s records at the %s stage only give %.2f of their weight to that "
+                         "stage's own libraries" % (rec_type, stage, share))
+            floor = max(1, int(round(n * MIN_PER_STAGE_CATEGORY_RATIO)))
+            thin = sorted(c for c, k in cells.items() if k < floor)
+            if thin:
+                fail("stage/category cells under %d records in %s at the %s stage: %s"
+                     % (floor, rec_type, stage, thin))
 
     missing_rules = sorted(set(all_rule_ids()) - set(rule_hits))
     if missing_rules:
@@ -274,7 +310,13 @@ def main():
     print("  stages: %s" % {s: sum(k for (st, _), k in stage_cells.items() if st == s)
                             for s in STAGES})
     print("  stage x type: %s" % {"%s/%s" % k: v for k, v in sorted(stage_cells.items())})
-    print("  categories: %d" % len(EXPECTED_CATEGORIES))
+    print("  categories: %d, each used only at the stages it applies to"
+          % len(EXPECTED_CATEGORIES))
+    for stage in STAGES:
+        cells = Counter(r["category"] for r in records if r["stage"] == stage)
+        native = sum(k for c, k in cells.items() if c in NATIVE_CATEGORIES[stage])
+        print("  stage %-9s libraries=%d, own-library share=%.2f"
+              % (stage, len(cells), native / max(1, sum(cells.values()))))
     print("  rules exercised: %d of %d" % (len(rule_hits), len(all_rule_ids())))
     print("  strategies: %s" % dict(strategy_hits.most_common()))
     print("  lenses: %d distinct; leads balanced %d-%d"

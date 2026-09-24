@@ -64,6 +64,10 @@ CATEGORY_LENSES = {
     "idea_generation": ("reader_trust", "character", "outline_obedience", "concrete", "metaphor"),
     "outline_design": ("outline_obedience", "pacing", "continuity", "character", "scene"),
     "revision_craft": ("continuity", "prose", "style_consistency", "reader_trust", "scene"),
+    "idea_shaping": ("character", "reader_trust", "outline_obedience", "emotion", "concrete"),
+    "arc_mapping": ("character", "outline_obedience", "pacing", "continuity", "reader_trust"),
+    "scene_planning": ("scene", "pacing", "outline_obedience", "concrete", "action"),
+    "revision_diagnosis": ("reader_trust", "scene", "continuity", "pacing", "style_consistency"),
 }
 
 # Craft pressure tags used by the outline bank, mapped to the lens that the

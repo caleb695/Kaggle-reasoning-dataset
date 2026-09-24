@@ -32,6 +32,10 @@ from . import continuity_outline
 from . import idea_generation
 from . import outline_design
 from . import revision_craft
+from . import idea_shaping
+from . import arc_mapping
+from . import scene_planning
+from . import revision_diagnosis
 
 CATEGORIES = [
     plot_architecture.CAT,
@@ -55,4 +59,8 @@ CATEGORIES = [
     idea_generation.CAT,
     outline_design.CAT,
     revision_craft.CAT,
+    idea_shaping.CAT,
+    arc_mapping.CAT,
+    scene_planning.CAT,
+    revision_diagnosis.CAT,
 ]

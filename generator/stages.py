@@ -51,13 +51,42 @@ STAGE_INFO = {
 # Which categories carry a stage's native reasoning. Records at a stage draw a
 # share of their craft items from these, and the rest from the full library.
 NATIVE_CATEGORIES = {
-    "ideation": ("idea_generation",),
-    "outline": ("outline_design", "plot_architecture", "chapter_arcs", "setup_payoff"),
+    "ideation": ("idea_generation", "idea_shaping"),
+    "outline": ("outline_design", "arc_mapping", "scene_planning"),
     "drafting": (),
-    "revision": ("revision_craft", "continuity_outline"),
+    "revision": ("revision_craft", "revision_diagnosis"),
 }
 
-NATIVE_SHARE = 0.35
+# Every stage reasons only with the libraries that belong to it, so a
+# brainstorming request never reasons about sentence rhythm and an outline
+# request never reasons about a chapter's entry point.
+ALLOWED_CATEGORIES = {
+    "ideation": (
+        "idea_generation", "idea_shaping", "plot_architecture",
+        "character_decisions", "epic_scale",
+    ),
+    "outline": (
+        "outline_design", "arc_mapping", "scene_planning", "plot_architecture",
+        "chapter_arcs", "setup_payoff", "tension", "momentum",
+        "information_management", "conflict_escalation", "epic_scale",
+        "continuity_outline",
+    ),
+    "drafting": (
+        "plot_architecture", "conflict_escalation", "character_decisions",
+        "information_management", "scene_construction", "chapter_arcs",
+        "setup_payoff", "tension", "momentum", "epic_scale", "pov_perception",
+        "concrete_grounding", "prose_discipline", "metaphor_imagery",
+        "emotion_craft", "dialogue_voice", "action_physicality",
+        "continuity_outline",
+    ),
+    "revision": (
+        "revision_craft", "revision_diagnosis", "scene_construction", "tension",
+        "momentum", "character_decisions", "information_management",
+        "continuity_outline", "prose_discipline", "dialogue_voice",
+    ),
+}
+
+NATIVE_SHARE = 0.65
 
 # ---------------------------------------------------------------------------
 # Instruction frames: where the writer is standing.
@@ -328,8 +357,8 @@ CONTEXT_LINES = {
 # ---------------------------------------------------------------------------
 
 LENS_AFFINITY = {
-    "ideation": ("character", "reader_trust", "concrete", "pov", "metaphor", "outline_obedience"),
+    "ideation": ("reader_trust", "character", "continuity", "outline_obedience", "pacing"),
     "outline": ("outline_obedience", "pacing", "continuity", "character", "scene", "reader_trust"),
     "drafting": (),  # every lens applies; the chapter's craft pressure leads
-    "revision": ("continuity", "prose", "style_consistency", "ai_patterns", "reader_trust", "scene"),
+    "revision": ("continuity", "prose", "style_consistency", "ai_patterns", "scene", "reader_trust"),
 }
