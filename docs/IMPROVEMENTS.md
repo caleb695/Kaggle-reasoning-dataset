@@ -4,7 +4,8 @@ This document records what was changed to make the dataset train better behavior
 each change was made, and what it looks like in the data. It is written for whoever
 maintains or retrains on this dataset.
 
-Current build: **7,200 records**, seed `20260924`, shipped in `data/`.
+Current build: **7,200 records**, seed `20260924`, shipped in `data/`. Stage coverage:
+900 brainstorming, 1,260 outlining, 4,320 drafting, 720 revision, across 25 libraries.
 
 ---
 
@@ -26,17 +27,53 @@ applies and is summarized in the repository README.
 
 ---
 
-## 2. Process coverage: the four stages
+## 2. Process coverage: the four stages, each with its own craft
 
 The dataset previously reasoned only about the drafting moment. It now covers the whole
-process, because the model is asked to help at every stage:
+process, and each stage teaches **the craft of that stage** rather than a process note
+about it: brainstorming reasons about how to generate an engaging story, outlining reasons
+about how to build a structure that holds, drafting reasons about how to write the chapter
+against an outline, revision reasons about how to diagnose and repair what exists.
 
-| Stage | Records | What the reasoning decides |
-|---|---|---|
-| `ideation` | 900 | the premise, its engine, the promise it makes, the choice that tests it |
-| `outline` | 1,260 | movements, chapter functions, thread schedule, escalation ladder, earned ending |
-| `drafting` | 4,320 | the specific chapter the caller's outline describes (3,600 of these end with the handoff line) |
-| `revision` | 720 | what to change, in what order, and what to protect |
+| Stage | Records | Deliverable the reasoning produces | Native libraries (65% of the stage) |
+|---|---|---|---|
+| `ideation` | 900 | a premise with an engine, the promise it makes, and the choice that tests it | `idea_generation`, `idea_shaping` |
+| `outline` | 1,260 | a plan whose chapters have functions, positions, and prices | `outline_design`, `arc_mapping`, `scene_planning` |
+| `drafting` | 4,320 | the decisions the chapter is written from (3,600 end with the handoff line) | the eighteen drafting craft libraries |
+| `revision` | 720 | a diagnosis and the order of passes that will fix it | `revision_craft`, `revision_diagnosis` |
+
+Stage routing is enforced rather than suggested: `generator/stages.py` holds
+`ALLOWED_CATEGORIES` per stage and the validator fails the build if a record reasons about
+a library outside its stage (a brainstorming request about sentence rhythm, an outlining
+request about a character's hands). Each stage also has its own instruction frames, tails,
+context lines, and response openers, and `generator/lenses_stage.py` gives the cross-cutting
+lens dimensions a planning-height paragraph bank, so ideation and outlining reason about
+character, pacing, and continuity at the level of the book rather than the level of a scene.
+
+What each stage's craft actually covers:
+
+- **Brainstorming (`ideation`)** — premise engines and the demand a premise creates;
+  protagonist choice by damage rather than capability; wants and needs; conflict generation
+  from opposition with a legitimate claim, structural obstacles, and mutual exclusivity;
+  stakes built as a ladder of currencies with something the protagonist cannot replace;
+  hooks and opening promises; tone as contract; ending direction and its price; theme
+  stated as a question with a live counter-position; pitch compression as a diagnostic;
+  generating and selecting among candidate versions; capacity checks for novel length.
+- **Outlining (`outline`)** — movements defined by changes of condition; chapter functions;
+  thread schedules with setup and payoff positions; escalation ladders that charge rather
+  than threaten; ending-first design and the conditions the ending requires; protagonist,
+  antagonist, relationship, knowledge and stakes arcs and their alignment; act breaks and
+  the midpoint reversal; climax design as a decision with a price; mystery trails and
+  misdirection; scene purpose, turns, entry and exit; sequences with a question and a
+  crest; set-piece staging with a cost and a consequence; scene budgets and ordering.
+- **Drafting (`drafting`)** — the eighteen craft libraries: scene construction, POV and
+  perception, concrete grounding, prose discipline, metaphor and imagery, emotion, dialogue,
+  action, worldbuilding, characterization, humor, pacing, reader trust, AI-pattern
+  avoidance, plan obedience, continuity, tension, momentum.
+- **Revision (`revision`)** — cause before symptom; scene and chapter audits; cut, merge,
+  relocate, strengthen; pass order; repairing slow openings, sagging middles, flat endings,
+  confusing sequences, unlikeable or undriven protagonists, missing motivation, and
+  overwritten drafts; protecting the material that carries voice; criteria for stopping.
 
 Drafting stays dominant, as requested. Transition records exist only at the drafting
 stage, because the handoff line separates planning from writing and there is no writing
@@ -45,18 +82,23 @@ to begin at the other stages.
 Three new authored craft libraries carry the stage-native reasoning, alongside the 18
 existing ones (21 categories total):
 
-- `idea_generation` — engine tests, specificity, promise, forced choice, collision,
-  theme-as-question, character pressure. Traps: genre-as-idea, theme-as-message,
-  world-as-substitute.
-- `outline_design` — movements, chapter functions, thread schedule, escalation ladder,
-  ending-first design, subplot convergence, pressure contour. Traps: event-list outline,
-  options kept open, outline dictating prose.
-- `revision_craft` — cause before symptom, cut first, protect what works, pass order,
-  pressure repair, continuity after change. Traps: polish before repair, patch and keep,
-  the infinite final pass.
+The seven stage-native libraries, with the traps that give the negative records their
+content:
 
-Each library carries four or five problems, three traps, three discipline checks, two
-arc-level themes, and three principles, in the same schema as the existing libraries.
+| Library | Stage | Craft | Traps |
+|---|---|---|---|
+| `idea_generation` | ideation | premise engines, forced choices, collisions, theme as question, idea tests, promise ledgers | genre-as-idea, theme-as-message, world-as-substitute |
+| `idea_shaping` | ideation | protagonist choice, want/need, conflict generation, stakes ladders, hooks, tone, ending direction, pitch, candidate selection | premise-love, twist-before-story, borrowed stakes, theme debate, indecisive protagonist |
+| `outline_design` | outline | movements, chapter functions, thread schedules, escalation ladders, ending-first design, subplot convergence, pressure contour | event-list outline, options kept open, outline dictating prose |
+| `arc_mapping` | outline | protagonist, antagonist, relationship, knowledge and stakes arcs, act breaks, climax, mystery, resolution | arc as announcement, escalation by inflation, twist as substitute |
+| `scene_planning` | outline | scene purpose, turns, entry and exit, sequences, set pieces, ordering, scene budgets | beat sheet as script, scenes added for length, reveal before setup |
+| `revision_craft` | revision | cause before symptom, cut first, protect what works, pass order, continuity after change | polish before repair, patch and keep, the infinite final pass |
+| `revision_diagnosis` | revision | symptom-to-cause mapping, scene and chapter audits, pacing, character, clarity and ending repair, line pass | explaining to repair, cutting the wrong thing, smoothing voice |
+
+Each library carries several moves (families of craft paragraphs), four to seven problems
+with openers and closers, three to five traps with damage and replacement reasoning, three
+discipline checks, two arc-level themes, and three principles, in the same schema as the
+existing libraries, so every stage can produce reasoning, negative, and transition records.
 
 ---
 

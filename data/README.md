@@ -38,8 +38,10 @@ data stays reasoning-only.
 }
 ```
 
-- `stage` places the reasoning in the writing process; `transition` records exist only at
-  the `drafting` stage, where writing follows the reasoning.
+- `stage` places the reasoning in the writing process, and each stage reasons only with the
+  libraries that belong to it: brainstorming with the idea libraries, outlining with the
+  structure libraries, drafting with the craft libraries, revision with the repair
+  libraries. `transition` records exist only at `drafting`, where writing follows.
 - `depth` controls the trace's size and demand: terse settles one decision (190–343 words),
   standard settles several with one named strategy (245–506 words), deep carries
   interacting decisions plus a check (281–625 words). `difficulty` follows the tier.
@@ -59,12 +61,15 @@ data stays reasoning-only.
 
 **Depths:** `terse` 1,573, `standard` 3,771, `deep` 1,856.
 
-**Categories (21, roughly 340 examples each):** `plot_architecture`,
-`conflict_escalation`, `character_decisions`, `information_management`,
-`scene_construction`, `chapter_arcs`, `setup_payoff`, `tension`, `momentum`, `epic_scale`,
-`pov_perception`, `concrete_grounding`, `prose_discipline`, `metaphor_imagery`,
-`emotion_craft`, `dialogue_voice`, `action_physicality`, `continuity_outline`, plus the
-three stage-native libraries `idea_generation`, `outline_design`, and `revision_craft`.
+**Categories (25, roughly 290 examples each):** the eighteen drafting libraries
+(`plot_architecture`, `conflict_escalation`, `character_decisions`,
+`information_management`, `scene_construction`, `chapter_arcs`, `setup_payoff`, `tension`,
+`momentum`, `epic_scale`, `pov_perception`, `concrete_grounding`, `prose_discipline`,
+`metaphor_imagery`, `emotion_craft`, `dialogue_voice`, `action_physicality`,
+`continuity_outline`) plus seven stage-native libraries: `idea_generation` and
+`idea_shaping` for brainstorming, `outline_design`, `arc_mapping` and `scene_planning` for
+outlining, `revision_craft` and `revision_diagnosis` for revision. Each stage reasons only
+with the libraries that belong to it, and its own libraries carry 65% of its records.
 
 ## Quick load in a Kaggle notebook
 

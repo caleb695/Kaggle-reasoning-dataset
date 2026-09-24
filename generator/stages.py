@@ -62,8 +62,7 @@ NATIVE_CATEGORIES = {
 # request never reasons about a chapter's entry point.
 ALLOWED_CATEGORIES = {
     "ideation": (
-        "idea_generation", "idea_shaping", "plot_architecture",
-        "character_decisions", "epic_scale",
+        "idea_generation", "idea_shaping", "character_decisions", "epic_scale",
     ),
     "outline": (
         "outline_design", "arc_mapping", "scene_planning", "plot_architecture",
@@ -82,7 +81,7 @@ ALLOWED_CATEGORIES = {
     "revision": (
         "revision_craft", "revision_diagnosis", "scene_construction", "tension",
         "momentum", "character_decisions", "information_management",
-        "continuity_outline", "prose_discipline", "dialogue_voice",
+        "continuity_outline", "prose_discipline",
     ),
 }
 

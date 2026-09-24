@@ -8,15 +8,27 @@ surface, imagery, emotion, dialogue, action, worldbuilding, humor, continuity an
 as generative, forward-looking reasoning performed *while writing*, not as post-hoc
 analysis.
 
-This is a **reasoning dataset** that covers the whole process of writing a novel, not only
-the drafting moment:
+This is a **reasoning dataset** that covers the whole process of writing a novel, and each
+stage teaches the craft of that stage rather than only the drafting moment:
 
-| Stage | Records | What the reasoning decides |
-|---|---|---|
-| `ideation` | 900 | the premise, its engine, the promise it makes, the choice that tests it |
-| `outline` | 1,260 | movements, chapter functions, thread schedule, escalation ladder, earned ending |
-| `drafting` | 4,320 | the specific chapter the caller's outline describes |
-| `revision` | 720 | what to change, in what order, and what to protect |
+| Stage | Records | Deliverable the reasoning produces | Native libraries |
+|---|---|---|---|
+| `ideation` | 900 | a premise with an engine, the promise it makes, and the choice that tests it | `idea_generation`, `idea_shaping` |
+| `outline` | 1,260 | a plan whose chapters have functions, positions, and prices | `outline_design`, `arc_mapping`, `scene_planning` |
+| `drafting` | 4,320 | the decisions the specific chapter is written from | the eighteen drafting-era craft libraries |
+| `revision` | 720 | a diagnosis and the order of passes that will fix it | `revision_craft`, `revision_diagnosis` |
+
+Each stage reasons **only** with the libraries that belong to it, and its own libraries
+carry 65% of its records: a brainstorming request never reasons about sentence rhythm or a
+chapter's entry point, an outlining request never reasons about a character's hands. The
+validator enforces the routing, the per-stage balance, and the share.
+
+The craft itself is folded into each stage as practice rather than as process: the ideation
+libraries teach how to generate and select premises, conflicts, stakes, hooks, tones and
+endings; the outline libraries teach how to design acts, turns, arcs, knowledge schedules,
+scene purpose, sequences and set pieces; the drafting libraries teach how to reason through
+a chapter against an outline; the revision libraries teach how to diagnose symptoms, find
+causes, and order the repair.
 
 Responses are structural craft reasoning: decisions, costs, staging, and what a scene owes
 the book. There is zero prose — no illustrative passages, no sample lines, no written-out
@@ -81,7 +93,7 @@ about 22% of records; the rest are balanced between 498 and 687 each.
 A detailed account of what changed and why, with examples, is in
 [`docs/IMPROVEMENTS.md`](docs/IMPROVEMENTS.md).
 
-## Craft categories (21)
+## Craft categories (25)
 
 Each category module is an authored library of forward-looking craft paragraphs, and each
 maps onto the 260-rule craft registry in `generator/rules.py` (rule ids follow the
@@ -107,15 +119,17 @@ original numbering, 1–260).
 | `dialogue_voice` | dialogue, subtext, register and humor | 76-99, 168-175, 252 |
 | `action_physicality` | action, combat legibility, physical cost | 118-122, 124-132, 135, 136 |
 | `continuity_outline` | continuity across a novel and obedience to its plan | 214-223, 227-240, 254, 256, 258 |
-| `idea_generation` | premise design: engine, promise, forced choice, collision, theme as question | stage-native, cross-cutting rules |
-| `outline_design` | architecture: movements, chapter functions, thread schedule, escalation ladder, earned ending | stage-native, cross-cutting rules |
-| `revision_craft` | revision: cause before symptom, cut first, pass order, continuity after change | stage-native, cross-cutting rules |
+| `idea_generation` | brainstorming: premise engines, forced choices, collisions, theme as a question, idea tests | ideation-native |
+| `idea_shaping` | brainstorming: protagonist choice, wants, conflict generation, stakes ladders, hooks, tone, ending direction, pitch, candidate selection | ideation-native |
+| `outline_design` | architecture: movements, chapter functions, thread schedules, escalation ladders, ending-first design, pressure contour | outline-native |
+| `arc_mapping` | arcs: protagonist, antagonist, relationship, knowledge, stakes ladder, act breaks, climax, mystery, resolution | outline-native |
+| `scene_planning` | scenes: purpose and turns, entry and exit, sequences, set pieces, ordering, scene budgets | outline-native |
+| `revision_craft` | repair: cause before symptom, cut first, protect what works, pass order, continuity after change | revision-native |
+| `revision_diagnosis` | repair: symptom-to-cause diagnosis, scene and chapter audits, pacing, character, clarity and ending repair | revision-native |
 
-The three stage-native libraries carry the reasoning that only exists at their stage
-(choosing a premise, designing a structure, deciding a revision), and they are weighted
-at it: 35% of a stage's records come from its native libraries. Each rule is routed to
-exactly one category module, so the eighteen rule-bearing modules between them encode all
-260 rules of the craft guide. Cross-cutting coverage on top of that is carried
+The seven stage-native libraries carry the reasoning that only exists at their stage, and
+each stage draws 65% of its records from them. The eighteen rule-bearing modules between
+them still encode all 260 rules of the craft guide, and every rule is exercised. Cross-cutting coverage on top of that is carried
 by the seventeen lens pools described below, and every record lists both the rules of its
 category and the lenses it was reasoned through.
 
@@ -148,15 +162,15 @@ JSONL. One record per line:
   "id": "t-dialogue_voice-0550",
   "type": "transition | reasoning | negative",
   "stage": "ideation | outline | drafting | revision",
-  "category": "dialogue_voice",
-  "subcategory": "humor_placement",
+  "category": "scene_planning",
+  "subcategory": "set_piece_design",
   "instruction": "the writing situation and the craft problem",
   "response": "pure structural/conceptual craft reasoning",
   "depth": "terse | standard | deep",
   "difficulty": "foundational | intermediate | advanced",
-  "lenses": ["dialogue", "humor", "character"],
+  "lenses": ["scene", "character"],
   "strategies": ["two_routes", "verify"],
-  "rules": [76, 78, 80, 168, 169, 252]
+  "rules": [100, 102, 114, 115, 131]
 }
 ```
 
@@ -179,8 +193,9 @@ Files:
 
 ## Guarantees (enforced by the validator)
 
-- Type ratios 50/25/25 within ±2 points; every stage covered; all 21 categories present
-  in every type, and in every stage, above a per-cell floor.
+- Type ratios 50/25/25 within ±2 points; every stage covered; every category present in
+  every type whose stages use it, with each stage balanced across its libraries and
+  drawing at least half of its records from its own.
 - Transition responses end with exactly one occurrence of the marker, as the final line,
   with substantial reasoning before it; no other type contains the marker or the phrase.
 - No double quotes, no curly quotes, and no exemplification phrases (`for example`,
