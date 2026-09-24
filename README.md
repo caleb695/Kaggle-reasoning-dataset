@@ -79,19 +79,21 @@ tiers also make reasoning length controllable at inference.
 
 | Depth | Records | Demand |
 |---|---|---|
-| `terse` | 1,573 | one decision, no reasoning strategy |
-| `standard` | 3,771 | several decisions and one named strategy |
-| `deep` | 1,856 | interacting decisions, a strategy, and a check |
+| `terse` | 1,600 | one decision, no reasoning strategy (190–351 words) |
+| `standard` | 3,747 | several decisions and one named strategy (248–498 words) |
+| `deep` | 1,853 | interacting decisions, a strategy, and a check (287–600 words) |
 
 **Reasoning strategies** — nine reusable moves are attached to a share of records and
 tagged in the `strategies` field: comparing two routes, reasoning backward from the
 ending, keeping a ledger of costs, a pre-mortem on the likely failure, turning constraints
 into conditions, strengthening the weakest link, reasoning from the reader's model of
 events, ordering work by consequence, and leaving a verification check. `verify` appears in
-about 22% of records; the rest are balanced between 498 and 687 each.
+about 22% of records; the rest are balanced between 498 and 684 each.
 
-A detailed account of what changed and why, with examples, is in
-[`docs/IMPROVEMENTS.md`](docs/IMPROVEMENTS.md).
+A full account of the repository — what it contains, how it is built, what the
+validator guarantees, and worked examples from the dataset — is in
+[`docs/REPO_SUMMARY.md`](docs/REPO_SUMMARY.md); the research-backed account of what was
+improved and why is in [`docs/IMPROVEMENTS.md`](docs/IMPROVEMENTS.md).
 
 ## Craft categories (25)
 
@@ -159,18 +161,18 @@ JSONL. One record per line:
 
 ```json
 {
-  "id": "t-dialogue_voice-0550",
+  "id": "t-setup_payoff-0238",
   "type": "transition | reasoning | negative",
   "stage": "ideation | outline | drafting | revision",
-  "category": "scene_planning",
-  "subcategory": "set_piece_design",
+  "category": "setup_payoff",
+  "subcategory": "load_bearing_plant",
   "instruction": "the writing situation and the craft problem",
   "response": "pure structural/conceptual craft reasoning",
   "depth": "terse | standard | deep",
   "difficulty": "foundational | intermediate | advanced",
-  "lenses": ["scene", "character"],
-  "strategies": ["two_routes", "verify"],
-  "rules": [100, 102, 114, 115, 131]
+  "lenses": ["outline_obedience", "scene", "pacing"],
+  "strategies": ["backward"],
+  "rules": [182, 183, 184, 185]
 }
 ```
 
