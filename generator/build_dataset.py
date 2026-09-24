@@ -5,10 +5,10 @@ Usage (from the repository root):
 
 Records cover the whole process of writing a novel, not only the drafting moment:
 
-    ideation  ->  finding a premise that can carry a book
-    outline   ->  turning the premise into an architecture that holds
-    drafting  ->  deciding the specific chapter the caller's outline describes
-    revision  ->  choosing what to change, in what order, and what to protect
+    ideation  ->  brainstorming: finding an idea that makes a story
+    outline   ->  outlining: building a story that works, from first page to last
+    drafting  ->  writing: how the chapter in front of you gets written
+    revision  ->  revising: what to change, what to keep, and what to do first
 
 Three record types:
 
@@ -149,8 +149,11 @@ def choose_lenses(rng, cat, rec_type, stage, lens_use, quota, lead=None,
     for lens in ordering:
         if lens and lens not in candidates and lens in permitted:
             candidates.append(lens)
-    if not candidates:  # defensive: never leave a record without a lens
-        candidates = [lens for lens in ordering if lens]
+    if not candidates:
+        # Defensive: a stage always reasons with a lens of its own, and an
+        # outline-mode craft pressure is always honoured even when the stage's
+        # own sets do not list it.
+        candidates = ([lead] if lead else []) + list(STAGE_LENSES[stage])
     weight = {lens: 1.0 for lens in candidates}
     weight[candidates[0]] = 1.6 if not lead else 2.0
     scored = sorted(candidates, key=lambda lens: (lens_use[lens] / weight[lens],
@@ -502,16 +505,22 @@ def stage_category_count(stage, total, rng):
     counts = Counter()
     allowed = list(ST.ALLOWED_CATEGORIES[stage])
     native = [c for c in ST.NATIVE_CATEGORIES[stage] if c in allowed]
+    general = [CATEGORY_BY_ID[c] for c in allowed if c not in native]
+    share = ST.NATIVE_SHARE[stage]
+    if native and (not general or share >= 1.0):
+        for cat, n in distribute(total, [CATEGORY_BY_ID[c] for c in native], rng):
+            counts[cat["id"]] += n
+        return counts
     if native:
-        native_total = int(round(total * ST.NATIVE_SHARE))
+        native_total = int(round(total * share))
         for cat, n in distribute(native_total, [CATEGORY_BY_ID[c] for c in native], rng):
             counts[cat["id"]] += n
         general_total = total - native_total
     else:
         general_total = total
-    general = [CATEGORY_BY_ID[c] for c in allowed if c not in native]
-    for cat, n in distribute(general_total, general, rng):
-        counts[cat["id"]] += n
+    if general and general_total:
+        for cat, n in distribute(general_total, general, rng):
+            counts[cat["id"]] += n
     return counts
 
 

@@ -312,7 +312,7 @@ CAT = {
                 "You want a repeatable way to turn an idea into something plannable.",
                 "You are deciding how to move from a premise to a book without guessing.",
             ],
-            "question": "How is an idea converted into a story that can be outlined, step by step?",
+            "question": "How do you turn an idea into a story: whose it is, what they want, what gets in the way, and what it costs them?",
             "openers": [
                 "The conversion has four moves and they are ordered: find the pressure the material creates, choose the person it damages most, give that person a want that costs them, and decide what the ending will take from them. Each move constrains the next, and skipping one produces a book that stalls at the stage it skipped.",
                 "Developing an idea means deciding, in sequence, what the situation makes unavoidable, who is least able to avoid it, what they want badly enough to act, and what their acting will cost. The order matters because the later decisions are only possible once the earlier ones are fixed.",
@@ -336,7 +336,7 @@ CAT = {
                 "You are trying to identify what makes a premise gripping rather than merely clever.",
                 "You want to build the book around the thing that holds attention.",
             ],
-            "question": "What makes a premise engaging, and how is that quality built into the idea deliberately?",
+            "question": "What makes a story engaging, and how do you build that into an idea on purpose?",
             "openers": [
                 "Engagement in a novel comes from three sources that can be designed: an unresolved question the reader wants answered, a person the reader wants to see succeed or fail, and a cost the reader can feel approaching. A premise that supplies all three produces momentum from the first chapter.",
                 "A grip on the reader is made of anticipation rather than surprise. Reasoning about a premise means deciding what the reader will be waiting for, and making sure that thing is concrete, personal, and continuously threatened.",

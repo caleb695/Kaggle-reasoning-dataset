@@ -260,7 +260,7 @@ CAT = {
                 "You want a revision plan rather than a set of impressions.",
                 "You are deciding where to begin repairing a manuscript.",
             ],
-            "question": "How is a draft diagnosed so that the revision addresses causes rather than symptoms?",
+            "question": "How do you find out what is actually wrong with a draft, rather than fixing what you happen to notice?",
             "openers": [
                 "Diagnose in a fixed order: the story's spine first, then the chapters' functions, then the scenes' turns, then the information schedule, then the prose. Reading downward keeps a structural fault from being treated as a line problem, which is the most expensive mistake revision makes.",
                 "A diagnostic pass produces a list of faults with causes attached rather than a feeling about the manuscript. Each symptom maps to a small number of structural causes, and choosing between them is what the revision plan is for.",
@@ -285,7 +285,7 @@ CAT = {
                 "You want to fix the problems without losing what is good about the manuscript.",
                 "You are deciding how far the revision is allowed to reach.",
             ],
-            "question": "How is a draft repaired so that the fixes do not damage what already works?",
+            "question": "How do you repair a draft without losing the parts that already work?",
             "openers": [
                 "Repair is bounded by two lists: what must change and what must survive. Writing both before opening the file is what keeps a structural repair from becoming a rewrite that loses the draft's best material and the writer's confidence along with it.",
                 "The safe repair is the smallest change that removes the cause. Deciding that principle before starting is what converts revision from an appetite into a procedure, and it is what keeps a manuscript from being improved until it is worse.",

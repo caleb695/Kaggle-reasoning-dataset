@@ -208,7 +208,7 @@ CAT = {
                 "You want an outline that produces pressure in every chapter rather than in the important ones.",
                 "You are building a structure and want it to hold at every scale.",
             ],
-            "question": "How should a novel's material be scheduled so that every chapter has a function and the ending arrives as a consequence?",
+            "question": "How do you build an outline so every chapter has a job and the ending arrives because of what came before?",
             "openers": [
                 "Treat the outline as a schedule of pressure: what is planted where, what is paid where, what each chapter changes, and what the last movement is allowed to spend. Structure is the order in which a story spends its material rather than the sequence in which events occur.",
                 "Architecture is the discipline of deciding positions. Once the ending's conditions are known, every plant, turn, and payoff has a position, and the outline is the record of those positions together with the reason each one is where it is.",
@@ -233,7 +233,7 @@ CAT = {
                 "You are deciding how the theme will be carried by the plan rather than by dialogue.",
                 "You are designing a structure that has to argue with itself.",
             ],
-            "question": "How is a theme built into a novel's structure rather than stated in its text?",
+            "question": "How do you build a story whose events test its theme instead of explaining it?",
             "openers": [
                 "A theme carried by structure is a pattern of pressure: the same test applied to different characters, the same mistake made at increasing cost, the counter-argument given its best scene. The plan embodies the question in what it makes people do.",
                 "Deciding theme at the level of architecture means deciding what the book will repeatedly put its characters in a position to choose, and how those choices will differ in cost each time they recur.",

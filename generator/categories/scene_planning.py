@@ -234,7 +234,7 @@ CAT = {
                 "You want the book's middle to have shape rather than length.",
                 "You are deciding how much to plan before drafting.",
             ],
-            "question": "How is an outline converted into scenes and sequences that carry pressure at every scale?",
+            "question": "How do you turn an outline into scenes: what each one does, where it starts, and what it leaves changed?",
             "openers": [
                 "The conversion runs in one direction and it is mechanical once the outline exists: each movement becomes two or three sequences, each sequence becomes three to five scenes with a crest, and each scene gets a goal, an obstacle, an outcome, and a position. The planning effort belongs at the sequence level, where the shape of the reading experience is decided.",
                 "Scene planning is where a story's pressure becomes physical. The sequence's crest decides where the reader's attention peaks, the scenes between it decide what the peak costs, and the entry and exit points decide whether the whole thing reads as fast or as long.",
@@ -259,7 +259,7 @@ CAT = {
                 "You want a set piece to carry a chapter without becoming a spectacle.",
                 "You are designing the physical facts of a scene that the story depends on.",
             ],
-            "question": "How is a major scene staged so that it turns the story rather than merely impressing the reader?",
+            "question": "How do you plan a big scene so that it turns the story instead of only being impressive?",
             "openers": [
                 "A staged scene is built from four decisions: the space and its constraints, the positions and capabilities of everyone present, the moment the terms change, and the bill that comes due afterward. Staging without a turn is a performance, and a turn without staging is an announcement.",
                 "Set-piece planning starts from what must be true when it ends. Deciding the exit condition first tells you which facts the staging has to establish, which is what keeps the scene's second half from inventing conveniences.",

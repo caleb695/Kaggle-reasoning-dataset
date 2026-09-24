@@ -35,24 +35,35 @@ about it: brainstorming reasons about how to generate an engaging story, outlini
 about how to build a structure that holds, drafting reasons about how to write the chapter
 against an outline, revision reasons about how to diagnose and repair what exists.
 
-| Stage | Records | Deliverable the reasoning produces | Native libraries (65% of the stage) |
+| Stage | Records | The work the examples teach | Libraries it reasons with |
 |---|---|---|---|
-| `ideation` | 900 | a premise with an engine, the promise it makes, and the choice that tests it | `idea_generation`, `idea_shaping` |
-| `outline` | 1,260 | a plan whose chapters have functions, positions, and prices | `outline_design`, `arc_mapping`, `scene_planning` |
-| `drafting` | 4,320 | the decisions the chapter is written from (3,600 end with the handoff line) | the eighteen drafting craft libraries |
-| `revision` | 720 | a diagnosis and the order of passes that will fix it | `revision_craft`, `revision_diagnosis` |
+| `ideation` | 900 | brainstorming: finding an idea that makes a story, with someone to follow, something they want badly, and trouble that will not let them have it | `idea_generation`, `idea_shaping` |
+| `outline` | 1,260 | outlining: building the story so it works, deciding what happens, why it happens, and what it costs | `outline_design`, `arc_mapping`, `scene_planning` plus the structural libraries |
+| `drafting` | 4,320 | writing: how the chapter in front of you gets written, inside the outline you were given | the eighteen writing craft libraries |
+| `revision` | 720 | revising: what to change, what to keep, and the order to work in | `revision_craft`, `revision_diagnosis` |
 
 Stage routing is enforced rather than suggested: `generator/stages.py` holds
-`ALLOWED_CATEGORIES` per stage and the validator fails the build if a record reasons about
-a library outside its stage (a brainstorming request about sentence rhythm, an outlining
-request about a character's hands). Each stage also has its own instruction frames, tails,
+`ALLOWED_CATEGORIES` and `NATIVE_SHARE` per stage, and the validator fails the build if a
+record reasons about a library outside its stage (a brainstorming request about sentence
+rhythm, an outlining request about a character's hands). Brainstorming and revision reason
+with nothing but their own libraries; outlining keeps the structural libraries alongside
+its own; writing draws on all of them, because that is where the craft converges.
+
+The stage voice is enforced too. Instruction frames, tails, response openers, context lines,
+and the lens paragraphs are written as the activity itself: brainstorming frames sit in the
+moment an idea is being found, outlining frames sit above the story deciding what happens
+and why, writing frames sit at the desk with the chapter's requirements in front of them,
+and revision frames sit in front of a draft that is not working yet. The planning lens pools
+in `generator/lenses_stage.py` are authored per activity, so a brainstorming record reasons
+about what makes a story engaging rather than about scene construction. Each stage also has its own instruction frames, tails,
 context lines, and response openers, and `generator/lenses_stage.py` gives the cross-cutting
 lens dimensions a planning-height paragraph bank, so ideation and outlining reason about
 character, pacing, and continuity at the level of the book rather than the level of a scene.
 
 What each stage's craft actually covers:
 
-- **Brainstorming (`ideation`)** — premise engines and the demand a premise creates;
+- **Brainstorming (`ideation`)** — what makes a story engaging and how to build it on
+  purpose; premise engines and the demand a premise creates;
   protagonist choice by damage rather than capability; wants and needs; conflict generation
   from opposition with a legitimate claim, structural obstacles, and mutual exclusivity;
   stakes built as a ladder of currencies with something the protagonist cannot replace;
@@ -70,7 +81,7 @@ What each stage's craft actually covers:
   perception, concrete grounding, prose discipline, metaphor and imagery, emotion, dialogue,
   action, worldbuilding, characterization, humor, pacing, reader trust, AI-pattern
   avoidance, plan obedience, continuity, tension, momentum.
-- **Revision (`revision`)** — cause before symptom; scene and chapter audits; cut, merge,
+- **Revision (`revision`)** — repair: cause before symptom; scene and chapter audits; cut, merge,
   relocate, strengthen; pass order; repairing slow openings, sagging middles, flat endings,
   confusing sequences, unlikeable or undriven protagonists, missing motivation, and
   overwritten drafts; protecting the material that carries voice; criteria for stopping.

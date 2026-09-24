@@ -61,12 +61,12 @@ CATEGORY_LENSES = {
     "dialogue_voice": ("dialogue", "humor", "character", "concrete", "reader_trust"),
     "action_physicality": ("action", "character", "continuity", "pacing", "concrete"),
     "continuity_outline": ("continuity", "outline_obedience", "reader_trust", "scene", "style_consistency"),
-    "idea_generation": ("reader_trust", "character", "outline_obedience", "concrete", "metaphor"),
-    "outline_design": ("outline_obedience", "pacing", "continuity", "character", "scene"),
+    "idea_generation": ("reader_trust", "character", "emotion", "worldbuilding", "pacing"),
+    "outline_design": ("pacing", "character", "scene", "continuity", "reader_trust"),
     "revision_craft": ("continuity", "prose", "style_consistency", "reader_trust", "scene"),
-    "idea_shaping": ("character", "reader_trust", "outline_obedience", "emotion", "concrete"),
-    "arc_mapping": ("character", "outline_obedience", "pacing", "continuity", "reader_trust"),
-    "scene_planning": ("scene", "pacing", "outline_obedience", "concrete", "action"),
+    "idea_shaping": ("character", "reader_trust", "emotion", "worldbuilding", "pacing"),
+    "arc_mapping": ("character", "pacing", "continuity", "reader_trust", "emotion"),
+    "scene_planning": ("scene", "pacing", "character", "continuity", "reader_trust"),
     "revision_diagnosis": ("reader_trust", "scene", "continuity", "pacing", "style_consistency"),
 }
 

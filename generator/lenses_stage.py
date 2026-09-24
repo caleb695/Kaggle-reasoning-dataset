@@ -2,120 +2,273 @@
 
 The 17 lens pools in `lenses_a` and `lenses_b` reason at drafting height: they
 talk about scenes, chapters, and the page. That is exactly right for the drafting
-stage, and wrong for ideation, outlining, and revision, where a paragraph about
-sentence rhythm or a scene's entry point answers a question nobody asked.
+stage and for revision, which works on written scenes.
 
-This module holds a planning-height paragraph bank per lens. Stages below
-drafting draw from these instead, so a lens keeps its craft dimension while the
-reasoning stays at the level of the work being done.
+It is wrong for brainstorming and outlining. A brainstorming request that
+receives a paragraph about sentence rhythm, or an outlining request that receives
+one about a scene's entry point, is being answered at the wrong height: it teaches
+a decision the writer does not have in front of them and leaves the decision they
+do have undeveloped.
+
+This module holds a paragraph bank per lens for brainstorming and for outlining.
+Each paragraph is about the work of that activity: for brainstorming, what makes
+an idea into a story someone will follow; for outlining, what makes a story hold
+together from first page to last.
 """
 
-PLANNING_LENSES = {
+IDEATION_LENSES = {
     "reader_trust": (
-        "Plan the book around what the reader can infer. Every explanation the book intends to supply early is a conclusion the reader was capable of reaching later, and the plan should spend its explanations only where the inference is not available to anyone.",
-        "Decide at the planning stage what the book will not explain. An unexplained act that the surrounding material accounts for is the reader's reward for paying attention, and a book whose plan explains everything has budgeted nothing for that pleasure.",
-        "Treat withheld information as a debt with terms. The reader will carry an unanswered question across a long book only if the plan keeps showing that the question is live, and any question the plan forgets is experienced as an error rather than as a mystery.",
+        "Judge the idea by whether it makes someone want to know what happens, not by whether it is clever. The want comes from a person in specific trouble, and an idea that cannot produce that has not become a story yet.",
+        "Ask what question the reader will be holding after the first pages, and whether the idea can keep answering and renewing it. An idea that keeps its only question for the end has nothing to carry the reading.",
+        "Decide what experience the idea promises: dread, longing, delight, unease, momentum. A premise that does not imply an experience has to find one before it can be written.",
     ),
     "character": (
-        "Decide the cast's wants before the plot's needs. Every principal character should want something independently of the story's problem, because those independent wants are what supply collisions when the main pressure is briefly quiet.",
-        "Plan the boundaries rather than the traits. What each character will not do even to succeed is where they become legible, and those limits are set at the planning stage because later chapters rely on them.",
-        "Give the cast an uneven distribution of competence, insight, and nerve. A book whose people are uniformly capable has no internal friction, and the plan should decide who is weak at what before the middle needs the friction.",
-        "Build contradiction into the plan rather than into the exposition: generosity beside vanity, competence beside cowardice in one specific area. Contradictions that are only described read as character notes, while contradictions that produce behavior read as people.",
-    ),
-    "outline_obedience": (
-        "Treat the plan as the constraint the later stages work inside. The decisions made here fix what the chapters must accomplish, so anything left undecided will be decided by whichever scene happens to be easiest later.",
-        "Keep the book's obligations traceable to positions: what is established where, what is paid where, and what each movement hands on. Structure that cannot be traced is advice rather than a plan.",
-        "Decide the structural questions rather than deferring them. Where the plan leaves the meaning of earlier material open, it guarantees a revision, because the chapters drafted before the decision will have assumed different answers.",
-    ),
-    "pacing": (
-        "Shape the book's intensity as a curve. Escalation works by contrast, so the plan should decide where the book rests, where it crests, and what each crest costs rather than distributing pressure evenly across the chapters.",
-        "Decide the aftermath positions as deliberately as the crisis positions. Consequences are where a story's pressure becomes weight, and a plan that schedules only its peaks produces a book that moves and does not accumulate.",
-        "Vary the kind of pressure rather than the amount. Changing the currency of what is at risk is what keeps a long book's middle from reading as the same event with new names.",
-        "Reserve the largest cost for the final movement and keep the earlier chapters from spending it. A book that has already used its biggest consequence has to invent a larger one, and invented stakes are read as inflation.",
-    ),
-    "continuity": (
-        "Carry a state ledger across the whole book: injuries, possessions, promises, debts, and who knows what. The plan is where the ledger is created; anything the plan does not record will be contradicted by a later chapter.",
-        "Track knowledge as rigorously as events. A character can only act on what they have been shown to know, so the plan should record the knowledge positions and treat every violation as a structural fault rather than a slip.",
-        "Plan consequences forward rather than restoring a neutral baseline between movements. Fatigue, position, money, and trust should all reflect what the earlier chapters did, and that cumulative state is what makes a long book feel continuous.",
-    ),
-    "worldbuilding": (
-        "Make the world's rules cost somebody something. A rule that never constrains a character is decoration, and the plan should decide which constraints the story's pressure depends on.",
-        "Deliver the world through consequence and use rather than through explanation, and plan where the reader will learn each essential fact. World information that arrives without a scene that needs it is a detour, however interesting the material is.",
-        "Decide the everyday texture of the world at the planning stage: what people eat, how they travel, what they fear, who holds power. Scale becomes legible through ordinary life, and the plan is where the ordinary details get chosen.",
-    ),
-    "scene": (
-        "Plan scenes as units of change: a goal, an obstacle, and an outcome that alters what is possible, known, or intended. A scene that cannot be stated that way is a transition, and the plan should carry few of them on purpose.",
-        "Decide what each scene inherits and what it hands on. Writing both states into the plan turns a scene list into a chain of causes, and it is what makes the drafting stage's work a matter of execution rather than invention.",
-        "Give every scene a turn near its end. The moment the situation changes direction is what the reader remembers, and placing it late is what makes the scene end on pressure rather than on summary.",
-    ),
-    "prose": (
-        "Decide the register the book intends to hold, and treat it as a promise to the reader rather than a preference of the writer. Register that shifts without a structural reason reads as drift.",
-        "Budget the book's visible effort. Every book has a small number of passages that are meant to be noticed, and deciding where those are, at the planning level, is what keeps the rest of the prose in service of the story.",
-        "Prefer plain, precise language as the book's default and reserve elaboration for the moments that earn it. The plan can name those moments now, which is cheaper than discovering later that the book has spent its intensity evenly.",
-    ),
-    "style_consistency": (
-        "Plan the book's voice as a maintained system: a small set of permitted moves, a list of habits to avoid, and a rule for resolving conflicts between them. Consistency across a long book is a matter of procedure rather than memory.",
-        "Decide where the voice may vary and why. Variation that follows structure, a new viewpoint, a new place, a changed state, reads as design, while variation that follows the writer's mood reads as inconsistency.",
-        "Check the plan against the voice it implies before drafting. A structure that requires the register to change three times needs those changes designed rather than improvised.",
-    ),
-    "ai_patterns": (
-        "Plan against the shapes that make machine-written prose recognizable before they enter the manuscript: the repeated negate-and-redefine construction, the constant three-item list, the summarizing sentence that restates what was just delivered, and the habit of announcing significance.",
-        "Decide what the book will do instead of its tics. Prohibitions leave gaps where the habits were, so the plan should record the positive alternative: how a scene ends when it is not ending on a thesis, how a description works when it is not listing three things.",
-        "Watch for the emotional shorthand that substitutes for observation and plan its replacements. Named physiological reactions are the most available indicators and the least specific, and the plan should decide what this book will use instead.",
+        "Choose the person the premise damages most. Whoever has the least ability to walk away will generate the most story, and whoever is most capable will generate the least pressure.",
+        "Give the protagonist a want that can be photographed and a reason to need it now. A want without urgency produces a book that can always start tomorrow.",
+        "Find the thing this person would not give up even to win. That boundary is what makes them legible, and it belongs to the idea rather than to a later rewrite.",
     ),
     "emotion": (
-        "Plan the emotional movement of the whole book, not only of its scenes: what the protagonist feels at the start, what the story does to that, and what remains at the end. Feelings that are never scheduled arrive as reactions to the plot rather than as a record of it.",
-        "Decide which emotional states the book withholds and pays for later. A book that spends its strongest feeling early has nothing left for the ending, and the plan is where the budget is set.",
-        "Give the cast different emotional signatures rather than a shared repertoire. Deciding at the planning level who withdraws, who attacks, and who goes quiet under pressure is what makes later scenes specific before they are written.",
+        "Decide what the story is about emotionally before deciding what it is about event-wise: the feeling you want the reader left holding.",
+        "Look for the moment the idea promises where someone must choose between two things they want. That is where feeling comes from, and an idea with no such moment has nowhere to land.",
+        "Make the stakes something a person can lose and feel. Stakes nobody can weigh produce events the reader watches rather than dreads.",
     ),
-    "dialogue": (
-        "Plan what speech is for in each stage of the book. Conversations that exist to transfer information announce themselves, while conversations that exist because two people want incompatible things generate their own material.",
-        "Decide what each principal character will not say. Withholding, evasion, and misdirection are structural decisions about the cast, and the plan should know what each person protects before the scenes require it.",
-        "Plan the conflict under the conversation rather than the conversation itself. A scene between two people with opposing aims works with almost any content, while a scene between two people who agree needs the plan to give one of them a reason to stay.",
+    "worldbuilding": (
+        "Build the world only as far as it presses on the people in it. Rules matter when they make something expensive, forbidden, or dangerous.",
+        "Find the one condition of this world that makes the story's problem unavoidable, and leave the rest in the notes.",
+        "Count the cost of the world's wonders. A world where nothing is scarce gives its people nothing to struggle against.",
     ),
-    "metaphor": (
-        "Plan the book's figurative vocabulary as a system with a small number of families, assigned to particular characters or places. Recurrence inside a family accumulates meaning, while a new family arriving late reads as a change of author.",
-        "Decide which images the book is saving. The comparisons reserved for the final movement cannot be spent in the middle, and the planning stage is where that reservation is made.",
-        "Let the figurative register follow the structure. A shift at a new movement or a new viewpoint reads as design, while the same shift inside a chapter reads as inconsistency.",
+    "pacing": (
+        "Test the premise by imagining three things that happen because of it. An idea that generates events has a book in it; an idea that needs new inventions on top is not one yet.",
+        "Ask what keeps the pressure up after the first act. An idea whose only engine is the opening incident will stall where the book needs a middle.",
+        "Look for the idea's turn: the moment the problem changes shape. An idea with one problem and no turn gives a long book nothing to do in its second half.",
     ),
-    "humor": (
-        "Plan where levity is allowed to come from. Humor generated by character is characterization, while humor generated by the narration distances the reader from the pressure the book has built.",
-        "Decide what the book finds funny and what it refuses to treat lightly. A comedy of manners and a novel about grief can both use humor, and the plan has to decide which material is protected from it.",
-        "Budget the book's wit. Sharp exchanges lose their value when everyone is capable of one, and the plan should decide which characters carry the humor and where it lands relative to the pressure.",
+    "scene": (
+        "Imagine the scenes the idea already implies. If the material suggests moments where someone must choose and pay, it is a story; if it suggests description, it is a setting.",
+        "Find the confrontation the premise is really about and keep it in view while the idea is shaped. Ideas that avoid their own central scene tend to be outlines of something else.",
+        "Ask what the idea makes happen to someone rather than what it makes true about the world. Stories are events that fall on people.",
+    ),
+    "continuity": (
+        "Decide, while the idea is still soft, what it will have to stay true to: one or two facts about the world or the past that every later choice respects.",
+        "Look for the idea's promises to itself, and make sure the version you keep can pay them. An idea loaded with implications it cannot honour becomes a revision.",
+        "Choose the version of the idea with the fewest moving parts. Fewer commitments in the premise means fewer contradictions later.",
     ),
     "concrete": (
-        "Decide the physical facts the story depends on before deciding its incidents: what the place is, what it costs to move through, what the characters do with their hands. Concrete particulars are what make a plan's pressure payable on the page.",
-        "Plan the world's texture through what the characters handle rather than through description. Objects that appear because someone needs them generate both place and character, and the plan can choose them early.",
-        "Anchor abstract pressures in physical consequences. A rule, a debt, or a fear becomes legible when the plan knows what it does to a body, a room, or a schedule.",
+        "Ground the idea in something that can be seen and done: a place with rules, a task with stakes, an object that matters.",
+        "Prefer the specific over the representative. A story about one person's particular trouble reaches more readers than a story about everyone's general one.",
+        "Find the physical fact inside the idea, the thing someone has to do with their hands, and build outward from there.",
+    ),
+    "metaphor": (
+        "Find the image the idea keeps circling and decide whether it belongs to the story or to the mood. Images that only decorate can be set aside now rather than during revision.",
+        "Let the idea's central image do structural work: if the same object or gesture can carry meaning at the start and at the end, the story has a spine before it has a plot.",
+        "Watch for the idea that is itself a metaphor, where the meaning is entirely in the comparison. Those need a person in them before they can become scenes.",
+    ),
+    "outline_obedience": (
+        "Decide what this idea commits the book to before any of it is planned. The promise made here is what later chapters have to keep.",
+        "Separate what the idea requires from what it merely allows. The requirements will become the plan; the allowances are where invention stays free.",
+        "Choose the idea whose obligations you would be glad to keep for a whole book, because those obligations are the work.",
     ),
     "pov": (
-        "Decide the book's point of view as a constraint on what can be told: which facts can arrive, in what order, and with what charge. The plan's information schedule depends on this choice more than on any other.",
-        "Choose the viewpoint for what it withholds as well as what it reveals. A limited perspective is the mechanism that keeps the book's mysteries honest, and the plan should record where the limits are load-bearing.",
-        "Plan where the reader is inside a character's interpretation and where they are outside it. The pattern of those positions is what produces suspense in one chapter and sympathy in another.",
+        "Decide whose experience this story is. The same events become a different book depending on who has to live through them, and the choice is usually visible in the idea already.",
+        "Ask whose knowledge makes the story most interesting: the person who knows too little, the person who knows too much, or the person who is wrong.",
+        "Choose the point of view the premise most needs rather than the one that is most convenient to tell. An idea told from the wrong vantage has to be discovered as a rewrite.",
+    ),
+    "dialogue": (
+        "Listen for what the people in the idea would say to each other, and whether any of it would change anything. Ideas whose people only explain themselves are not yet dramatic.",
+        "Find the conversation the premise makes inevitable, and let it shape the idea. If no conversation matters, the story may be about events happening to things rather than to people.",
+        "Decide what the people in this idea cannot say to each other. That gap is usually where the story's pressure lives.",
+    ),
+    "humor": (
+        "Notice where the idea is funny and whether the humour comes from the people or from the premise. Character-borne humour survives a long book; premise-borne humour runs out.",
+        "Decide the register the story can carry, and keep the version of the idea that matches it. A grim story told in a comic key has to be a deliberate choice rather than an accident.",
+        "Look for the absurdity inside the material and decide whether to use it or answer it. Ignored absurdity reads as a mistake.",
     ),
     "action": (
-        "Plan physical sequences around the decisions they force rather than around the spectacle they provide. The staging is the medium; what the reader takes away is who chose what, and at what cost.",
-        "Decide the limits before the plan depends on them: what each character can do, what it costs them, and what happens when it fails. Capabilities established late discount every earlier difficulty.",
-        "Give the plan's conflicts consequences that outlive them: injuries, lost ground, debts, exposure. A confrontation that resets to a neutral state is a performance rather than a turn.",
+        "Find the physical stakes inside the idea: what can be lost or broken, and by whom. Ideas with a body in them hold attention differently than ideas without.",
+        "Ask what the people in the idea are willing to do with their hands, and make sure the premise gives them something worth doing.",
+        "Make the danger concrete before making it large. A specific physical risk is more persuasive than a general catastrophe.",
+    ),
+    "prose": (
+        "Notice the kind of language the idea seems to want, and decide whether that voice can be sustained for a whole book rather than a page.",
+        "Choose the version of the idea that can be told in the register you want to hold. Ideas that demand a voice you do not want to write are a long argument with yourself.",
+        "Prefer the plainest statement of the idea. If it needs ornament to be interesting, the trouble is in the idea rather than in the telling.",
+    ),
+    "ai_patterns": (
+        "Test the idea against the version of it that is easiest to write. If the premise reads like a familiar summary, it needs a specific person and a specific cost before it is worth writing.",
+        "Look for the idea that arrives complete and unsurprising, the one that satisfies rather than unsettles. That is usually a sign of a shape borrowed rather than found.",
+        "Prefer the idea with a complication you have not already solved in your head. The difficulty is the part that will keep the writing alive.",
+    ),
+    "style_consistency": (
+        "Decide the idea's tone at the level of a whole book, and choose the version you can hold: wry, grave, tender, cold.",
+        "Keep the idea's promise of register in mind when choosing between versions, because the register will have to survive every chapter.",
+        "Reject any version of the idea that needs the book to change key halfway without a reason in the story.",
     ),
 }
 
-# Which lenses each stage may reason through.
-STAGE_LENSES = {
-    "ideation": ("reader_trust", "character", "outline_obedience", "continuity", "pacing",
-                 "worldbuilding", "emotion"),
-    "outline": ("outline_obedience", "pacing", "continuity", "character", "scene",
-                "reader_trust", "worldbuilding", "emotion", "metaphor"),
-    "revision": ("continuity", "prose", "style_consistency", "ai_patterns", "reader_trust",
-                 "scene", "pacing", "character", "dialogue", "emotion", "metaphor", "pov"),
-    "drafting": tuple(PLANNING_LENSES) + (
-        "concrete", "dialogue", "humor", "action", "metaphor", "pov", "emotion",
+OUTLINE_LENSES = {
+    "pacing": (
+        "Plan the shape of the reader's attention: where the story tightens, where it lets them breathe, and what each tightening costs.",
+        "Vary what is at risk rather than only how much. A story that raises the same threat repeatedly stops escalating, however loud it gets.",
+        "Decide where the quiet scenes go before writing them off. Consequences need room, and an outline made only of crises leaves nothing to accumulate.",
+    ),
+    "character": (
+        "Decide what each principal character wants independently of the main problem, because those wants are what collide when the plot is briefly quiet.",
+        "Plan the arc as a series of choices rather than a change of temperament: what this person does differently at the end shows what happened to them.",
+        "Decide what each character refuses to do, then build the outline so the story eventually requires it of them.",
+    ),
+    "scene": (
+        "Plan each scene around the change it makes: what is different for someone when it ends.",
+        "Decide where each scene enters and leaves. Most scenes begin too early and end too late, and the outline is where that is cheapest to fix.",
+        "Give the scenes that matter a shape in the plan: what is being attempted, what interferes, and what it costs.",
+    ),
+    "continuity": (
+        "Track what each character knows and when they learn it. A story breaks the moment someone acts on information they do not have.",
+        "Plan consequences forward instead of resetting between chapters: injuries, debts, and promises should still be in force later.",
+        "Decide what the story has already established and hold later chapters to it.",
+    ),
+    "reader_trust": (
+        "Decide what the story will not explain and trust the reader to assemble. What the reader works out is remembered; what they are told is only received.",
+        "Plan the questions the reader will be holding and when each is answered. A question the story forgets reads as a mistake rather than a mystery.",
+        "Keep the clues honest: whatever the resolution needs must have been available earlier, even if only in plain sight.",
+    ),
+    "emotion": (
+        "Plan where the story asks the reader to feel something, and make sure the ground has been laid before it does.",
+        "Decide the emotional turn of each movement: what the reader should want by its end that they did not want at its start.",
+        "Build the ending's feeling out of the story's costs rather than its events. What the reader mourns or celebrates has to have been paid for earlier.",
+    ),
+    "worldbuilding": (
+        "Decide the world's rules and what each one makes impossible or expensive, then plan the story so those pressures do work.",
+        "Introduce the world where it obstructs someone. A world learned in a lecture is scenery; a world learned while a character struggles with it is a place.",
+        "Keep the invention serving the story's problem rather than competing with it.",
+    ),
+    "plot_architecture": (
+        "Build the outline as a chain of causes: this happens because of that, and what it costs is what makes the next thing necessary.",
+        "Decide the turns before the transitions. Where the story changes direction is structure; everything between turns is connective tissue and can be written later.",
+        "Test the outline by asking what each part makes worse for someone. Parts that change nothing can be moved, merged, or cut.",
+    ),
+    "tension": (
+        "Keep a question open at every point in the plan, and make sure the reader knows it is open before it is answered.",
+        "Decide what the story is hiding from whom, and when the hiding stops being worth it.",
+        "Plan the obstacles in the reader's way as carefully as the obstacles in the protagonist's: the order in which things are learned is half of the tension.",
+    ),
+    "momentum": (
+        "Plan so that each part opens something the next part can close. A story that resolves everything it raises before moving on has nowhere left to pull from.",
+        "Give the middle its own question rather than a longer version of the opening one.",
+        "Decide what the reader is waiting for at each point, and make sure the answer keeps changing.",
+    ),
+    "information_management": (
+        "Decide who knows what, and make the gaps between them do work in the plan rather than being repaired in dialogue.",
+        "Plan the reveals in order of cost: what the reader learns early should make later events harder, not easier.",
+        "Choose deliberately what the story withholds, and decide what the withholding forces people to do.",
+    ),
+    "conflict_escalation": (
+        "Give the opposition a legitimate claim, and let the pressure come from two rights rather than one wrong.",
+        "Raise the cost of the protagonist's choices rather than the volume of the opposition. Escalation is a price, not a number.",
+        "Plan each defeat so that it removes an option. A setback that leaves everything as it was buys the story nothing.",
+    ),
+    "epic_scale": (
+        "Keep the scale visible through people: what the world's events cost the cast in the same chapter they occur.",
+        "Decide the price of the world's powers, and let magic or technology be as expensive as the story needs it to be.",
+        "Plan the widening so that the story's problem grows with the scope rather than being replaced by it.",
+    ),
+    "chapter_arcs": (
+        "Give every chapter something to change, so a reader can say what is different at its end.",
+        "Plan the chapters as movements of the story rather than containers of scenes: each one takes a position and leaves it altered.",
+        "Decide what question each chapter raises and when the story answers it, then place the chapters so the questions overlap.",
+    ),
+    "setup_payoff": (
+        "Plant what the ending needs early and in plain sight, and let the payoff collect what the reader has been carrying.",
+        "Decide the distance between the plant and the payoff, because the distance is what makes the recognition land.",
+        "Plan the innocent reason each plant exists, so nothing in the story exists only to be used later.",
+    ),
+    "scene_construction": (
+        "Plan the scene as a contest of wants: what each person is trying to get out of it, and which of them will not get it.",
+        "Decide the turn before the content: what changes inside the scene, and who pays for it.",
+        "Give each scene a job in the story's chain of cause and effect, and cut the ones that only deliver information.",
+    ),
+    "dialogue": (
+        "Plan the conversations that change something, and decide what each speaker wants from the other before they start.",
+        "Decide what cannot be said aloud in the scenes that matter, because that is what the scene will be about.",
+        "Keep the talking in the plan to the encounters where the story turns; the rest can be handled in the writing.",
+    ),
+    "pov": (
+        "Decide whose experience carries each movement, and let the choice cost something: the story should lose access to information it would like to have.",
+        "Plan the story so that the point of view makes some things hard to see, because a vantage that costs nothing is only a camera.",
+        "Choose the vantage that makes the story's central trouble most immediate, not the one that makes it easiest to explain.",
+    ),
+    "prose": (
+        "Plan the register the story will hold, and choose the version of events that can be told in it from beginning to end.",
+        "Keep the plan free of writing that belongs to the draft; the outline decides what happens, not how it sounds.",
+        "Decide which moments the story will let itself be beautiful in, and spend them there rather than everywhere.",
+    ),
+    "metaphor": (
+        "Find one image the story can return to, and plan what it means at each appearance so it accumulates rather than repeats.",
+        "Use imagery to carry what the story would otherwise have to say, and decide where that substitution happens.",
+        "Keep the story's central image tied to its action, so the meaning is discovered rather than explained.",
+    ),
+    "style_consistency": (
+        "Decide the story's register once, and plan events that can be told inside it.",
+        "Keep the plan's language plain, so the decisions stand on their own without the writing dressed up around them.",
+        "Choose the shape of the story that the voice you want can carry for a whole book.",
+    ),
+    "ai_patterns": (
+        "Prefer the plan with a complication that unsettles the familiar shape rather than one that completes it.",
+        "Test the outline against how a reader would summarize it. If the summary is the whole story, the plan has no surprises left in it.",
+        "Keep the plan specific: particular people in particular trouble rather than a general situation with roles filled in.",
+    ),
+    "humor": (
+        "Decide where the story can afford levity, and let it come from the characters rather than from the narration.",
+        "Plan the comic beats where they relieve pressure rather than where they interrupt it.",
+        "Use humour to reveal people: what someone finds funny, or refuses to, shows character faster than description.",
+    ),
+    "action": (
+        "Plan the physical sequences so their outcome follows from what the reader already knows about the space and the people.",
+        "Decide the cost of each physical sequence before its spectacle, so the action changes the story rather than pausing it.",
+        "Make the plan's physical events legible on the page: who is where, what is in the way, and what it costs to get past it.",
+    ),
+    "concrete": (
+        "Plan with things rather than abstractions: the object that gets handed over, the door that is locked, the money that is short.",
+        "Ground every movement of the story in a place and a task, so the reader is somewhere rather than being told about somewhere.",
+        "Choose the specific detail that can carry a whole beat, and let the outline mark where it belongs.",
+    ),
+    "dialogue_voice": (
+        "Decide which voices the story needs, so that characters can be told apart by what they say and what they avoid saying.",
+        "Plan the conversations where power shifts, and let the rest of the talk be written in the draft.",
+        "Keep the plan's dialogue intentions to what speech must accomplish rather than what it must say.",
     ),
 }
 
 
 def lens_bank(stage, lens, full_bank):
-    """The paragraph bank to draw from: planning height below drafting."""
-    if stage == "drafting":
-        return full_bank
-    return PLANNING_LENSES.get(lens, full_bank)
+    """The paragraph bank to draw from, at the height of the stage's work."""
+    if stage == "ideation":
+        return IDEATION_LENSES.get(lens) or OUTLINE_LENSES.get(lens) or full_bank
+    if stage == "outline":
+        return OUTLINE_LENSES.get(lens) or full_bank
+    return full_bank
+
+
+def stage_lenses():
+    """Which lenses each stage reasons with.
+
+    Brainstorming and outlining keep the lenses that belong to their own work:
+    a brainstorming record does not reason about obeying a plan that does not
+    exist yet, and an outlining record does not reason about sentence rhythm.
+    Drafting draws on every lens, and revision on the ones its passes touch.
+    """
+    drafting = (
+        "pov", "concrete", "character", "scene", "pacing", "emotion", "dialogue",
+        "humor", "action", "worldbuilding", "continuity", "outline_obedience",
+        "reader_trust", "metaphor", "prose", "ai_patterns", "style_consistency",
+    )
+    return {
+        "ideation": ("reader_trust", "character", "emotion", "worldbuilding", "pacing"),
+        "outline": ("pacing", "character", "scene", "continuity", "reader_trust",
+                    "emotion", "worldbuilding"),
+        "drafting": drafting,
+        "revision": ("continuity", "prose", "style_consistency", "ai_patterns", "scene",
+                     "reader_trust", "pacing", "character", "dialogue", "emotion",
+                     "metaphor", "pov"),
+    }
+
+
+STAGE_LENSES = stage_lenses()

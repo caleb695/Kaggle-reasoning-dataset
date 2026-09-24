@@ -11,24 +11,25 @@ analysis.
 This is a **reasoning dataset** that covers the whole process of writing a novel, and each
 stage teaches the craft of that stage rather than only the drafting moment:
 
-| Stage | Records | Deliverable the reasoning produces | Native libraries |
+| Stage | Records | The work the examples teach | Libraries it reasons with |
 |---|---|---|---|
-| `ideation` | 900 | a premise with an engine, the promise it makes, and the choice that tests it | `idea_generation`, `idea_shaping` |
-| `outline` | 1,260 | a plan whose chapters have functions, positions, and prices | `outline_design`, `arc_mapping`, `scene_planning` |
-| `drafting` | 4,320 | the decisions the specific chapter is written from | the eighteen drafting-era craft libraries |
-| `revision` | 720 | a diagnosis and the order of passes that will fix it | `revision_craft`, `revision_diagnosis` |
+| `ideation` | 900 | **brainstorming**: finding an idea that makes a story, with someone to follow, something they want badly, and trouble that will not let them have it | `idea_generation`, `idea_shaping` |
+| `outline` | 1,260 | **outlining**: building the story so it works, deciding what happens, why it happens, and what it costs | `outline_design`, `arc_mapping`, `scene_planning` plus the structural libraries |
+| `drafting` | 4,320 | **writing**: how the chapter in front of you gets written, inside the outline you were given | the eighteen writing craft libraries |
+| `revision` | 720 | **revising**: what to change, what to keep, and the order to work in | `revision_craft`, `revision_diagnosis` |
 
-Each stage reasons **only** with the libraries that belong to it, and its own libraries
-carry 65% of its records: a brainstorming request never reasons about sentence rhythm or a
-chapter's entry point, an outlining request never reasons about a character's hands. The
-validator enforces the routing, the per-stage balance, and the share.
+Each stage reasons **only** with the libraries that belong to it. Brainstorming and revision
+use nothing else: a brainstorming request that reasoned about thread schedules would be an
+outlining request, and a revision request that plans an arc is planning rather than repair.
+Outlining keeps the structural libraries beside its own, and writing draws on the whole craft
+library, because that is where all of it converges. The validator enforces the routing, the
+per-stage balance, and the share.
 
-The craft itself is folded into each stage as practice rather than as process: the ideation
-libraries teach how to generate and select premises, conflicts, stakes, hooks, tones and
-endings; the outline libraries teach how to design acts, turns, arcs, knowledge schedules,
-scene purpose, sequences and set pieces; the drafting libraries teach how to reason through
-a chapter against an outline; the revision libraries teach how to diagnose symptoms, find
-causes, and order the repair.
+Instruction frames, instruction tails, response openers, context lines, and the cross-cutting
+lens paragraphs are written in the voice of the activity, and the lens paragraphs are drawn at
+the height of the stage's work: brainstorming reasons about what makes a story engaging,
+outlining about what makes a story hold together, writing about how the chapter reaches the
+page, and revision about what is wrong and what to do first.
 
 Responses are structural craft reasoning: decisions, costs, staging, and what a scene owes
 the book. There is zero prose — no illustrative passages, no sample lines, no written-out
@@ -79,16 +80,16 @@ tiers also make reasoning length controllable at inference.
 
 | Depth | Records | Demand |
 |---|---|---|
-| `terse` | 1,600 | one decision, no reasoning strategy (190–351 words) |
-| `standard` | 3,747 | several decisions and one named strategy (248–498 words) |
-| `deep` | 1,853 | interacting decisions, a strategy, and a check (287–600 words) |
+| `terse` | 1434 | one decision, no reasoning strategy (190–339 words) |
+| `standard` | 3943 | several decisions and one named strategy (245–499 words) |
+| `deep` | 1823 | interacting decisions, a strategy, and a check (285–585 words) |
 
 **Reasoning strategies** — nine reusable moves are attached to a share of records and
 tagged in the `strategies` field: comparing two routes, reasoning backward from the
 ending, keeping a ledger of costs, a pre-mortem on the likely failure, turning constraints
 into conditions, strengthening the weakest link, reasoning from the reader's model of
 events, ordering work by consequence, and leaving a verification check. `verify` appears in
-about 22% of records; the rest are balanced between 498 and 684 each.
+about 23% of records; the rest are balanced between 517 and 694 each.
 
 A full account of the repository — what it contains, how it is built, what the
 validator guarantees, and worked examples from the dataset — is in
@@ -197,7 +198,8 @@ Files:
 
 - Type ratios 50/25/25 within ±2 points; every stage covered; every category present in
   every type whose stages use it, with each stage balanced across its libraries and
-  drawing at least half of its records from its own.
+  drawing at least half of its records from its own (brainstorming and revision draw all of
+  theirs).
 - Transition responses end with exactly one occurrence of the marker, as the final line,
   with substantial reasoning before it; no other type contains the marker or the phrase.
 - No double quotes, no curly quotes, and no exemplification phrases (`for example`,

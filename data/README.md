@@ -39,9 +39,12 @@ data stays reasoning-only.
 ```
 
 - `stage` places the reasoning in the writing process, and each stage reasons only with the
-  libraries that belong to it: brainstorming with the idea libraries, outlining with the
-  structure libraries, drafting with the craft libraries, revision with the repair
-  libraries. `transition` records exist only at `drafting`, where writing follows.
+  libraries that belong to its own work: brainstorming (`idea_generation`, `idea_shaping`),
+  outlining (`outline_design`, `arc_mapping`, `scene_planning` plus the structural libraries),
+  writing (the eighteen craft libraries), revision (`revision_craft`, `revision_diagnosis`).
+  Brainstorming and revision use nothing else. `transition` records exist only at `drafting`,
+  where writing follows, and the reasoning in every stage is written in the voice of that
+  activity rather than in the voice of a process.
 - `depth` controls the trace's size and demand: terse settles one decision (190–343 words),
   standard settles several with one named strategy (245–506 words), deep carries
   interacting decisions plus a check (281–625 words). `difficulty` follows the tier.

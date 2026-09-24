@@ -245,7 +245,7 @@ CAT = {
                 "You want the plot's movement and the character's change to happen together.",
                 "You are mapping the shapes that run through the whole book.",
             ],
-            "question": "How are a novel's arcs, character, antagonist, relationship, knowledge and stakes, arranged so they move together?",
+            "question": "How do the parts of a story move together: what the protagonist wants, what opposes them, and what each of them learns?",
             "openers": [
                 "Treat the arcs as a system with a shared clock: the plot's turns should occur at the moments when the protagonist's belief is failing, the antagonist is gaining, and the reader's knowledge is shifting. Designing the coincidence is what makes a book feel inevitable.",
                 "The work at this level is alignment. Each movement should advance the plot and cost the character something, and each revelation should land where it changes a relationship as well as a fact, so a single scene does several jobs at once.",
@@ -270,7 +270,7 @@ CAT = {
                 "You want each part of the book to have its own shape rather than repeating the last.",
                 "You are deciding how many turns the story needs and where.",
             ],
-            "question": "How should a long book be divided into movements, and what does each movement have to do?",
+            "question": "How do you break a long story into movements, and what has to change by the end of each one?",
             "openers": [
                 "Divide the book by changes of condition rather than by equal length. A movement ends when the protagonist's situation has changed so much that the previous method no longer applies, and the next movement begins with a different problem rather than a continuation.",
                 "Give each movement a question, an escalation, and a cost. The question organizes the chapters, the escalation supplies the momentum, and the cost is what the next movement inherits; movements missing any of the three tend to sag or repeat.",

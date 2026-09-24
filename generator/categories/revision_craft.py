@@ -202,7 +202,7 @@ CAT = {
                 "You want the revision to fix causes rather than chapters.",
                 "You are deciding what the book needs before you open the file.",
             ],
-            "question": "How should a whole manuscript be revised so that the work done in one chapter does not have to be redone in the next?",
+            "question": "How do you revise a whole manuscript in an order that does not force you to redo the same work?",
             "openers": [
                 "Revision across a book is a scheduling problem. The order of passes decides how much work survives, and the discipline is to make the structural decisions once, high enough in the manuscript that every later fix is smaller.",
                 "Treat the manuscript as a system of dependencies: chapters depend on earlier plants, characters depend on earlier knowledge, and the ending depends on everything the middle paid for. Revision has to work on the dependencies rather than on the chapters, which means it starts with the map and not the pages.",
@@ -227,7 +227,7 @@ CAT = {
                 "You suspect the chapters assume knowledge the reader does not have.",
                 "You are checking whether the book's information arrives in a readable order.",
             ],
-            "question": "How is a draft audited for what the reader can actually follow, know, and infer at each point?",
+            "question": "How do you check what the reader can follow, know, and work out at each point in the draft?",
             "openers": [
                 "Audit the draft against a reader's model of events rather than against the plan. At each chapter boundary, write down what the reader knows, what they expect, what they want to know, and what they have been promised, then compare that against what the following chapter assumes.",
                 "The gap between the plan and the reader is where revision produces the largest gains, because a fault in the order of information reads as a fault in the story no matter how good the individual chapters are.",
