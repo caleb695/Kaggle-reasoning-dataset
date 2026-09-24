@@ -29,6 +29,9 @@ from . import emotion_craft
 from . import dialogue_voice
 from . import action_physicality
 from . import continuity_outline
+from . import idea_generation
+from . import outline_design
+from . import revision_craft
 
 CATEGORIES = [
     plot_architecture.CAT,
@@ -49,4 +52,7 @@ CATEGORIES = [
     dialogue_voice.CAT,
     action_physicality.CAT,
     continuity_outline.CAT,
+    idea_generation.CAT,
+    outline_design.CAT,
+    revision_craft.CAT,
 ]

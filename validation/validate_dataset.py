@@ -2,18 +2,18 @@
 
 Checks:
 - Dataset size is inside the supported band, and type ratios are 50/25/25.
-- Transition responses end with exactly one handoff marker, as the final line;
-  reasoning and negative responses never contain it, and never contain the
-  phrase the scene begins.
+- Every stage of the writing process is covered, with every category represented
+  inside every stage and type combination.
+- Transition responses end with exactly one handoff marker, as the final line,
+  and only at the drafting stage; other types never contain the marker.
 - No double quotes, no curly quotes, and no prose-exemplar phrases anywhere.
 - All instructions and responses are globally unique.
-- Every category appears in every type, and per-category counts are balanced.
-- Records carry valid lenses and rule references; every rule in the registry is
-  exercised by at least one record.
-- Response and instruction lengths sit inside sane bands.
-- Optional: when a record carries outline metadata (only in outline mode), the
-  outline and chapter must resolve and the plain-text outline block must be in
-  the instruction.
+- Depth tiers are represented, responses sit in the band for their tier, and the
+  difficulty tag agrees with the tier.
+- Reasoning strategies are drawn from the registry and all of them are used.
+- Lenses and rule references are valid, and every rule in the registry is used.
+- Optional: when a record carries outline metadata (outline mode only), the
+  outline and chapter resolve and the pressure lens travels with the record.
 
 Usage:
     python -m validation.validate_dataset data/dataset.jsonl
@@ -29,8 +29,10 @@ from collections import Counter, defaultdict
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from generator.categories import CATEGORIES
-from generator.lenses import LENS_ORDER
+from generator.lenses import LENS_ORDER, PRESSURE_LENS
 from generator.rules import all_rule_ids
+from generator.stages import STAGES
+from generator.strategies import STRATEGIES
 
 EXPECTED_CATEGORIES = {c["id"] for c in CATEGORIES}
 
@@ -45,8 +47,20 @@ FORBIDDEN_SUBSTRINGS = [
 
 TYPE_SHARES = {"transition": 0.50, "reasoning": 0.25, "negative": 0.25}
 
-REQUIRED_FIELDS = ("id", "type", "category", "subcategory", "instruction", "response",
-                   "lenses", "rules")
+REQUIRED_FIELDS = ("id", "type", "stage", "category", "subcategory", "instruction",
+                   "response", "lenses", "strategies", "rules", "depth", "difficulty")
+
+DEPTH_FIELDS = {
+    "terse": (185, 400),      # one decision, settled fast
+    "standard": (240, 540),   # several decisions plus a strategy
+    "deep": (275, 700),       # interacting decisions, strategy, and a check
+}
+
+DIFFICULTY_BY_DEPTH = {"terse": "foundational", "standard": "intermediate",
+                       "deep": "advanced"}
+
+MIN_PER_STAGE_CATEGORY_RATIO = 0.0011  # ~8 at 7,200 records
+MIN_PER_TYPE_CATEGORY = 20
 
 
 def fail(msg):
@@ -69,8 +83,6 @@ def main():
     parser.add_argument("path", nargs="?", default="data/dataset.jsonl")
     parser.add_argument("--min", type=int, default=6000)
     parser.add_argument("--max", type=int, default=8000)
-    parser.add_argument("--min-words", type=int, default=180)
-    parser.add_argument("--max-words", type=int, default=900)
     args = parser.parse_args()
 
     records = load(args.path)
@@ -93,20 +105,19 @@ def main():
     ids = [r["id"] for r in records]
     if len(set(ids)) != n:
         fail("duplicate record ids found")
-
-    instructions = [r["instruction"] for r in records]
-    responses = [r["response"] for r in records]
-    if len(set(instructions)) != n:
+    if len({r["instruction"] for r in records}) != n:
         fail("duplicate instructions found")
-    if len(set(responses)) != n:
+    if len({r["response"] for r in records}) != n:
         fail("duplicate responses found")
 
     word_counts = []
     instruction_words = []
+    stage_cells = Counter()
     per_type_cat = defaultdict(Counter)
     rule_hits = Counter()
     lens_lead = Counter()
     lens_all = Counter()
+    strategy_hits = Counter()
     outline_records = 0
 
     for r in records:
@@ -121,18 +132,35 @@ def main():
         words = len(resp.split())
         word_counts.append(words)
         instruction_words.append(len(instr.split()))
-        if words < args.min_words:
-            fail("%s response too short (%d words)" % (r["id"], words))
-        if words > args.max_words:
-            fail("%s response too long (%d words)" % (r["id"], words))
+
+        stage = r["stage"]
+        if stage not in STAGES:
+            fail("%s has unknown stage %r" % (r["id"], stage))
+        if stage != "drafting" and r["type"] == "transition":
+            fail("%s transition record outside the drafting stage" % r["id"])
+        stage_cells[(stage, r["type"])] += 1
+
+        depth = r["depth"]
+        if depth not in DEPTH_FIELDS:
+            fail("%s has unknown depth %r" % (r["id"], depth))
+        low, high = DEPTH_FIELDS[depth]
+        if r.get("outline_id"):
+            # Outline mode prepends the outline slice, so the reasoning itself is
+            # unchanged but the record is longer than the depth band.
+            high += 160
+        if not (low <= words <= high):
+            fail("%s is %s depth but has %d words (band %d-%d)"
+                 % (r["id"], depth, words, low, high))
+        if r["difficulty"] != DIFFICULTY_BY_DEPTH[depth]:
+            fail("%s difficulty %r does not match depth %r"
+                 % (r["id"], r["difficulty"], depth))
 
         if r["type"] == "transition":
             if not resp.endswith(MARKER):
                 fail("%s transition response does not end with the marker" % r["id"])
             if resp.count(MARKER) != 1:
                 fail("%s transition response contains the marker more than once" % r["id"])
-            body = resp[: -len(MARKER)].rstrip()
-            if len(body.split()) < 150:
+            if len(resp[: -len(MARKER)].split()) < 150:
                 fail("%s transition response has too little reasoning before the marker" % r["id"])
         else:
             if MARKER in resp:
@@ -157,6 +185,24 @@ def main():
         lens_lead.update(lenses[:1])
         lens_all.update(lenses)
 
+        strategies = r["strategies"]
+        if len(strategies) > 2 or len(set(strategies)) != len(strategies):
+            fail("%s carries invalid strategies %r" % (r["id"], strategies))
+        if any(name not in STRATEGIES for name in strategies):
+            fail("%s has unknown strategies %r" % (r["id"], strategies))
+        if depth == "terse" and strategies:
+            fail("%s is terse but carries a reasoning strategy" % r["id"])
+        strategy_hits.update(strategies)
+        for name in strategies:
+            if not any(STRATEGIES[name]["paragraphs"][i] in resp
+                       for i in range(len(STRATEGIES[name]["paragraphs"]))):
+                fail("%s carries strategy %r without its paragraph" % (r["id"], name))
+
+        rules = r["rules"]
+        if not rules:
+            fail("%s carries no rule references" % r["id"])
+        rule_hits.update(rules)
+
         # Optional outline metadata: the dataset is reasoning-only by default,
         # so this block only fires for records built in the outline mode.
         if r.get("outline_id"):
@@ -164,7 +210,6 @@ def main():
             if "TITLE:" not in instr:
                 fail("%s instruction is missing the outline block" % r["id"])
             from generator.outlines import BY_ID as OUTLINE_BY_ID
-            from generator.lenses import PRESSURE_LENS
 
             outline = OUTLINE_BY_ID.get(r["outline_id"])
             if outline is None:
@@ -182,19 +227,42 @@ def main():
                     fail("%s does not carry the lens for its craft pressure %r"
                          % (r["id"], r["craft_pressure"]))
 
+    # Stage and category coverage.
+    for stage in STAGES:
+        for rec_type in TYPE_SHARES:
+            if rec_type == "transition":
+                # Transitions are the planning-to-writing handoff, so they exist
+                # only where writing follows: the drafting stage.
+                continue
+            if not stage_cells[(stage, rec_type)]:
+                fail("no records at stage %s for type %s" % (stage, rec_type))
+    if stage_cells[("drafting", "transition")] != type_counts["transition"]:
+        fail("every transition record should sit at the drafting stage")
+
     for rec_type in TYPE_SHARES:
         covered = per_type_cat[rec_type]
         if set(covered) != EXPECTED_CATEGORIES:
             missing = sorted(EXPECTED_CATEGORIES - set(covered))
             fail("type %s is missing categories %s" % (rec_type, missing))
-        counts = list(covered.values())
-        if max(counts) > 1.25 * min(counts):
-            fail("type %s category counts are unbalanced: %s" % (rec_type, dict(covered)))
+        thin = sorted(c for c, k in covered.items() if k < min(MIN_PER_TYPE_CATEGORY, n // 400))
+        if thin:
+            fail("type %s has thinly covered categories %s" % (rec_type, thin))
 
-    missing_rules = sorted(set(all_rule_ids()) - set(rule_hits := Counter(rid for r in records
-                                                                          for rid in r["rules"])))
+    for rec_type in TYPE_SHARES:
+        cells = Counter((r["stage"], r["category"]) for r in records if r["type"] == rec_type)
+        floor = max(1, int(round(n * MIN_PER_STAGE_CATEGORY_RATIO)))
+        thin = sorted(cell for cell, k in cells.items() if k < floor)
+        if thin:
+            fail("stage/category cells under %d records in %s: %s"
+                 % (floor, rec_type, thin[:6]))
+
+    missing_rules = sorted(set(all_rule_ids()) - set(rule_hits))
     if missing_rules:
         fail("rules with no coverage: %s" % missing_rules)
+
+    unused_strategies = sorted(set(STRATEGIES) - set(strategy_hits))
+    if unused_strategies:
+        fail("strategies with no coverage: %s" % unused_strategies)
 
     for field, values in (("response", word_counts), ("instruction", instruction_words)):
         values = sorted(values)
@@ -203,12 +271,14 @@ def main():
 
     print("OK: %d records%s" % (n, "" if not outline_records else " (%d outline-mode)" % outline_records))
     print("  types: %s" % dict(type_counts))
-    print("  categories: %d, per category per type roughly %d"
-          % (len(EXPECTED_CATEGORIES), n // (len(EXPECTED_CATEGORIES) * 2)))
+    print("  stages: %s" % {s: sum(k for (st, _), k in stage_cells.items() if st == s)
+                            for s in STAGES})
+    print("  stage x type: %s" % {"%s/%s" % k: v for k, v in sorted(stage_cells.items())})
+    print("  categories: %d" % len(EXPECTED_CATEGORIES))
     print("  rules exercised: %d of %d" % (len(rule_hits), len(all_rule_ids())))
+    print("  strategies: %s" % dict(strategy_hits.most_common()))
     print("  lenses: %d distinct; leads balanced %d-%d"
           % (len(lens_all), min(lens_lead.values()), max(lens_lead.values())))
-    print("  lens frequency: %s" % dict(lens_all.most_common()))
 
 
 if __name__ == "__main__":

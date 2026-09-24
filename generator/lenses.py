@@ -61,6 +61,9 @@ CATEGORY_LENSES = {
     "dialogue_voice": ("dialogue", "humor", "character", "concrete", "reader_trust"),
     "action_physicality": ("action", "character", "continuity", "pacing", "concrete"),
     "continuity_outline": ("continuity", "outline_obedience", "reader_trust", "scene", "style_consistency"),
+    "idea_generation": ("reader_trust", "character", "outline_obedience", "concrete", "metaphor"),
+    "outline_design": ("outline_obedience", "pacing", "continuity", "character", "scene"),
+    "revision_craft": ("continuity", "prose", "style_consistency", "reader_trust", "scene"),
 }
 
 # Craft pressure tags used by the outline bank, mapped to the lens that the

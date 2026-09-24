@@ -1,6 +1,6 @@
 # Writer-Craft Reasoning Dataset
 
-An instruction-response dataset of **6,400 examples** that teaches a fiction-writing model
+An instruction-response dataset of **7,200 examples** that teaches a fiction-writing model
 *internalized writer thinking*: how to construct plot, escalate conflict, make character
 decisions, manage narrative information, pace scenes and chapters, plant and pay off
 long-range setups, hold tension, sustain momentum, and control point of view, prose
@@ -8,9 +8,18 @@ surface, imagery, emotion, dialogue, action, worldbuilding, humor, continuity an
 as generative, forward-looking reasoning performed *while writing*, not as post-hoc
 analysis.
 
-This is a **reasoning dataset**. The responses contain the structural craft reasoning the
-model should produce before it writes: decisions, costs, staging, and what a scene owes the
-book. There is zero prose — no illustrative passages, no sample lines, no written-out
+This is a **reasoning dataset** that covers the whole process of writing a novel, not only
+the drafting moment:
+
+| Stage | Records | What the reasoning decides |
+|---|---|---|
+| `ideation` | 900 | the premise, its engine, the promise it makes, the choice that tests it |
+| `outline` | 1,260 | movements, chapter functions, thread schedule, escalation ladder, earned ending |
+| `drafting` | 4,320 | the specific chapter the caller's outline describes |
+| `revision` | 720 | what to change, in what order, and what to protect |
+
+Responses are structural craft reasoning: decisions, costs, staging, and what a scene owes
+the book. There is zero prose — no illustrative passages, no sample lines, no written-out
 examples anywhere in the responses.
 
 At inference the model is handed the novel outline it is about to draft, along with a
@@ -27,9 +36,9 @@ Designed to accompany pretraining on a corpus of high-quality novels.
 
 | Type | Share | Count | Ends with |
 |---|---|---|---|
-| `transition` | 50% | 3,200 | the single handoff line `Given the above, the scene begins.` |
-| `reasoning` | 25% | 1,600 | nothing — the response ends when the reasoning is complete |
-| `negative` | 25% | 1,600 | nothing — ends on the replacement decisions |
+| `transition` | 50% | 3,600 | the single handoff line `Given the above, the scene begins.` (drafting stage only) |
+| `reasoning` | 25% | 1,800 | nothing — the response ends when the reasoning is complete |
+| `negative` | 25% | 1,800 | nothing — ends on the replacement decisions |
 
 **Transition examples** (the dominant training signal) take one specific craft problem,
 work through it with complete reasoning, and end with exactly one voice-neutral, structural
@@ -46,7 +55,33 @@ generating* — always forward-oriented: here is the temptation as it presents i
 drafting, here is the damage it would do downstream, here is the replacement reasoning and
 the decisions to carry into the writing. Never backward-looking diagnosis.
 
-## Craft categories (18)
+## How the reasoning is built to transfer
+
+Two axes are added on top of the craft libraries, because reasoning data is absorbed as
+procedure as much as content:
+
+**Depth tiers** — every category produces terse (190-343 words, one decision), standard
+(245-506 words, several decisions plus a strategy), and deep (281-625 words, interacting
+decisions, a strategy, and a check) traces. Uniformly long traces teach verbosity; the
+tiers also make reasoning length controllable at inference.
+
+| Depth | Records | Demand |
+|---|---|---|
+| `terse` | 1,573 | one decision, no reasoning strategy |
+| `standard` | 3,771 | several decisions and one named strategy |
+| `deep` | 1,856 | interacting decisions, a strategy, and a check |
+
+**Reasoning strategies** — nine reusable moves are attached to a share of records and
+tagged in the `strategies` field: comparing two routes, reasoning backward from the
+ending, keeping a ledger of costs, a pre-mortem on the likely failure, turning constraints
+into conditions, strengthening the weakest link, reasoning from the reader's model of
+events, ordering work by consequence, and leaving a verification check. `verify` appears in
+about 22% of records; the rest are balanced between 498 and 687 each.
+
+A detailed account of what changed and why, with examples, is in
+[`docs/IMPROVEMENTS.md`](docs/IMPROVEMENTS.md).
+
+## Craft categories (21)
 
 Each category module is an authored library of forward-looking craft paragraphs, and each
 maps onto the 260-rule craft registry in `generator/rules.py` (rule ids follow the
@@ -72,9 +107,15 @@ original numbering, 1–260).
 | `dialogue_voice` | dialogue, subtext, register and humor | 76-99, 168-175, 252 |
 | `action_physicality` | action, combat legibility, physical cost | 118-122, 124-132, 135, 136 |
 | `continuity_outline` | continuity across a novel and obedience to its plan | 214-223, 227-240, 254, 256, 258 |
+| `idea_generation` | premise design: engine, promise, forced choice, collision, theme as question | stage-native, cross-cutting rules |
+| `outline_design` | architecture: movements, chapter functions, thread schedule, escalation ladder, earned ending | stage-native, cross-cutting rules |
+| `revision_craft` | revision: cause before symptom, cut first, pass order, continuity after change | stage-native, cross-cutting rules |
 
-Each rule is routed to exactly one category module, so the eighteen modules between them
-encode all 260 rules of the craft guide. Cross-cutting coverage on top of that is carried
+The three stage-native libraries carry the reasoning that only exists at their stage
+(choosing a premise, designing a structure, deciding a revision), and they are weighted
+at it: 35% of a stage's records come from its native libraries. Each rule is routed to
+exactly one category module, so the eighteen rule-bearing modules between them encode all
+260 rules of the craft guide. Cross-cutting coverage on top of that is carried
 by the seventeen lens pools described below, and every record lists both the rules of its
 category and the lenses it was reasoned through.
 
@@ -106,15 +147,22 @@ JSONL. One record per line:
 {
   "id": "t-dialogue_voice-0550",
   "type": "transition | reasoning | negative",
+  "stage": "ideation | outline | drafting | revision",
   "category": "dialogue_voice",
   "subcategory": "humor_placement",
   "instruction": "the writing situation and the craft problem",
   "response": "pure structural/conceptual craft reasoning",
+  "depth": "terse | standard | deep",
+  "difficulty": "foundational | intermediate | advanced",
   "lenses": ["dialogue", "humor", "character"],
+  "strategies": ["two_routes", "verify"],
   "rules": [76, 78, 80, 168, 169, 252]
 }
 ```
 
+- `stage` says which part of the process the reasoning belongs to; `depth` and
+  `difficulty` say how demanding the trace is, and `strategies` lists the reasoning moves
+  it uses.
 - `lenses` names the craft dimensions the record reasons through, in canonical paragraph
   order.
 - `rules` lists the registry rules the record's category encodes, so a training run can
@@ -122,24 +170,26 @@ JSONL. One record per line:
 
 Files:
 
-- `data/dataset.jsonl` — all 6,400 records, shuffled
-- `data/transition_examples.jsonl` — 3,200 transition examples
-- `data/pure_reasoning_examples.jsonl` — 1,600 pure reasoning examples
-- `data/negative_examples.jsonl` — 1,600 negative examples
-- `data/manifest.json` — seed, counts, per-category, per-lens and per-rule coverage
+- `data/dataset.jsonl` — all 7,200 records, shuffled
+- `data/transition_examples.jsonl` — 3,600 transition examples
+- `data/pure_reasoning_examples.jsonl` — 1,800 pure reasoning examples
+- `data/negative_examples.jsonl` — 1,800 negative examples
+- `data/manifest.json` — seed, counts, stage / depth / difficulty / strategy /
+  category / lens / rule coverage
 
 ## Guarantees (enforced by the validator)
 
-- Type ratios 50/25/25 within ±2 points; all 18 categories present in every type with
-  balanced per-category counts.
+- Type ratios 50/25/25 within ±2 points; every stage covered; all 21 categories present
+  in every type, and in every stage, above a per-cell floor.
 - Transition responses end with exactly one occurrence of the marker, as the final line,
   with substantial reasoning before it; no other type contains the marker or the phrase.
 - No double quotes, no curly quotes, and no exemplification phrases (`for example`,
   `such as`, `might read`, and similar) anywhere — the no-prose rule is machine-checked,
   not aspirational.
-- All 6,400 instructions and all 6,400 responses are globally unique.
-- Every rule in the 260-rule registry is exercised; lenses and rule references are valid
-  on every record; responses sit inside a sane length band (180–900 words).
+- All 7,200 instructions and all 7,200 responses are globally unique.
+- Every rule in the 260-rule registry is exercised and every reasoning strategy is used;
+  depth, difficulty, lenses, and strategy paragraphs are consistent with the record.
+- Responses sit inside the word band for their depth tier (190–625 words in practice).
 
 Run the validator:
 
@@ -153,10 +203,10 @@ The dataset is generated from authored libraries of craft-reasoning paragraphs a
 pools, deterministically composed per seed:
 
 ```bash
-python -m generator.build_dataset --size 6400 --seed 20260924
+python -m generator.build_dataset --size 7200 --seed 20260924
 ```
 
-`--size` may be any value in the 2000–20000 supported range (the shipped dataset is 6,400,
+`--size` may be any value in the 200–20,000 supported range (the shipped dataset is 7,200,
 inside the 6,000–8,000 target band the validator enforces by default); a different seed
 yields a different, equally valid sample of the combination space. Outputs are written to
 `data/`.
@@ -172,7 +222,8 @@ The dataset is built for **reasoning-trace supervision** rather than for direct 
 generation:
 
 - **Cold-start SFT** on the reasoning traces, with the chapter text withheld, so the model
-  learns to plan before writing. The `reasoning` slice is the arc-level curriculum stage;
+  learns to plan before writing. `ideation` and `outline` are the early curriculum stages,
+  `revision` teaches repair, and the `reasoning` slice carries the arc-level thinking;
   `transition` records give the planning-to-writing handoff; `negative` records teach
   forward avoidance of named traps rather than post-hoc critique.
 - **Prompt shape at inference.** Send the outline being drafted, then a situation prompt in
@@ -185,8 +236,9 @@ generation:
 - **On-policy stage.** Once the model produces traces, score the *chapter* it writes
   afterwards (not the trace) and reinforce on that signal; the negative examples give the
   reward model concrete, already-named failure modes to rank against.
-- **Rubric hooks.** `lenses` and `rules` are attached per record, so evaluation can be
-  sliced by craft dimension and per-rule coverage can be checked against held-out chapters.
+- **Rubric hooks.** `stage`, `depth`, `difficulty`, `strategies`, `lenses`, and `rules`
+  are attached per record, so data can be sampled by craft dimension, process stage, trace
+  depth, or reasoning strategy, and per-rule coverage checked against held-out chapters.
 - **Do not sample the marker literally at inference** unless the writing pass follows in
   the same generation; the marker is a planning-to-writing cognitive handoff, not a
   stylistic flourish.
@@ -231,6 +283,8 @@ LICENSE                 CC0 1.0 public-domain dedication
 generator/
   common.py             shared infrastructure: marker, instruction banks, helpers
   rules.py              260-rule craft registry (ids, groups, category and lens routing)
+  stages.py             the four process stages: frames, tails, openers, contracts
+  strategies.py         nine reasoning strategies attached to a share of records
   lenses_a.py           lens pools: pov, concrete, prose, metaphor, emotion, dialogue, humor
   lenses_b.py           lens pools: action, worldbuilding, reader trust, continuity,
                         AI patterns, plan obedience, style consistency, pacing,
@@ -239,7 +293,11 @@ generator/
   outlines/             optional: 36 authored novel outlines x 10 chapters (--with-outlines)
   situations.py         optional: outline conditioning used only by --with-outlines
   build_dataset.py      deterministic composition engine (CLI above)
-  categories/           eighteen authored craft libraries (moves, problems, traps, themes)
+  categories/           twenty-one authored craft libraries (moves, problems, traps,
+                        themes), three of them stage-native: idea_generation,
+                        outline_design, revision_craft
+docs/
+  IMPROVEMENTS.md       what changed for training quality, why, and examples
 validation/
   validate_dataset.py   machine-checks every hard constraint
 training/

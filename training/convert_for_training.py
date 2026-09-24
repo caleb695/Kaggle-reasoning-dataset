@@ -18,17 +18,27 @@ Outputs:
 import argparse
 import json
 import os
+from collections import Counter
 
 # At inference the caller supplies the novel outline being drafted; the outline
 # is not part of these records, so training stays pure reasoning supervision.
 SYSTEM_PROMPT = (
-    "You are a structural writing planner. You reason about craft before drafting: "
-    "point of view, scene construction, pacing, tension, emotion, dialogue, imagery, "
-    "continuity, and how each chapter serves the plan of the novel. Your reasoning is "
-    "structural and conceptual only. You never write prose, never quote lines, and "
-    "never give illustrative passages. When you are writing a chapter, you end your "
-    "reasoning with the single line: Given the above, the scene begins."
+    "You are a structural writing planner working at any stage of a novel: developing "
+    "an idea, designing its architecture, drafting a chapter of it, or revising it. "
+    "You reason about craft before writing: premise and promise, structure and thread "
+    "scheduling, point of view, scene construction, pacing, tension, emotion, dialogue, "
+    "imagery, continuity, and how each chapter serves the plan of the novel. Your "
+    "reasoning is structural and conceptual only. You never write prose, never quote "
+    "lines, and never give illustrative passages. When you are about to write a chapter, "
+    "you end your reasoning with the single line: Given the above, the scene begins."
 )
+
+STAGE_BRIEF = {
+    "ideation": "Stage: idea development. Deliverable: a premise with an engine, the promise it makes, and the choice that tests it.",
+    "outline": "Stage: story architecture. Deliverable: a plan whose chapters have functions, positions, and prices.",
+    "drafting": "Stage: chapter drafting. Deliverable: the decisions the chapter will be written from.",
+    "revision": "Stage: revision. Deliverable: a diagnosis and the order of passes that will fix it.",
+}
 
 MARKER = "Given the above, the scene begins."
 
@@ -39,9 +49,11 @@ def render(record, drop_marker=False):
         response = response[: -len(MARKER)].rstrip()
     context = [
         "Type: %s" % record["type"],
+        STAGE_BRIEF.get(record.get("stage", ""), ""),
         "Category: %s" % record["category"],
         "Craft dimension: %s" % record["subcategory"],
     ]
+    context = [line for line in context if line]
     if record.get("outline_id"):
         if record.get("chapter") is not None:
             context.append("Outline: %s, chapter %s" % (record["outline_id"], record["chapter"]))
@@ -51,7 +63,11 @@ def render(record, drop_marker=False):
     return {
         "id": record["id"],
         "type": record["type"],
+        "stage": record.get("stage"),
         "category": record["category"],
+        "depth": record.get("depth"),
+        "difficulty": record.get("difficulty"),
+        "strategies": record.get("strategies", []),
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": user},
@@ -73,6 +89,7 @@ def main():
     os.makedirs(args.out, exist_ok=True)
     wanted = set(args.types) if args.types else None
     counts = {"transition": 0, "reasoning": 0, "negative": 0}
+    all_rows = []
     handles = {}
 
     def handle(name):
@@ -90,6 +107,7 @@ def main():
                 continue
             rendered = render(record, drop_marker=args.drop_marker)
             counts[record["type"]] += 1
+            all_rows.append(rendered)
             handle("train.jsonl").write(json.dumps(rendered, ensure_ascii=False) + "\n")
             handle("sft_%s.jsonl" % record["type"]).write(
                 json.dumps(rendered, ensure_ascii=False) + "\n")
@@ -97,7 +115,9 @@ def main():
     for fh in handles.values():
         fh.close()
 
+    stages = Counter(r["stage"] for r in all_rows)
     print("wrote %s" % args.out)
+    print("  stages: %s" % dict(stages))
     for rec_type, count in counts.items():
         print("  %-11s %5d" % (rec_type, count))
     print("  total       %5d" % sum(counts.values()))
