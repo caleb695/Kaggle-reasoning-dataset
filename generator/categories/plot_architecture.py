@@ -70,7 +70,7 @@ CAT = {
                 "The opening should catch pressure in motion. Choose the moment where the protagonist is already doing something that expresses who they are and already touching the situation that will change them, so the first scene establishes character and situation in the same stroke instead of sequentially.",
             ],
             "closers": [
-                "Fix the point of attack: the first scene begins inside motion, with the ordinary world visible only in the way the pressure deforms it. Everything the reader needs of the before will arrive as residue of the after.",
+                "Fix the point of attack: the first scene opens inside motion, with the ordinary world visible only in the way the pressure deforms it. Everything the reader needs of the before will arrive as residue of the after.",
                 "Commit to entering late: the story begins where stability is already cracking, the first scene carries character through action under pressure, and the ground for the first turn is laid as behavior, not as introduction.",
             ],
         },

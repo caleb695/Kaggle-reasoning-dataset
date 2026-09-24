@@ -107,8 +107,8 @@ def build_instruction(rng, intro_bank, frame, context, stage, tail):
     return " ".join(p.strip() for p in parts if p and p.strip())
 
 
-def make_record(rec_id, rec_type, category, subcategory, instruction, response):
-    return {
+def make_record(rec_id, rec_type, category, subcategory, instruction, response, **extra):
+    rec = {
         "id": rec_id,
         "type": rec_type,
         "category": category,
@@ -116,3 +116,5 @@ def make_record(rec_id, rec_type, category, subcategory, instruction, response):
         "instruction": instruction,
         "response": response,
     }
+    rec.update(extra)
+    return rec

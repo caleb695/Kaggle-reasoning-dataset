@@ -21,6 +21,14 @@ from . import setup_payoff
 from . import tension
 from . import momentum
 from . import epic_scale
+from . import pov_perception
+from . import concrete_grounding
+from . import prose_discipline
+from . import metaphor_imagery
+from . import emotion_craft
+from . import dialogue_voice
+from . import action_physicality
+from . import continuity_outline
 
 CATEGORIES = [
     plot_architecture.CAT,
@@ -33,4 +41,12 @@ CATEGORIES = [
     tension.CAT,
     momentum.CAT,
     epic_scale.CAT,
+    pov_perception.CAT,
+    concrete_grounding.CAT,
+    prose_discipline.CAT,
+    metaphor_imagery.CAT,
+    emotion_craft.CAT,
+    dialogue_voice.CAT,
+    action_physicality.CAT,
+    continuity_outline.CAT,
 ]
