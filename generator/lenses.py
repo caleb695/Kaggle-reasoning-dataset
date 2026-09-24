@@ -19,7 +19,18 @@ LENSES = {}
 LENSES.update(LENSES_A)
 LENSES.update(LENSES_B)
 
+# The genre lens is about the promise the book's kind makes to its reader, and it
+# applies wherever a genre is in play: brainstorming one, outlining one, writing
+# inside one, or checking an existing draft against one.
+LENSES["genre"] = (
+    "Keep the genre's promise in view while writing: an epic fantasy chapter earns the reader's patience by letting the world's power cost someone something, a science fiction chapter earns it by letting the speculative change touch an ordinary want, and a thriller chapter earns it by advancing the danger while the protagonist is deciding.",
+    "Write the genre's obligations as the scene's obligations. The scale, the clock, the price of power, or the consequence of the change belong in the chapter's work rather than in its scenery.",
+    "Prefer the genre's experience delivered through people. Awe, dread, and urgency come from what the characters can do, cannot do, and are about to lose, not from naming the feeling the setting is supposed to produce.",
+    "Check each chapter against the genre's conventions without letting them dictate the plot: the reader came for a specific kind of pressure, and the chapter should supply it in its own way rather than in the way the genre's imitations do.",
+)
+
 LENS_ORDER = (
+    "genre",
     "pov",
     "concrete",
     "character",
@@ -68,6 +79,9 @@ CATEGORY_LENSES = {
     "arc_mapping": ("character", "pacing", "continuity", "reader_trust", "emotion"),
     "scene_planning": ("scene", "pacing", "character", "continuity", "reader_trust"),
     "revision_diagnosis": ("reader_trust", "scene", "continuity", "pacing", "style_consistency"),
+    "genre_epic_fantasy": ("worldbuilding", "character", "pacing", "emotion", "reader_trust"),
+    "genre_scifi": ("worldbuilding", "reader_trust", "character", "pacing", "continuity"),
+    "genre_thriller": ("pacing", "scene", "character", "reader_trust", "action"),
 }
 
 # Craft pressure tags used by the outline bank, mapped to the lens that the

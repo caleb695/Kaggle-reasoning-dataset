@@ -71,12 +71,14 @@ NATIVE_CATEGORIES = {
 ALLOWED_CATEGORIES = {
     "ideation": (
         "idea_generation", "idea_shaping",
+        "genre_epic_fantasy", "genre_scifi", "genre_thriller",
     ),
     "outline": (
         "outline_design", "arc_mapping", "scene_planning", "plot_architecture",
         "chapter_arcs", "setup_payoff", "tension", "momentum",
         "information_management", "conflict_escalation", "epic_scale",
         "continuity_outline",
+        "genre_epic_fantasy", "genre_scifi", "genre_thriller",
     ),
     "drafting": (
         "plot_architecture", "conflict_escalation", "character_decisions",
@@ -84,7 +86,7 @@ ALLOWED_CATEGORIES = {
         "setup_payoff", "tension", "momentum", "epic_scale", "pov_perception",
         "concrete_grounding", "prose_discipline", "metaphor_imagery",
         "emotion_craft", "dialogue_voice", "action_physicality",
-        "continuity_outline",
+        "continuity_outline", "genre_epic_fantasy", "genre_scifi", "genre_thriller",
     ),
     "revision": (
         "revision_craft", "revision_diagnosis",
@@ -374,9 +376,9 @@ CONTEXT_LINES = {
 # ---------------------------------------------------------------------------
 
 LENS_AFFINITY = {
-    "ideation": ("reader_trust", "character", "emotion", "worldbuilding", "pacing"),
+    "ideation": ("reader_trust", "character", "emotion", "worldbuilding", "pacing", "genre"),
     "outline": ("pacing", "character", "scene", "continuity", "reader_trust",
-                "emotion", "worldbuilding"),
+                "emotion", "worldbuilding", "genre"),
     "drafting": (),  # every lens applies; the chapter's craft pressure leads
     "revision": ("continuity", "prose", "style_consistency", "ai_patterns", "scene",
                  "reader_trust", "pacing", "character"),

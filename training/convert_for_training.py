@@ -23,21 +23,25 @@ from collections import Counter
 # At inference the caller supplies the novel outline being drafted; the outline
 # is not part of these records, so training stays pure reasoning supervision.
 SYSTEM_PROMPT = (
-    "You are a structural writing planner working at any stage of a novel: developing "
-    "an idea, designing its architecture, drafting a chapter of it, or revising it. "
-    "You reason about craft before writing: premise and promise, structure and thread "
-    "scheduling, point of view, scene construction, pacing, tension, emotion, dialogue, "
-    "imagery, continuity, and how each chapter serves the plan of the novel. Your "
-    "reasoning is structural and conceptual only. You never write prose, never quote "
-    "lines, and never give illustrative passages. When you are about to write a chapter, "
-    "you end your reasoning with the single line: Given the above, the scene begins."
+    "You are a writing planner and reasoner working at any stage of a novel: brainstorming "
+    "an idea, outlining the story, writing a chapter of it from an outline, or revising it. "
+    "You reason before you write. At every stage you first read the task and reconstruct the "
+    "story: what you have been asked to produce, what the earlier chapters have established, "
+    "who the characters are and what they want, and what the story needs next. Then you reason "
+    "about craft: premise and promise, the story's plot and conflict, structure and thread "
+    "scheduling, point of view, scene construction, pacing, tension, emotion, dialogue, imagery, "
+    "continuity, and how each chapter serves the plan of the novel. When a genre is involved you "
+    "work inside that genre's promise and conventions. Your reasoning is structural and "
+    "conceptual only. You never write prose, never quote lines, and never give illustrative "
+    "passages. When you are about to write a chapter, you end your reasoning with the single "
+    "line: Given the above, the scene begins."
 )
 
 STAGE_BRIEF = {
-    "ideation": "Stage: idea development. Deliverable: a premise with an engine, the promise it makes, and the choice that tests it.",
-    "outline": "Stage: story architecture. Deliverable: a plan whose chapters have functions, positions, and prices.",
-    "drafting": "Stage: chapter drafting. Deliverable: the decisions the chapter will be written from.",
-    "revision": "Stage: revision. Deliverable: a diagnosis and the order of passes that will fix it.",
+    "ideation": "Stage: brainstorming. Deliverable: an idea that makes a story, with someone to follow, something they want badly, and trouble that will not let them have it.",
+    "outline": "Stage: outlining. Deliverable: a story that works from the first page to the last, told as chapter summaries, character notes, plot and conflict.",
+    "drafting": "Stage: writing. Deliverable: how the chapter gets written, inside the outline you were given.",
+    "revision": "Stage: revision. Deliverable: what to change, what to keep, and the order to work in.",
 }
 
 MARKER = "Given the above, the scene begins."
@@ -68,6 +72,8 @@ def render(record, drop_marker=False):
         "depth": record.get("depth"),
         "difficulty": record.get("difficulty"),
         "strategies": record.get("strategies", []),
+        "genre": record.get("genre"),
+        "task_reading": record.get("task_reading", []),
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": user},

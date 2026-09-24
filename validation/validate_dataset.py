@@ -31,7 +31,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from generator.categories import CATEGORIES
 from generator.lenses import LENS_ORDER, PRESSURE_LENS
 from generator.rules import all_rule_ids
+from generator.genres import GENRES
 from generator.stages import ALLOWED_CATEGORIES, NATIVE_CATEGORIES, STAGES
+from generator.task_reading import REQUIRED_KINDS, TASK_READING
 from generator.strategies import STRATEGIES
 
 EXPECTED_CATEGORIES = {c["id"] for c in CATEGORIES}
@@ -114,6 +116,11 @@ def main():
     word_counts = []
     instruction_words = []
     stage_cells = Counter()
+    genre_cells = Counter()
+    genre_by_id = Counter()
+    task_cells = Counter()
+    rule_stages = defaultdict(set)
+    rule_types = defaultdict(set)
     per_type_cat = defaultdict(Counter)
     rule_hits = Counter()
     lens_lead = Counter()
@@ -140,6 +147,32 @@ def main():
         if stage != "drafting" and r["type"] == "transition":
             fail("%s transition record outside the drafting stage" % r["id"])
         stage_cells[(stage, r["type"])] += 1
+
+        # Genre records declare their genre, and only genre libraries may.
+        gid = r.get("genre")
+        if r["category"].startswith("genre_"):
+            if not gid or GENRES[gid]["category"] != r["category"]:
+                fail("%s reasons inside a genre library without declaring its genre"
+                     % r["id"])
+            genre_cells[(gid, stage)] += 1
+            genre_by_id[gid] += 1
+        elif gid:
+            fail("%s declares genre %r but does not reason inside that library"
+                 % (r["id"], gid))
+
+        # Every record opens by reading its task and the story it belongs to.
+        kinds = r.get("task_reading")
+        if not kinds:
+            fail("%s does not open by reading the task and the story" % r["id"])
+        for kind in kinds:
+            if kind not in TASK_READING[stage]:
+                fail("%s claims task reading %r, which the %s stage does not have"
+                     % (r["id"], kind, stage))
+            task_cells[kind] += 1
+        for kind in REQUIRED_KINDS[stage]:
+            if kind not in kinds:
+                fail("%s does not reason about %s before deciding the craft"
+                     % (r["id"], kind))
 
         depth = r["depth"]
         if depth not in DEPTH_FIELDS:
@@ -206,6 +239,9 @@ def main():
         if not rules:
             fail("%s carries no rule references" % r["id"])
         rule_hits.update(rules)
+        for rule_id in rules:
+            rule_stages[rule_id].add(stage)
+            rule_types[rule_id].add(r["type"])
 
         # Optional outline metadata: the dataset is reasoning-only by default,
         # so this block only fires for records built in the outline mode.
@@ -268,7 +304,8 @@ def main():
     for rec_type in TYPE_SHARES:
         for stage in STAGES:
             cells = Counter(r["category"] for r in records
-                            if r["type"] == rec_type and r["stage"] == stage)
+                            if r["type"] == rec_type and r["stage"] == stage
+                            and not r["category"].startswith("genre_"))
             if not cells:
                 continue
             native_ids = set(NATIVE_CATEGORIES[stage])
@@ -296,6 +333,41 @@ def main():
     if missing_rules:
         fail("rules with no coverage: %s" % missing_rules)
 
+    # Every rule needs enough worked examples to be learnable, and the rules have
+    # to be exercised while brainstorming, outlining and writing, not only in the
+    # stage whose library happens to own them.
+    rule_floor = max(3, int(round(n * 0.004)))
+    thin_rules = sorted(r for r in all_rule_ids() if rule_hits.get(r, 0) < rule_floor)
+    if thin_rules:
+        fail("rules with fewer than %d examples: %s" % (rule_floor, thin_rules[:8]))
+    narrow_rules = sorted(r for r in all_rule_ids() if len(rule_types.get(r, ())) < 2)
+    if narrow_rules:
+        fail("rules exercised by only one record type: %s" % narrow_rules[:8])
+    unapplied = [r for r in all_rule_ids()
+                 if not ({"ideation", "outline", "drafting"} & rule_stages.get(r, set()))]
+    if unapplied:
+        fail("rules never exercised while brainstorming, outlining or writing: %s"
+             % unapplied[:8])
+
+    # The genre slice: all three genres, at all three generative stages.
+    genre_total = sum(genre_by_id.values())
+    if not genre_total:
+        fail("the genre slice is empty")
+    genre_floor = max(3, int(round(n * 0.01)))
+    for gid in GENRES:
+        if genre_by_id[gid] < genre_floor:
+            fail("genre %s has fewer than %d examples (%d)"
+                 % (gid, genre_floor, genre_by_id[gid]))
+        for stage in ("ideation", "outline", "drafting"):
+            if not genre_cells[(gid, stage)]:
+                fail("genre %s is not exercised at the %s stage" % (gid, stage))
+
+    # Task reading is present at every stage, in the kinds that stage requires.
+    for stage in STAGES:
+        for kind in REQUIRED_KINDS[stage]:
+            if not task_cells[kind]:
+                fail("no record reasons about %s at the %s stage" % (kind, stage))
+
     unused_strategies = sorted(set(STRATEGIES) - set(strategy_hits))
     if unused_strategies:
         fail("strategies with no coverage: %s" % unused_strategies)
@@ -317,7 +389,11 @@ def main():
         native = sum(k for c, k in cells.items() if c in NATIVE_CATEGORIES[stage])
         print("  stage %-9s libraries=%d, own-library share=%.2f"
               % (stage, len(cells), native / max(1, sum(cells.values()))))
-    print("  rules exercised: %d of %d" % (len(rule_hits), len(all_rule_ids())))
+    print("  rules exercised: %d of %d (floor %d examples each)"
+          % (len(rule_hits), len(all_rule_ids()), rule_floor))
+    print("  genres: %s" % {gid: genre_by_id[gid] for gid in GENRES})
+    print("  genre x stage: %s" % {"%s/%s" % k: v for k, v in sorted(genre_cells.items())})
+    print("  task reading lead: %s" % dict(task_cells.most_common()))
     print("  strategies: %s" % dict(strategy_hits.most_common()))
     print("  lenses: %d distinct; leads balanced %d-%d"
           % (len(lens_all), min(lens_lead.values()), max(lens_lead.values())))

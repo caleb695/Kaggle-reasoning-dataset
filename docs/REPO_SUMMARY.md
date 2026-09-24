@@ -563,3 +563,135 @@ d2feac2  Improve dataset quality and cover the whole writing process (7,200 reco
 Branch `arena/01a0d3cd-kaggle-reasoning-dataset`, pushed to `origin`. The shipped `data/`
 matches the generator at `5af4577`: rebuild +
 `python -m validation.validate_dataset data/dataset.jsonl` is green.
+
+---
+
+## 9. Rules: the 260-rule registry, with worked examples
+
+The craft rules the dataset is built on live in `generator/rules.py` (rule numbering follows
+the original craft guide, 1–260, grouped into eighteen groups such as POV, prose, emotion,
+dialogue, scene, pacing, reader trust, AI-pattern avoidance, plot and outline obedience,
+continuity and the overarching rules). Every authored paragraph in the 28 libraries encodes
+one or more of those rules, and **every record is tagged with the rules its reasoning
+implements**, so the supervision can be weighted, balanced or ablated rule by rule.
+
+The generative libraries — brainstorming, outlining, revision and the three genres — carry
+explicit rule sets too (`GENERATIVE_RULES`), so the rules are applied while brainstorming,
+outlining and writing rather than only in the writing libraries:
+
+| Library set | Rules carried |
+|---|---|
+| `idea_generation` | 26 rules (character, plot, worldbuilding, reader trust, overarching) |
+| `idea_shaping` | 28 rules |
+| `outline_design` | 42 rules |
+| `arc_mapping` | 39 rules |
+| `scene_planning` | 32 rules |
+| `revision_craft` / `revision_diagnosis` | 41 / 51 rules |
+| `genre_epic_fantasy` / `genre_scifi` / `genre_thriller` | 45 / 41 / 41 rules |
+
+Coverage in the shipped build, enforced by the validator:
+
+| Measure | Value |
+|---|---|
+| rules in the registry | 260 |
+| rules with worked examples | 260 |
+| examples per rule (min / median / max) | 210 / 572 / 3279 |
+| rules exercised at more than one record type | 260 |
+| rules exercised while brainstorming, outlining or writing | 260 |
+
+Two worked examples, one rule each, with the record that implements it:
+
+**Rule 59 (`dont_name_emotions`)** — examples include `t-emotion_craft-2201`, which opens by
+reading the chapter's job and the people in the scene, then reasons:
+
+> Decide where the feeling goes rather than when it ends. It can be postponed by obligation,
+> converted into efficiency, hidden behind a practical problem, or saved for a character who
+> is not present. Every one of those options lets the plot continue while keeping the emotion
+> alive, and the release, when it comes, will be an event rather than a summary.
+
+**Rule 151 (`personalities_not_roles`)** — 2,151 examples across brainstorming, outlining and
+writing, e.g. `r-idea_shaping-0750` (brainstorming) and `n-character_decisions-1373`
+(writing). The ideation example reasons about casting by what a person will not give up,
+which is the rule applied at the idea stage rather than at the page.
+
+`docs/RULE_COVERAGE.md` lists all 260 rules with their group, the number of examples, the
+stages and types they are exercised in, and example record ids to open.
+
+## 10. Reasoning first about the task and the story
+
+Every record now begins with that opening reasoning, before any craft decision, and the
+validator fails the build if a record is missing it:
+
+| Stage | Task/story reading | What it teaches the model to do first |
+|---|---|---|
+| writing | `task`, `story_so_far`, `characters`, `what_happens`, `emotion_line` | read what the chapter is supposed to be: its function, its beats, the state it hands on; recall what the earlier chapters established and who knows what; reconstruct what each character wants and feels on entry; decide what happens and in what order |
+| outlining | `story`, `artifact`, `chapters`, `characters` | reason about the story itself (want, obstacle, escalation, shape) and about the outline's own deliverable: a chapter-by-chapter summary, short character descriptions, plot, conflict, and notes |
+| brainstorming | `story`, `artifact` | reason about the story the idea would become before judging the idea: who it happens to, what they want, what it costs, and what brainstorming has to produce before it is finished |
+| revision | `draft_state`, `repair` | read the draft as the reader meets it, and decide what the pass is for before changing anything |
+
+Coverage: 4,320 writing records open with the chapter's task; 2,160 outlining records open
+with story reasoning and 2,160 with the outline deliverable; 2,160 brainstorming records open
+with story reasoning; 720 revision records open with the draft's state. `story_so_far`
+(1,081), `characters` (1,034), `what_happens` (1,081) and `emotion_line` (1,096) recur across
+the writing records.
+
+A worked example — `t-emotion_craft-0281`, writing, transition:
+
+**Instruction**
+
+> You are at the desk with the scene ahead of you and the problem below still open.
+> Your characters recover from major events within a page.
+> Emotional states must be delayed, stored, or displaced; immediate resolution destroys both the character's credibility and the plot's sense of consequence.
+> You are in the scene following a loss.
+> Reason your way through it in full, then begin the scene.
+
+**Response (opening)**
+
+> Establish the boundaries of the chapter first: what it must accomplish, what it must not resolve yet, and what the reader has to be able to do afterwards that they could not do before.
+>
+> Reconstruct the people before staging them. For everyone in the scene: what they want in this conversation or confrontation, what they are carrying in from earlier chapters, what they believe about the situation, and what they are wrong about.
+
+…and then the craft reasoning, ending with the single handoff line.
+
+## 11. Genres: epic fantasy, science fiction, thriller
+
+Three genre libraries teach how to write each genre and what a story in it looks like, as
+structure rather than as prose. Each genre is a registry entry in `generator/genres.py`
+(promise, story shape, and an instruction frame) plus a library in
+`generator/categories/`:
+
+| Genre | Promise | What a story in it looks like | Library craft |
+|---|---|---|---|
+| **Epic fantasy** | a large world with power in it, followed through people who pay for using it | a world whose powers are priced, a protagonist drawn in against preference, allies whose interests diverge, an ending that costs something unrecoverable | priced power; world with consequence; protagonist against preference; alliance and fracture; scale management; prophecy and agency |
+| **Science fiction** | one change to the world, followed all the way to what it does to people | one speculative change worked out honestly, an ordinary want made expensive by it, an opposing interest that benefits from the old order, an ending that answers the question the premise raised | one change extrapolated; idea dramatized; scale from the personal; competence and cost; society as argument; question answered |
+| **Thriller** | a competent person under a clock, with something worse behind every answer | danger that advances on its own schedule, an antagonist already ahead, information that is dangerous to hold, escalation where every answer widens the problem, a confrontation forced by the protagonist's choice | clock and pressure; antagonist ahead; information asymmetry; escalating cost; competence and flaw; personal stakes |
+
+Each genre also carries its own traps (lore openings, chosen-one defaults, quest itineraries;
+exposition lectures, present-day-with-gadgets, scale inflation; rescue-dependent protagonists,
+information dumps, false escalation), discipline checks, an arc-level theme and principles.
+
+Sizing: **1,104 examples** — 368 epic fantasy, 367 science fiction, 369 thriller — spread
+across brainstorming (270), outlining (316) and writing (518), shipped both inside the main
+dataset and separately as `data/genre_examples.jsonl`, which is the smaller genre dataset.
+Genre records carry `genre`, and the instruction leads with the genre's frame and story
+shape, for example:
+
+> You are building the order of events, and every part has to earn its place.
+> The book is a thriller: something in the story advances without the protagonist, the antagonist has a schedule of their own, and each solution the protagonist reaches makes the situation worse rather than safer.
+> …
+> A thriller story puts a protagonist with something to lose into a situation where the danger advances on its own schedule…
+
+### 11.1 A genre example, verbatim — `r-genre_epic_fantasy-0117`
+
+**Instruction (excerpt)**
+
+> You are at the desk with the chapter's requirements in front of you, working out how to write it.
+> The book is epic fantasy: the world's powers cost something to use, the scale is carried by consequences that land on specific people, and the protagonist's involvement comes from an obligation rather than a destiny.
+
+**Response (excerpt)**
+
+> Read the request before deciding anything about the writing. What the chapter has to accomplish, where it sits in the book, what it must leave true when it ends, and what the reader is supposed to have learned by the last page of it.
+>
+> Plan the emotional line of the chapter the way the other obligations are planned: what the reader should feel on entry, what the scene does to that feeling, and what they should be left carrying into the next chapter.
+>
+> The genre promises bigness felt personally. That promise is kept by architecture rather than by description: the world's rules create costs, the costs create choices, the choices create the escalation, and the escalation is paid by a small, specific cast.

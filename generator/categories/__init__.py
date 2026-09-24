@@ -36,6 +36,9 @@ from . import idea_shaping
 from . import arc_mapping
 from . import scene_planning
 from . import revision_diagnosis
+from . import genre_epic_fantasy
+from . import genre_scifi
+from . import genre_thriller
 
 CATEGORIES = [
     plot_architecture.CAT,
@@ -63,4 +66,7 @@ CATEGORIES = [
     arc_mapping.CAT,
     scene_planning.CAT,
     revision_diagnosis.CAT,
+    genre_epic_fantasy.CAT,
+    genre_scifi.CAT,
+    genre_thriller.CAT,
 ]

@@ -61,9 +61,11 @@ from generator.common import (
     pick,
 )
 from generator import stages as ST
+from generator.genres import GENRES, GENRE_ORDER, frame_line, genre_of_category, story_line
+from generator.task_reading import REQUIRED_KINDS, TASK_READING, kinds_for
 from generator.lenses import CATEGORY_LENSES, LENSES, LENS_ORDER, PRESSURE_LENS, TYPE_LENSES
 from generator.lenses_stage import STAGE_LENSES, lens_bank
-from generator.rules import RULES, rules_for_category
+from generator.rules import RULES, group_of, rules_for_category
 from generator.strategies import STRATEGIES, TYPE_STRATEGIES
 
 TYPE_PREFIX = {"transition": "t", "reasoning": "r", "negative": "n"}
@@ -79,6 +81,12 @@ STAGE_MIX = {
 }
 
 DEPTHS = (("terse", 0.30), ("standard", 0.45), ("deep", 0.25))
+
+# Share of each generative stage that reasons inside a genre. Brainstorming and
+# outlining carry the largest genre slices, because that is where a genre's
+# promise and story shape are decided; writing carries a smaller one, since most
+# chapters are written inside a book whose genre is already settled.
+GENRE_SHARE = {"ideation": 0.30, "outline": 0.25, "drafting": 0.12}
 
 CATEGORY_BY_ID = {cat["id"]: cat for cat in CATEGORIES}
 
@@ -110,6 +118,9 @@ def build_instruction(rng, rec_type, stage, cat, item, ctx=None):
                    else "Novel outline for the chapter you are about to write:")
         parts.extend([heading, render_outline_block(outline, chapter), ""])
     parts.append(pick(rng, ST.FRAMES[stage][rec_type]))
+    gid = genre_of_category(cat["id"])
+    if gid:
+        parts.append(frame_line(gid))
     parts.append(pick(rng, item["frames"]))
     if rec_type == "transition":
         parts.append(item["context"])
@@ -121,6 +132,8 @@ def build_instruction(rng, rec_type, stage, cat, item, ctx=None):
         parts.append("You are in " + pick(rng, item["stages"]) + ".")
     if rng.random() < 0.6:
         parts.append(pick(rng, ST.CONTEXT_LINES[stage]))
+    if gid:
+        parts.append(story_line(gid))
     parts.append(pick(rng, ST.TAILS[stage][rec_type]))
     if rng.random() < 0.5:
         parts.append(ST.deliverable_line(stage))
@@ -132,6 +145,19 @@ def build_instruction(rng, rec_type, stage, cat, item, ctx=None):
 # Lenses, strategies, depth
 # ---------------------------------------------------------------------------
 
+
+LENGTH_BAND = {"terse": (190, 400), "standard": (245, 540), "deep": (285, 700)}
+
+
+def length_band(depth, conditioned=False):
+    low, high = LENGTH_BAND[depth]
+    return low, high + (160 if conditioned else 0)
+
+
+def task_paragraphs(rng, stage, count=2):
+    """The opening reasoning: what the task is, and what the story currently is."""
+    kinds = kinds_for(stage, rng, count)
+    return kinds, [pick(rng, TASK_READING[stage][kind]) for kind in kinds]
 
 def choose_lenses(rng, cat, rec_type, stage, lens_use, quota, lead=None,
                   max_lenses=3):
@@ -269,6 +295,7 @@ def build_transition(rng, cat, stage, ctx, used_text, used_combo, lens_use, quot
     problem = pick(rng, cat["problems"])
     move_keys = list(cat["moves"].keys())
     pad = 0
+    task_pad = 0
     for _ in range(900):
         outline, chapter = ctx if ctx is not None else (None, None)
         depth = weighted_choice(rng, DEPTHS)
@@ -300,14 +327,21 @@ def build_transition(rng, cat, stage, ctx, used_text, used_combo, lens_use, quot
             from generator.situations import situation_paragraph
 
             paragraphs.append(situation_paragraph(outline, chapter, rng, "transition"))
+        task_kinds, task_paras = task_paragraphs(
+            rng, stage, max(2 - task_pad, len(REQUIRED_KINDS[stage])))
+        paragraphs.extend(task_paras)
         paragraphs.append(problem["openers"][opener_i])
         paragraphs.extend(cat["moves"][key][idx] for key, idx in move_paras)
         paragraphs.extend(strategy_paragraphs(rng, strategies))
         paragraphs.extend(lens_paragraphs(rng, lenses, stage))
         paragraphs.append(problem["closers"][closer_i])
         response = join_paragraphs(paragraphs) + "\n\n" + TRANSITION_LINE
-        minimum = {"terse": 190, "standard": 245, "deep": 285}[depth]
-        if len(response.split()) < minimum and pad < 3:
+        minimum, maximum = length_band(depth, ctx is not None)
+        words = len(response.split())
+        if words > maximum and task_pad < 2:
+            task_pad += 1
+            continue
+        if words < minimum and pad < 3:
             pad += 1
             continue
         if response in used_text:
@@ -323,7 +357,8 @@ def build_transition(rng, cat, stage, ctx, used_text, used_combo, lens_use, quot
             stage=stage, depth=depth,
             difficulty=difficulty_for(depth),
             lenses=list(lenses), strategies=list(strategies),
-            rules=tag_rules(cat, lenses), **outline_fields(outline, chapter),
+            rules=tag_rules(cat, lenses), genre=genre_of_category(cat["id"]),
+            task_reading=task_kinds, **outline_fields(outline, chapter),
         )
     raise RuntimeError("Could not build a unique transition example for " + cat["id"])
 
@@ -333,6 +368,7 @@ def build_reasoning(rng, cat, stage, ctx, used_text, used_combo, lens_use, quota
     theme = pick(rng, cat["themes"])
     middles = theme["middles"]
     pad = 0
+    task_pad = 0
     for _ in range(900):
         outline, chapter = ctx if ctx is not None else (None, None)
         depth = weighted_choice(rng, DEPTHS)
@@ -362,6 +398,9 @@ def build_reasoning(rng, cat, stage, ctx, used_text, used_combo, lens_use, quota
             from generator.situations import situation_paragraph
 
             paragraphs.append(situation_paragraph(outline, chapter, rng, "reasoning"))
+        task_kinds, task_paras = task_paragraphs(
+            rng, stage, max(2 - task_pad, len(REQUIRED_KINDS[stage])))
+        paragraphs.extend(task_paras)
         paragraphs.append(pick(rng, ST.OPENERS[stage]["reasoning"]))
         paragraphs.append(theme["openers"][opener_i])
         paragraphs.extend(middles[i] for i in keep)
@@ -370,8 +409,12 @@ def build_reasoning(rng, cat, stage, ctx, used_text, used_combo, lens_use, quota
         paragraphs.extend(lens_paragraphs(rng, lenses, stage))
         paragraphs.append(theme["closers"][closer_i])
         response = join_paragraphs(paragraphs)
-        minimum = {"terse": 190, "standard": 245, "deep": 285}[depth]
-        if len(response.split()) < minimum and pad < 3:
+        minimum, maximum = length_band(depth, ctx is not None)
+        words = len(response.split())
+        if words > maximum and task_pad < 2:
+            task_pad += 1
+            continue
+        if words < minimum and pad < 3:
             pad += 1
             continue
         if response in used_text:
@@ -387,7 +430,8 @@ def build_reasoning(rng, cat, stage, ctx, used_text, used_combo, lens_use, quota
             stage=stage, depth=depth,
             difficulty=difficulty_for(depth),
             lenses=list(lenses), strategies=list(strategies),
-            rules=tag_rules(cat, lenses), **outline_fields(outline, None),
+            rules=tag_rules(cat, lenses), genre=genre_of_category(cat["id"]),
+            task_reading=task_kinds, **outline_fields(outline, None),
         )
     raise RuntimeError("Could not build a unique reasoning example for " + cat["id"])
 
@@ -396,6 +440,7 @@ def build_negative(rng, cat, stage, ctx, used_text, used_combo, lens_use, quota,
                    strategy_use):
     trap = pick(rng, cat["traps"])
     pad = 0
+    task_pad = 0
     for _ in range(900):
         outline, chapter = ctx if ctx is not None else (None, None)
         depth = weighted_choice(rng, DEPTHS)
@@ -430,6 +475,9 @@ def build_negative(rng, cat, stage, ctx, used_text, used_combo, lens_use, quota,
             from generator.situations import situation_paragraph
 
             paragraphs.append(situation_paragraph(outline, chapter, rng, "negative"))
+        task_kinds, task_paras = task_paragraphs(
+            rng, stage, max(2 - task_pad, len(REQUIRED_KINDS[stage])))
+        paragraphs.extend(task_paras)
         paragraphs.append(pick(rng, ST.OPENERS[stage]["negative"]))
         paragraphs.append(trap["openers"][opener_i])
         paragraphs.append(trap["damage"])
@@ -439,8 +487,12 @@ def build_negative(rng, cat, stage, ctx, used_text, used_combo, lens_use, quota,
         paragraphs.extend(lens_paragraphs(rng, lenses, stage))
         paragraphs.append(trap["closers"][closer_i])
         response = join_paragraphs(paragraphs)
-        minimum = {"terse": 190, "standard": 245, "deep": 285}[depth]
-        if len(response.split()) < minimum and pad < 3:
+        minimum, maximum = length_band(depth, ctx is not None)
+        words = len(response.split())
+        if words > maximum and task_pad < 2:
+            task_pad += 1
+            continue
+        if words < minimum and pad < 3:
             pad += 1
             continue
         if response in used_text:
@@ -456,7 +508,8 @@ def build_negative(rng, cat, stage, ctx, used_text, used_combo, lens_use, quota,
             stage=stage, depth=depth,
             difficulty=difficulty_for(depth),
             lenses=list(lenses), strategies=list(strategies),
-            rules=tag_rules(cat, lenses), **outline_fields(outline, chapter),
+            rules=tag_rules(cat, lenses), genre=genre_of_category(cat["id"]),
+            task_reading=task_kinds, **outline_fields(outline, chapter),
         )
     raise RuntimeError("Could not build a unique negative example for " + cat["id"])
 
@@ -503,9 +556,19 @@ def stage_category_count(stage, total, rng):
     the repair, scene and continuity libraries).
     """
     counts = Counter()
-    allowed = list(ST.ALLOWED_CATEGORIES[stage])
+    allowed = [c for c in ST.ALLOWED_CATEGORIES[stage]
+               if not c.startswith("genre_")]
     native = [c for c in ST.NATIVE_CATEGORIES[stage] if c in allowed]
     general = [CATEGORY_BY_ID[c] for c in allowed if c not in native]
+
+    # The genre slice comes out of the stage's total first, split evenly across
+    # epic fantasy, science fiction and thriller.
+    genre_total = int(round(total * GENRE_SHARE.get(stage, 0.0)))
+    if genre_total:
+        for gid, n in distribute(genre_total, [GENRES[g]["category"] for g in GENRE_ORDER], rng):
+            counts[gid] += n
+    total -= genre_total
+
     share = ST.NATIVE_SHARE[stage]
     if native and (not general or share >= 1.0):
         for cat, n in distribute(total, [CATEGORY_BY_ID[c] for c in native], rng):
@@ -675,6 +738,10 @@ def main():
             }
             for cat in CATEGORIES
         },
+        "per_genre": {gid: sum(1 for r in all_records if r.get("genre") == gid)
+                      for gid in GENRE_ORDER},
+        "per_task_reading": dict(Counter(kind for r in all_records
+                                         for kind in r["task_reading"]).most_common()),
         "per_strategy": {name: strategy_counts.get(name, 0) for name in STRATEGIES},
         "per_lens": dict(lens_counts.most_common()),
         "per_rule": {str(k): rule_counts.get(k, 0) for k in sorted(RULES)},
@@ -682,6 +749,33 @@ def main():
     if args.with_outlines:
         manifest["per_outline"] = dict(sorted(
             Counter(r["outline_id"] for r in all_records).items()))
+    # The genre slice is shipped as its own smaller dataset alongside the full one.
+    genre_records = [r for r in all_records if r.get("genre")]
+    write_jsonl(os.path.join(args.outdir, "genre_examples.jsonl"), genre_records)
+
+    # Per-rule index: the rules a record encodes, and worked example record ids
+    # for every rule in the registry, so the rule set can be audited rule by rule.
+    rule_index = {}
+    for rid in sorted(RULES):
+        hits = [r for r in all_records if rid in r["rules"]]
+        by_stage = {}
+        for r in hits:
+            by_stage.setdefault(r["stage"], []).append(r["id"])
+        rule_index[str(rid)] = {
+            "key": RULES[rid][0],
+            "group": group_of(rid),
+            "category": RULES[rid][1],
+            "lens": RULES[rid][2],
+            "records": len(hits),
+            "types": sorted({r["type"] for r in hits}),
+            "stages": sorted(by_stage),
+            "examples": {stage: ids[:3] for stage, ids in sorted(by_stage.items())},
+        }
+    manifest["per_rule_examples"] = dict(sorted(
+        (k, v["records"]) for k, v in rule_index.items()))
+    with open(os.path.join(args.outdir, "rule_index.json"), "w", encoding="utf-8") as fh:
+        json.dump(rule_index, fh, indent=2)
+
     with open(os.path.join(args.outdir, "manifest.json"), "w", encoding="utf-8") as fh:
         json.dump(manifest, fh, indent=2)
 
@@ -694,6 +788,8 @@ def main():
         print("  %-11s %5d" % ("stage:" + stage, total))
     print("  depths:     %s" % manifest["per_depth"])
     print("  difficulty: %s" % manifest["per_difficulty"])
+    print("  genres:     %s" % manifest["per_genre"])
+    print("  task lead:  %s" % manifest["per_task_reading"])
     missing = [str(k) for k in sorted(RULES) if rule_counts.get(k, 0) == 0]
     if missing:
         print("  rules with no coverage: %s" % ", ".join(missing))

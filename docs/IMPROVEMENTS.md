@@ -263,3 +263,40 @@ python -m training.convert_for_training --out training/formatted
 
 The build is deterministic per seed. `--size` may be anything from 200 to 20,000; the
 validator's default band is the 6,000-8,000 target.
+
+---
+
+## 8. This round: rules with examples, task-first reasoning, and genres
+
+Three gaps were closed and verified against the shipped build.
+
+**Rules, with worked examples for each.** The seven generative libraries and the three genre
+libraries previously carried no rules of their own, so brainstorming, outlining and revision
+records fell back on a single lens for their rule tags. They now carry explicit rule sets
+(`GENERATIVE_RULES` in `generator/rules.py`), which means the craft rules are exercised while
+brainstorming, outlining and writing rather than only in the writing libraries. The build emits
+`data/rule_index.json` (every rule with its group, lens, example counts and example record ids
+per stage and type) and `docs/RULE_COVERAGE.md` renders all 260 rules with their examples. The
+validator now enforces a floor of examples per rule, requires every rule in more than one record
+type, and requires every rule to appear while brainstorming, outlining or writing.
+
+**Reasoning first about the task and the story.** `generator/task_reading.py` adds the opening
+reasoning to every record: writing records read the chapter's task (function, beats, state to
+hand on), reconstruct the story so far from the earlier chapters, reconstruct the characters and
+what they carry into the scene, decide what happens in what order, and plan the chapter's
+emotional line; outlining records reason about the story (want, obstacle, escalation, shape) and
+about the outline's own deliverable (chapter-by-chapter summaries, character notes, plot,
+conflict, notes); brainstorming records reason about the story the idea would become; revision
+records read the draft as the reader meets it. Records carry `task_reading`, and the validator
+requires the stage's mandatory kinds.
+
+**Genre craft.** `generator/genres.py` plus three libraries (`genre_epic_fantasy`,
+`genre_scifi`, `genre_thriller`) teach how to write each genre and what a story in it looks
+like. Each genre has a promise, a structural story shape, moves, problems, three traps,
+discipline checks, a theme and principles. 1,104 of the 7,200 records reason inside a genre
+(368 / 367 / 369), across brainstorming, outlining and writing, shipped both in the main dataset
+and as `data/genre_examples.jsonl`. Every genre record declares `genre`, and its instruction
+leads with the genre's frame and story shape.
+
+Resulting build: 7,200 records, 28 libraries, 260 rules exercised, 1,104 genre examples, every
+record opening with task and story reasoning. Validator: green.

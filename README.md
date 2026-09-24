@@ -96,7 +96,7 @@ validator guarantees, and worked examples from the dataset — is in
 [`docs/REPO_SUMMARY.md`](docs/REPO_SUMMARY.md); the research-backed account of what was
 improved and why is in [`docs/IMPROVEMENTS.md`](docs/IMPROVEMENTS.md).
 
-## Craft categories (25)
+## Craft categories (28)
 
 Each category module is an authored library of forward-looking craft paragraphs, and each
 maps onto the 260-rule craft registry in `generator/rules.py` (rule ids follow the
@@ -122,13 +122,16 @@ original numbering, 1–260).
 | `dialogue_voice` | dialogue, subtext, register and humor | 76-99, 168-175, 252 |
 | `action_physicality` | action, combat legibility, physical cost | 118-122, 124-132, 135, 136 |
 | `continuity_outline` | continuity across a novel and obedience to its plan | 214-223, 227-240, 254, 256, 258 |
-| `idea_generation` | brainstorming: premise engines, forced choices, collisions, theme as a question, idea tests | ideation-native |
-| `idea_shaping` | brainstorming: protagonist choice, wants, conflict generation, stakes ladders, hooks, tone, ending direction, pitch, candidate selection | ideation-native |
-| `outline_design` | architecture: movements, chapter functions, thread schedules, escalation ladders, ending-first design, pressure contour | outline-native |
-| `arc_mapping` | arcs: protagonist, antagonist, relationship, knowledge, stakes ladder, act breaks, climax, mystery, resolution | outline-native |
-| `scene_planning` | scenes: purpose and turns, entry and exit, sequences, set pieces, ordering, scene budgets | outline-native |
-| `revision_craft` | repair: cause before symptom, cut first, protect what works, pass order, continuity after change | revision-native |
-| `revision_diagnosis` | repair: symptom-to-cause diagnosis, scene and chapter audits, pacing, character, clarity and ending repair | revision-native |
+| `idea_generation` | brainstorming: premise engines, forced choices, collisions, theme as a question, idea tests | 26 generative rules |
+| `idea_shaping` | brainstorming: protagonist choice, wants, conflict generation, stakes ladders, hooks, tone, ending direction, pitch, candidate selection | 28 generative rules |
+| `outline_design` | outlining: movements, chapter functions, thread schedules, escalation ladders, ending-first design, pressure contour | 42 generative rules |
+| `arc_mapping` | outlining: protagonist, antagonist, relationship, knowledge and stakes arcs, act breaks, climax, mystery, resolution | 39 generative rules |
+| `scene_planning` | outlining: scene purpose and turns, entry and exit, sequences, set pieces, ordering, scene budgets | 32 generative rules |
+| `revision_craft` | revision: cause before symptom, cut first, protect what works, pass order, continuity after change | 41 generative rules |
+| `revision_diagnosis` | revision: symptom-to-cause diagnosis, scene and chapter audits, pacing, character, clarity and ending repair | 51 generative rules |
+| `genre_epic_fantasy` | epic fantasy: priced power, world with consequence, reluctant protagonist, alliance fracture, scale management, prophecy and agency | 45 genre rules |
+| `genre_scifi` | science fiction: one change extrapolated, idea dramatized, scale from the personal, competence and cost, society as argument | 41 genre rules |
+| `genre_thriller` | thriller: the clock, antagonist ahead, information asymmetry, escalating cost, competence and flaw, personal stakes | 41 genre rules |
 
 The seven stage-native libraries carry the reasoning that only exists at their stage, and
 each stage draws 65% of its records from them. The eighteen rule-bearing modules between
@@ -173,13 +176,20 @@ JSONL. One record per line:
   "difficulty": "foundational | intermediate | advanced",
   "lenses": ["outline_obedience", "scene", "pacing"],
   "strategies": ["backward"],
-  "rules": [182, 183, 184, 185]
+  "rules": [182, 183, 184, 185],
+  "genre": "epic_fantasy | scifi | thriller | null",
+  "task_reading": ["task", "characters"]
 }
 ```
 
 - `stage` says which part of the process the reasoning belongs to; `depth` and
   `difficulty` say how demanding the trace is, and `strategies` lists the reasoning moves
   it uses.
+- `genre` is set when the record reasons inside one of the three genre libraries.
+- `task_reading` names the opening paragraphs the record used to read its task and the
+  story before deciding craft: `task`, `story_so_far`, `characters`, `what_happens`,
+  `emotion_line` at writing; `story`, `artifact`, `chapters`, `characters` at outlining;
+  `story`, `artifact` at brainstorming; `draft_state`, `repair` at revision.
 - `lenses` names the craft dimensions the record reasons through, in canonical paragraph
   order.
 - `rules` lists the registry rules the record's category encodes, so a training run can
@@ -191,8 +201,11 @@ Files:
 - `data/transition_examples.jsonl` — 3,600 transition examples
 - `data/pure_reasoning_examples.jsonl` — 1,800 pure reasoning examples
 - `data/negative_examples.jsonl` — 1,800 negative examples
+- `data/genre_examples.jsonl` — 1,104 examples that reason inside a genre
+  (epic fantasy, science fiction, thriller), the smaller genre dataset
+- `data/rule_index.json` — all 260 rules with example record ids per stage and type
 - `data/manifest.json` — seed, counts, stage / depth / difficulty / strategy /
-  category / lens / rule coverage
+  category / lens / rule / genre / task-reading coverage
 
 ## Guarantees (enforced by the validator)
 
@@ -206,8 +219,20 @@ Files:
   `such as`, `might read`, and similar) anywhere — the no-prose rule is machine-checked,
   not aspirational.
 - All 7,200 instructions and all 7,200 responses are globally unique.
-- Every rule in the 260-rule registry is exercised and every reasoning strategy is used;
-  depth, difficulty, lenses, and strategy paragraphs are consistent with the record.
+- Every rule in the 260-rule registry is exercised with a floor of examples, appears in
+  more than one record type, and appears while brainstorming, outlining or writing;
+  `data/rule_index.json` names worked examples per rule and `docs/RULE_COVERAGE.md` lists
+  them.
+- Every record opens by reading its task and the story: writing records reason about what
+  the chapter must do, what earlier chapters established, who the characters are and what
+  they feel; outlining records reason about the story and the outline's own deliverable
+  (chapter summaries, character notes, plot, conflict, notes) before deciding structure;
+  brainstorming records reason about the story the idea would become.
+- The genre slice covers epic fantasy, science fiction and thriller at brainstorming,
+  outlining and writing, each genre with its own library, and genre records declare their
+  genre.
+- Every reasoning strategy is used; depth, difficulty, lenses, and strategy paragraphs are
+  consistent with the record.
 - Responses sit inside the word band for their depth tier (190–625 words in practice).
 
 Run the validator:

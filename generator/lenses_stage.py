@@ -190,6 +190,11 @@ OUTLINE_LENSES = {
         "Decide what cannot be said aloud in the scenes that matter, because that is what the scene will be about.",
         "Keep the talking in the plan to the encounters where the story turns; the rest can be handled in the writing.",
     ),
+    "genre": (
+        "Keep the genre's promise visible in the plan: the reader of an epic fantasy gets a world whose powers are priced, the reader of science fiction gets one change taken all the way, the reader of a thriller gets pressure that advances without the protagonist.",
+        "Decide what the story's genre obliges, and hold those obligations beside the story's own: the scale, the clock, the cost of power, or the consequences of the change, whichever this book is built on.",
+        "Choose the version of the story that delivers the genre's experience through the story's people rather than through its furniture.",
+    ),
     "pov": (
         "Decide whose experience carries each movement, and let the choice cost something: the story should lose access to information it would like to have.",
         "Plan the story so that the point of view makes some things hard to see, because a vantage that costs nothing is only a camera.",
@@ -256,13 +261,13 @@ def stage_lenses():
     Drafting draws on every lens, and revision on the ones its passes touch.
     """
     drafting = (
-        "pov", "concrete", "character", "scene", "pacing", "emotion", "dialogue",
+        "genre", "pov", "concrete", "character", "scene", "pacing", "emotion", "dialogue",
         "humor", "action", "worldbuilding", "continuity", "outline_obedience",
         "reader_trust", "metaphor", "prose", "ai_patterns", "style_consistency",
     )
     return {
-        "ideation": ("reader_trust", "character", "emotion", "worldbuilding", "pacing"),
-        "outline": ("pacing", "character", "scene", "continuity", "reader_trust",
+        "ideation": ("genre", "reader_trust", "character", "emotion", "worldbuilding", "pacing"),
+        "outline": ("genre", "pacing", "character", "scene", "continuity", "reader_trust",
                     "emotion", "worldbuilding"),
         "drafting": drafting,
         "revision": ("continuity", "prose", "style_consistency", "ai_patterns", "scene",

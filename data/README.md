@@ -64,15 +64,27 @@ data stays reasoning-only.
 
 **Depths:** `terse` 1,573, `standard` 3,771, `deep` 1,856.
 
-**Categories (25, roughly 290 examples each):** the eighteen drafting libraries
+**Categories (28, roughly 260 examples each):** the eighteen drafting libraries
 (`plot_architecture`, `conflict_escalation`, `character_decisions`,
 `information_management`, `scene_construction`, `chapter_arcs`, `setup_payoff`, `tension`,
 `momentum`, `epic_scale`, `pov_perception`, `concrete_grounding`, `prose_discipline`,
 `metaphor_imagery`, `emotion_craft`, `dialogue_voice`, `action_physicality`,
 `continuity_outline`) plus seven stage-native libraries: `idea_generation` and
 `idea_shaping` for brainstorming, `outline_design`, `arc_mapping` and `scene_planning` for
-outlining, `revision_craft` and `revision_diagnosis` for revision. Each stage reasons only
-with the libraries that belong to it, and its own libraries carry 65% of its records.
+outlining, `revision_craft` and `revision_diagnosis` for revision, and three genre libraries
+(`genre_epic_fantasy`, `genre_scifi`, `genre_thriller`) that reason inside the genre's promise
+at brainstorming, outlining and writing. Each stage reasons only with the libraries that
+belong to it, and its own libraries carry the majority of its records: all of them at
+brainstorming and revision, 65% at outlining, and the full craft library while writing.
+
+**Genre slice:** 1,104 of the 7,200 records reason inside a genre (368 epic fantasy, 367
+science fiction, 369 thriller), spread across brainstorming (270), outlining (316) and
+writing (518). They are also shipped on their own as `genre_examples.jsonl`.
+
+**Rule examples:** every record carries the craft rules its reasoning implements
+(`rules`), and `rule_index.json` maps all 260 rules to the number of examples and to record
+ids per stage and type, so the rule set can be audited rule by rule. A readable version is
+in `docs/RULE_COVERAGE.md`.
 
 ## Quick load in a Kaggle notebook
 

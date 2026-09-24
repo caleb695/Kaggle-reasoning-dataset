@@ -370,6 +370,64 @@ NEW_CRAFT_CATEGORIES = (
 # character voice carry nearly all of the humor signal).
 CATEGORY_ALIASES = {"humor_craft": "dialogue_voice", "worldbuilding_scale": "epic_scale"}
 
+# The generative libraries reason at brainstorming, outlining and drafting, so
+# they carry the guide rules that govern those decisions rather than falling back
+# on a single lens. Each list is the subset of the rule registry that the
+# library's paragraphs encode, so a tagged record's rules describe what its
+# reasoning actually implements.
+GENERATIVE_RULES = {
+    "idea_generation": (
+        151, 152, 153, 154, 155, 156, 160, 161, 162, 163, 164, 165, 166, 167,
+        178, 179, 214, 215, 216, 224, 225, 226, 248, 249, 250, 251, 252,
+    ),
+    "idea_shaping": (
+        151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 165, 166, 167,
+        103, 133, 134, 137, 138, 139, 140, 141, 178, 179, 248, 251, 252, 253,
+    ),
+    "outline_design": (
+        100, 104, 105, 106, 107, 108, 109, 110, 111, 113, 116, 117, 176, 177,
+        178, 179, 180, 181, 182, 183, 184, 185, 186, 214, 215, 216, 217, 218,
+        224, 225, 226, 227, 228, 229, 230, 231, 248, 249, 254, 255, 256, 257,
+    ),
+    "arc_mapping": (
+        151, 152, 153, 154, 155, 156, 157, 158, 162, 166, 167, 103, 133, 134,
+        137, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 214, 217, 218,
+        225, 226, 227, 228, 229, 230, 231, 248, 251, 252, 254,
+    ),
+    "scene_planning": (
+        100, 101, 102, 103, 104, 105, 106, 107, 109, 110, 112, 114, 115, 118,
+        119, 120, 124, 137, 176, 177, 182, 183, 214, 215, 216, 217, 218, 224,
+        248, 249, 250, 256,
+    ),
+    "revision_craft": (
+        19, 26, 28, 29, 32, 33, 39, 40, 41, 43, 72, 73, 75, 78, 100, 104, 108,
+        111, 182, 183, 184, 197, 198, 199, 200, 201, 202, 209, 210, 213, 227,
+        228, 231, 232, 241, 242, 243, 248, 249, 253, 255,
+    ),
+    "revision_diagnosis": (
+        19, 23, 26, 28, 29, 30, 31, 32, 33, 35, 36, 37, 40, 41, 43, 46, 58,
+        59, 60, 61, 62, 63, 64, 72, 73, 74, 75, 78, 79, 81, 96, 100, 101, 104,
+        105, 108, 111, 176, 177, 186, 187, 188, 197, 209, 213, 227, 232, 248,
+        253, 254, 257,
+    ),
+    "genre_epic_fantasy": (
+        103, 133, 134, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147,
+        151, 152, 153, 154, 166, 167, 176, 177, 178, 179, 180, 181, 182, 183,
+        184, 185, 214, 215, 217, 225, 226, 227, 228, 230, 231, 248, 251, 252,
+        254, 255, 256,
+    ),
+    "genre_scifi": (
+        9, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149,
+        150, 151, 152, 153, 154, 166, 167, 176, 177, 178, 179, 187, 188, 189,
+        190, 214, 215, 216, 225, 226, 248, 250, 251, 252, 253, 255, 257,
+    ),
+    "genre_thriller": (
+        101, 102, 103, 108, 109, 110, 111, 112, 116, 117, 118, 119, 120, 124,
+        125, 126, 133, 134, 135, 136, 151, 152, 155, 156, 166, 167, 176, 177,
+        186, 214, 215, 216, 224, 225, 226, 248, 249, 251, 253, 256, 259,
+    ),
+}
+
 
 def rule_category(rule_id):
     cat = RULES[rule_id][1]
@@ -381,6 +439,8 @@ def rule_lens(rule_id):
 
 
 def rules_for_category(category_id):
+    if category_id in GENERATIVE_RULES:
+        return sorted(GENERATIVE_RULES[category_id])
     return [rid for rid, (_k, cat, _l) in RULES.items()
             if CATEGORY_ALIASES.get(cat, cat) == category_id]
 
