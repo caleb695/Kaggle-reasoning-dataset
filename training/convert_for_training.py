@@ -19,6 +19,8 @@ import argparse
 import json
 import os
 
+# At inference the caller supplies the novel outline being drafted; the outline
+# is not part of these records, so training stays pure reasoning supervision.
 SYSTEM_PROMPT = (
     "You are a structural writing planner. You reason about craft before drafting: "
     "point of view, scene construction, pacing, tension, emotion, dialogue, imagery, "
@@ -40,10 +42,11 @@ def render(record, drop_marker=False):
         "Category: %s" % record["category"],
         "Craft dimension: %s" % record["subcategory"],
     ]
-    if record.get("chapter") is not None:
-        context.append("Outline: %s, chapter %s" % (record["outline_id"], record["chapter"]))
-    else:
-        context.append("Scope: the whole novel %s" % record["outline_id"])
+    if record.get("outline_id"):
+        if record.get("chapter") is not None:
+            context.append("Outline: %s, chapter %s" % (record["outline_id"], record["chapter"]))
+        else:
+            context.append("Scope: the whole novel %s" % record["outline_id"])
     user = "\n".join(context) + "\n\n" + record["instruction"]
     return {
         "id": record["id"],
