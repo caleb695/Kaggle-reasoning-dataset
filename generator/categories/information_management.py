@@ -48,11 +48,11 @@ CAT = {
             "openers": [
                 "A secret is a debt that accrues interest. Every scene that depends on its concealment raises the price of exposure, and the story's tension is the interest rate. Decide now what the secret costs its keeper in each coming stretch, in behavior, in missed chances, in lies that compound, and let that cost be visible long before the secret itself is.",
                 "Before writing further, fix the secret's containment system: who knows, who suspects, what evidence exists outside control, and what event would breach each wall. The plot of the middle is the slow failure of that system under pressure, so the system must be specific enough to fail in interesting ways.",
-                "Decide the secret's two clocks: the internal one, how long the keeper can sustain the concealment, and the external one, when some outside pressure would surface it regardless. The story lives between the two, and whichever runs out first decides the shape of the crisis. Set both clocks in motion early.",
+                "Decide the secret's two clocks: the internal one, how long the character can sustain the concealment, and the external one, when some outside pressure would surface it regardless. The story lives between the two, and whichever runs out first decides the shape of the crisis. Set both clocks in motion early.",
             ],
             "closers": [
                 "Commit to the secret's accounting: the cost of each week of silence, the walls of the containment system, and the two clocks now running. Write the next scenes as movements of that system, with the pressure visible in behavior before anyone speaks of it.",
-                "Fix what the concealment is doing to the keeper right now, and let the next scene be shaped by that deformation. The secret's weight is the story's tension, and it must be paid scene by scene, not saved for the reveal.",
+                "Fix what the concealment is doing to the character right now, and let the next scene be shaped by that deformation. The secret's weight is the story's tension, and it must be paid scene by scene, not saved for the reveal.",
             ],
         },
         {
@@ -143,13 +143,13 @@ CAT = {
             "slide": "You feel the pull toward contrived silence: letting the secret survive this scene because no one mentions it, though any real person in the room would speak. The pull is quiet because the scene works on its surface; it just has a hole where a motive should be.",
             "stages": ["the early middle of the book", "the middle of the book", "the second act"],
             "openers": [
-                "The scene ahead has a hole in it: the information that would naturally be spoken stays unspoken, and nothing in the character prevents them from speaking. The pull is to let the hole stand, since the plot needs the silence. Find the keeper's true reason instead, or accept that the secret breaks here and let the story grow from the breach.",
+                "The scene ahead has a hole in it: the information that would naturally be spoken stays unspoken, and nothing in the character prevents them from speaking. The pull is to let the hole stand, since the plot needs the silence. Find the character's true reason instead, or accept that the secret breaks here and let the story grow from the breach.",
                 "You are about to write a silence that the character has no motive to keep. The temptation is real, the plot depends on it, and the reader's nose is sharper than the plot. Before drafting, either give the silence a price the character is visibly unwilling to pay, or let the information go and restructure what follows.",
             ],
             "damage": "The damage is a broken contract with the reader's rationality: they extend belief to a story that hides things for reasons, and every unmotivated silence teaches them the hiding is the author's, not the character's. Once that suspicion is awake, the story's genuine mysteries are read as manipulations, and even honest reveals feel cheap.",
             "reason_past": "Reason past it while writing by pricing every silence: for each fact a character withholds, establish what speaking would cost them, in fear, shame, advantage, or danger to someone else, and make the price visible in the scene where the silence happens.",
             "closers": [
-                "Commit to the priced silence: the keeper's reason will be present in the scene as motive, behavior, and cost, not as absence. Write the withholding as an act with a visible price, and the reader will carry the secret with the character.",
+                "Commit to the priced silence: the character's reason will be present in the scene as motive, behavior, and cost, not as absence. Write the withholding as an act with a visible price, and the reader will carry the secret with the character.",
                 "Refuse the free hole. Either the silence earns its keep through motive and cost, or the information enters the story here and the plot absorbs the shock. Decide now, and write the scene with the decision honored.",
             ],
         },

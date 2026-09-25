@@ -1,0 +1,7354 @@
+{
+  "1": {
+    "key": "inside_character",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "pov",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "2": {
+    "key": "notice_first",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "pov",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "3": {
+    "key": "perceivable_only",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "pov",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "4": {
+    "key": "filter_by_priority",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "pov",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "5": {
+    "key": "no_author_knowledge",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "pov",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "6": {
+    "key": "limited_knowledge",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "continuity",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "7": {
+    "key": "allowed_misreading",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "pov",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "8": {
+    "key": "wrong_assumptions",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "pov",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "9": {
+    "key": "no_immediate_correction",
+    "group": "pov_and_perception",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 615,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_scifi-2403",
+        "t-genre_scifi-2448",
+        "t-information_management-1698"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_scifi-0909",
+        "n-genre_scifi-0910"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "10": {
+    "key": "personality_shapes_reading",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "pov",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "11": {
+    "key": "thoughts_not_essays",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "prose",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "12": {
+    "key": "mundane_in_big_moments",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "character",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "13": {
+    "key": "petty_coexists",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "character",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "14": {
+    "key": "opaque_own_emotions",
+    "group": "pov_and_perception",
+    "category": "emotion_craft",
+    "lens": "emotion",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ]
+    }
+  },
+  "15": {
+    "key": "contradictory_feelings",
+    "group": "pov_and_perception",
+    "category": "emotion_craft",
+    "lens": "emotion",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ]
+    }
+  },
+  "16": {
+    "key": "not_every_observation_profound",
+    "group": "pov_and_perception",
+    "category": "prose_discipline",
+    "lens": "prose",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "17": {
+    "key": "not_every_thought_relevant",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "character",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "18": {
+    "key": "worldview_persists",
+    "group": "pov_and_perception",
+    "category": "pov_perception",
+    "lens": "continuity",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-pov_perception-0266",
+        "t-pov_perception-0238",
+        "t-pov_perception-0333"
+      ]
+    }
+  },
+  "19": {
+    "key": "concrete_over_abstract",
+    "group": "concrete_before_abstract",
+    "category": "concrete_grounding",
+    "lens": "concrete",
+    "records": 931,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-concrete_grounding-1974",
+        "t-concrete_grounding-1911",
+        "t-concrete_grounding-1907"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "20": {
+    "key": "enact_unease",
+    "group": "concrete_before_abstract",
+    "category": "concrete_grounding",
+    "lens": "concrete",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-concrete_grounding-1974",
+        "t-concrete_grounding-1911",
+        "t-concrete_grounding-1907"
+      ]
+    }
+  },
+  "21": {
+    "key": "anger_through_behavior",
+    "group": "concrete_before_abstract",
+    "category": "concrete_grounding",
+    "lens": "concrete",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-concrete_grounding-1974",
+        "t-concrete_grounding-1911",
+        "t-concrete_grounding-1907"
+      ]
+    }
+  },
+  "22": {
+    "key": "nervousness_through_body",
+    "group": "concrete_before_abstract",
+    "category": "concrete_grounding",
+    "lens": "concrete",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-concrete_grounding-1974",
+        "t-concrete_grounding-1911",
+        "t-concrete_grounding-1907"
+      ]
+    }
+  },
+  "23": {
+    "key": "experience_before_naming",
+    "group": "concrete_before_abstract",
+    "category": "emotion_craft",
+    "lens": "emotion",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "24": {
+    "key": "physical_grounding_under_load",
+    "group": "concrete_before_abstract",
+    "category": "concrete_grounding",
+    "lens": "concrete",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-concrete_grounding-1974",
+        "t-concrete_grounding-1911",
+        "t-concrete_grounding-1907"
+      ]
+    }
+  },
+  "25": {
+    "key": "contact_with_surroundings",
+    "group": "concrete_before_abstract",
+    "category": "concrete_grounding",
+    "lens": "concrete",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-concrete_grounding-1974",
+        "t-concrete_grounding-1911",
+        "t-concrete_grounding-1907"
+      ]
+    }
+  },
+  "26": {
+    "key": "avoid_abstract_stretches",
+    "group": "concrete_before_abstract",
+    "category": "prose_discipline",
+    "lens": "prose",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "27": {
+    "key": "incidental_over_atmospheric",
+    "group": "concrete_before_abstract",
+    "category": "concrete_grounding",
+    "lens": "concrete",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-concrete_grounding-1974",
+        "t-concrete_grounding-1911",
+        "t-concrete_grounding-1907"
+      ]
+    }
+  },
+  "28": {
+    "key": "clear_natural_prose",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "prose",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "29": {
+    "key": "simple_precise_diction",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "prose",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "30": {
+    "key": "not_every_sentence_beautiful",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "31": {
+    "key": "not_every_sentence_memorable",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "32": {
+    "key": "invisible_prose",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "prose",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "33": {
+    "key": "selective_strength",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "prose",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "34": {
+    "key": "no_literary_posturing",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "35": {
+    "key": "no_purple_prose",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "36": {
+    "key": "no_decorative_adjectives",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "37": {
+    "key": "no_description_stacking",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "38": {
+    "key": "one_precise_image",
+    "group": "prose_style",
+    "category": "metaphor_imagery",
+    "lens": "metaphor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-metaphor_imagery-2615",
+        "n-metaphor_imagery-1087",
+        "r-metaphor_imagery-1124"
+      ]
+    }
+  },
+  "39": {
+    "key": "intentional_rhythm",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "prose",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "40": {
+    "key": "varied_sentence_length",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "41": {
+    "key": "no_repetitive_structures",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "42": {
+    "key": "vary_sentence_openings",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "43": {
+    "key": "no_uniform_paragraph_rhythm",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "44": {
+    "key": "short_for_speed_or_weight",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "prose",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "45": {
+    "key": "long_for_processing",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "prose",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "46": {
+    "key": "fragments_not_manufactured",
+    "group": "prose_style",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "47": {
+    "key": "fewer_stronger_metaphors",
+    "group": "metaphor_and_imagery",
+    "category": "metaphor_imagery",
+    "lens": "metaphor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-metaphor_imagery-2615",
+        "n-metaphor_imagery-1087",
+        "r-metaphor_imagery-1124"
+      ]
+    }
+  },
+  "48": {
+    "key": "no_metaphor_per_paragraph",
+    "group": "metaphor_and_imagery",
+    "category": "metaphor_imagery",
+    "lens": "metaphor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-metaphor_imagery-2615",
+        "n-metaphor_imagery-1087",
+        "r-metaphor_imagery-1124"
+      ]
+    }
+  },
+  "49": {
+    "key": "no_impressive_metaphors",
+    "group": "metaphor_and_imagery",
+    "category": "metaphor_imagery",
+    "lens": "metaphor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-metaphor_imagery-2615",
+        "n-metaphor_imagery-1087",
+        "r-metaphor_imagery-1124"
+      ]
+    }
+  },
+  "50": {
+    "key": "metaphor_fits_pov",
+    "group": "metaphor_and_imagery",
+    "category": "metaphor_imagery",
+    "lens": "metaphor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-metaphor_imagery-2615",
+        "n-metaphor_imagery-1087",
+        "r-metaphor_imagery-1124"
+      ]
+    }
+  },
+  "51": {
+    "key": "avoid_generic_ai_metaphors",
+    "group": "metaphor_and_imagery",
+    "category": "metaphor_imagery",
+    "lens": "ai_patterns",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-metaphor_imagery-2615",
+        "n-metaphor_imagery-1087",
+        "r-metaphor_imagery-1124"
+      ]
+    }
+  },
+  "52": {
+    "key": "no_metaphor_vocabulary_drift",
+    "group": "metaphor_and_imagery",
+    "category": "metaphor_imagery",
+    "lens": "style_consistency",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-metaphor_imagery-2615",
+        "n-metaphor_imagery-1087",
+        "r-metaphor_imagery-1124"
+      ]
+    }
+  },
+  "53": {
+    "key": "no_metaphor_chains",
+    "group": "metaphor_and_imagery",
+    "category": "metaphor_imagery",
+    "lens": "metaphor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-metaphor_imagery-2615",
+        "n-metaphor_imagery-1087",
+        "r-metaphor_imagery-1124"
+      ]
+    }
+  },
+  "54": {
+    "key": "concrete_before_metaphor",
+    "group": "metaphor_and_imagery",
+    "category": "metaphor_imagery",
+    "lens": "metaphor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-metaphor_imagery-2615",
+        "n-metaphor_imagery-1087",
+        "r-metaphor_imagery-1124"
+      ]
+    }
+  },
+  "55": {
+    "key": "literal_can_be_strongest",
+    "group": "metaphor_and_imagery",
+    "category": "metaphor_imagery",
+    "lens": "metaphor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-metaphor_imagery-2615",
+        "n-metaphor_imagery-1087",
+        "r-metaphor_imagery-1124"
+      ]
+    }
+  },
+  "56": {
+    "key": "no_forced_symbolism",
+    "group": "metaphor_and_imagery",
+    "category": "metaphor_imagery",
+    "lens": "reader_trust",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-metaphor_imagery-2615",
+        "n-metaphor_imagery-1087",
+        "r-metaphor_imagery-1124"
+      ]
+    }
+  },
+  "57": {
+    "key": "objects_can_just_exist",
+    "group": "metaphor_and_imagery",
+    "category": "metaphor_imagery",
+    "lens": "reader_trust",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-metaphor_imagery-2615",
+        "n-metaphor_imagery-1087",
+        "r-metaphor_imagery-1124"
+      ]
+    }
+  },
+  "58": {
+    "key": "emotion_through_behavior",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "emotion",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "59": {
+    "key": "dont_name_emotions",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "emotion",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "60": {
+    "key": "no_formulaic_reactions",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "61": {
+    "key": "surprise_not_widened_eyes",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "62": {
+    "key": "fear_not_always_shaking",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "63": {
+    "key": "sadness_not_always_tears",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "64": {
+    "key": "individual_reactions",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "character",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "65": {
+    "key": "delayed_emotion",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "emotion",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ]
+    }
+  },
+  "66": {
+    "key": "suppressed_emotion",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "emotion",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ]
+    }
+  },
+  "67": {
+    "key": "misread_own_emotion",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "emotion",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ]
+    }
+  },
+  "68": {
+    "key": "inappropriate_reaction",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "character",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ]
+    }
+  },
+  "69": {
+    "key": "laughter_when_uncomfortable",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "humor",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ]
+    }
+  },
+  "70": {
+    "key": "practical_under_fear",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "character",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ]
+    }
+  },
+  "71": {
+    "key": "small_problem_focus",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "emotion",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ]
+    }
+  },
+  "72": {
+    "key": "dont_resolve_emotion_fast",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "emotion",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "73": {
+    "key": "emotion_changes_gradually",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "emotion",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "74": {
+    "key": "mixed_emotions",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "emotion",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "75": {
+    "key": "emotional_consequences_persist",
+    "group": "emotion",
+    "category": "emotion_craft",
+    "lens": "continuity",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-emotion_craft-2201",
+        "n-emotion_craft-1419",
+        "n-emotion_craft-1418"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "76": {
+    "key": "dialogue_sounds_spoken",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "77": {
+    "key": "no_reader_exposition",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "78": {
+    "key": "no_exposition_as_dialogue",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "reader_trust",
+    "records": 930,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "79": {
+    "key": "distinct_voices",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 570,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "80": {
+    "key": "voice_from_person",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "81": {
+    "key": "no_shared_vocabulary",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "style_consistency",
+    "records": 570,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "82": {
+    "key": "natural_contractions",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "83": {
+    "key": "allow_interruptions",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "84": {
+    "key": "allow_hesitation",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "85": {
+    "key": "allow_subject_changes",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "86": {
+    "key": "mutual_misunderstanding",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "87": {
+    "key": "use_subtext",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "88": {
+    "key": "say_what_they_mean_not",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "89": {
+    "key": "characters_can_lie",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "character",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "90": {
+    "key": "avoid_answering",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "91": {
+    "key": "answer_other_question",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "92": {
+    "key": "defensive_speech",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "character",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "93": {
+    "key": "conversations_not_efficient",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "94": {
+    "key": "irrelevant_remarks_allowed",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "95": {
+    "key": "dialogue_reveals_relationships",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "96": {
+    "key": "no_perfect_comebacks",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "ai_patterns",
+    "records": 570,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "97": {
+    "key": "late_perfect_response",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "character",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "98": {
+    "key": "not_every_exchange_witty",
+    "group": "dialogue",
+    "category": "dialogue_voice",
+    "lens": "humor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "99": {
+    "key": "humor_from_character",
+    "group": "dialogue",
+    "category": "humor_craft",
+    "lens": "humor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "100": {
+    "key": "every_scene_has_reason",
+    "group": "scene_construction",
+    "category": "scene_construction",
+    "lens": "outline_obedience",
+    "records": 1341,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-scene_construction-2812",
+        "t-scene_construction-2796",
+        "t-scene_construction-2807"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-scene_planning-0070",
+        "n-scene_planning-0046"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "101": {
+    "key": "want_in_every_scene",
+    "group": "scene_construction",
+    "category": "scene_construction",
+    "lens": "scene",
+    "records": 1145,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-scene_construction-2812",
+        "t-scene_construction-2796",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-scene_planning-0070",
+        "n-scene_planning-0046",
+        "n-scene_planning-0089"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "102": {
+    "key": "scenes_have_obstacles",
+    "group": "scene_construction",
+    "category": "scene_construction",
+    "lens": "scene",
+    "records": 785,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-scene_construction-2812",
+        "t-scene_construction-2796",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-scene_planning-0070",
+        "n-scene_planning-0046",
+        "n-scene_planning-0089"
+      ]
+    }
+  },
+  "103": {
+    "key": "characters_can_fail",
+    "group": "scene_construction",
+    "category": "conflict_escalation",
+    "lens": "scene",
+    "records": 1709,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "t-conflict_escalation-2260"
+      ],
+      "ideation": [
+        "r-idea_shaping-0750",
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "n-conflict_escalation-0469",
+        "n-arc_mapping-0198"
+      ]
+    }
+  },
+  "104": {
+    "key": "scenes_produce_consequences",
+    "group": "scene_construction",
+    "category": "plot_architecture",
+    "lens": "scene",
+    "records": 1376,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "r-plot_architecture-1151",
+        "r-plot_architecture-1152",
+        "t-plot_architecture-1390"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-scene_planning-0070",
+        "n-scene_planning-0046"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "105": {
+    "key": "not_every_scene_main_plot",
+    "group": "scene_construction",
+    "category": "scene_construction",
+    "lens": "pacing",
+    "records": 981,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-scene_construction-2812",
+        "t-scene_construction-2796",
+        "t-scene_construction-2807"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-scene_planning-0070",
+        "n-scene_planning-0046"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "106": {
+    "key": "smaller_concerns_between",
+    "group": "scene_construction",
+    "category": "scene_construction",
+    "lens": "pacing",
+    "records": 621,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-scene_construction-2812",
+        "t-scene_construction-2796",
+        "t-scene_construction-2807"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-scene_planning-0070",
+        "n-scene_planning-0046"
+      ]
+    }
+  },
+  "107": {
+    "key": "let_scenes_breathe",
+    "group": "scene_construction",
+    "category": "scene_construction",
+    "lens": "pacing",
+    "records": 621,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-scene_construction-2812",
+        "t-scene_construction-2796",
+        "t-scene_construction-2807"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-scene_planning-0070",
+        "n-scene_planning-0046"
+      ]
+    }
+  },
+  "108": {
+    "key": "dont_rush_events",
+    "group": "scene_construction",
+    "category": "momentum",
+    "lens": "pacing",
+    "records": 1542,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-momentum-2954",
+        "t-genre_thriller-1840",
+        "t-momentum-2899"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-outline_design-0348",
+        "r-outline_design-0105"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "109": {
+    "key": "quieter_scenes_contrast",
+    "group": "scene_construction",
+    "category": "scene_construction",
+    "lens": "pacing",
+    "records": 990,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-scene_construction-2812",
+        "t-scene_construction-2796",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-scene_planning-0070",
+        "n-scene_planning-0046"
+      ]
+    }
+  },
+  "110": {
+    "key": "uneven_scene_weight",
+    "group": "scene_construction",
+    "category": "scene_construction",
+    "lens": "pacing",
+    "records": 990,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-scene_construction-2812",
+        "t-scene_construction-2796",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-scene_planning-0070",
+        "n-scene_planning-0046"
+      ]
+    }
+  },
+  "111": {
+    "key": "build_intensity",
+    "group": "scene_construction",
+    "category": "tension",
+    "lens": "pacing",
+    "records": 1542,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "n-tension-1426",
+        "t-genre_thriller-1840",
+        "t-tension-1081"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-outline_design-0348",
+        "r-outline_design-0105"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "112": {
+    "key": "register_contrast",
+    "group": "scene_construction",
+    "category": "scene_construction",
+    "lens": "pacing",
+    "records": 785,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-scene_construction-2812",
+        "t-scene_construction-2796",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-scene_planning-0070",
+        "n-scene_planning-0046",
+        "n-scene_planning-0089"
+      ]
+    }
+  },
+  "113": {
+    "key": "avoid_repetitive_openings",
+    "group": "scene_construction",
+    "category": "chapter_arcs",
+    "lens": "ai_patterns",
+    "records": 453,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-chapter_arcs-3360",
+        "t-chapter_arcs-3290",
+        "t-chapter_arcs-3313"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-chapter_arcs-0160",
+        "r-chapter_arcs-0306"
+      ]
+    }
+  },
+  "114": {
+    "key": "enter_late",
+    "group": "scene_construction",
+    "category": "scene_construction",
+    "lens": "scene",
+    "records": 416,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-scene_construction-2812",
+        "t-scene_construction-2796",
+        "t-scene_construction-2807"
+      ],
+      "outline": [
+        "n-scene_planning-0070",
+        "n-scene_planning-0046",
+        "n-scene_planning-0089"
+      ]
+    }
+  },
+  "115": {
+    "key": "leave_when_done",
+    "group": "scene_construction",
+    "category": "scene_construction",
+    "lens": "scene",
+    "records": 416,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-scene_construction-2812",
+        "t-scene_construction-2796",
+        "t-scene_construction-2807"
+      ],
+      "outline": [
+        "n-scene_planning-0070",
+        "n-scene_planning-0046",
+        "n-scene_planning-0089"
+      ]
+    }
+  },
+  "116": {
+    "key": "dont_summarize_interesting",
+    "group": "scene_construction",
+    "category": "momentum",
+    "lens": "pacing",
+    "records": 822,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-momentum-2954",
+        "t-genre_thriller-1840",
+        "t-momentum-2899"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-outline_design-0348",
+        "r-outline_design-0105"
+      ]
+    }
+  },
+  "117": {
+    "key": "dont_pad_unimportant",
+    "group": "scene_construction",
+    "category": "momentum",
+    "lens": "pacing",
+    "records": 822,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-momentum-2954",
+        "t-genre_thriller-1840",
+        "t-momentum-2899"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-outline_design-0348",
+        "r-outline_design-0105"
+      ]
+    }
+  },
+  "118": {
+    "key": "action_understandable",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "action",
+    "records": 784,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-scene_planning-0070",
+        "n-scene_planning-0046",
+        "n-scene_planning-0089"
+      ]
+    }
+  },
+  "119": {
+    "key": "track_positions",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "action",
+    "records": 784,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-scene_planning-0070",
+        "n-scene_planning-0046",
+        "n-scene_planning-0089"
+      ]
+    }
+  },
+  "120": {
+    "key": "track_objects",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "continuity",
+    "records": 784,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-scene_planning-0070",
+        "n-scene_planning-0046",
+        "n-scene_planning-0089"
+      ]
+    }
+  },
+  "121": {
+    "key": "respect_physical_limits",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "action",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-action_physicality-0471"
+      ]
+    }
+  },
+  "122": {
+    "key": "no_battlefield_teleporting",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "action",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-action_physicality-0471"
+      ]
+    }
+  },
+  "123": {
+    "key": "no_perfect_move",
+    "group": "action_and_combat",
+    "category": "conflict_escalation",
+    "lens": "action",
+    "records": 249,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-conflict_escalation-2260",
+        "t-conflict_escalation-2314",
+        "t-conflict_escalation-2275"
+      ],
+      "outline": [
+        "n-conflict_escalation-0469",
+        "n-conflict_escalation-0464",
+        "n-conflict_escalation-0457"
+      ]
+    }
+  },
+  "124": {
+    "key": "combat_contains_error",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "action",
+    "records": 784,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-scene_planning-0070",
+        "n-scene_planning-0046",
+        "n-scene_planning-0089"
+      ]
+    }
+  },
+  "125": {
+    "key": "characters_tire",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "action",
+    "records": 580,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "r-genre_thriller-0610",
+        "n-genre_thriller-0125",
+        "n-genre_thriller-0139"
+      ]
+    }
+  },
+  "126": {
+    "key": "injuries_have_consequences",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "continuity",
+    "records": 580,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "r-genre_thriller-0610",
+        "n-genre_thriller-0125",
+        "n-genre_thriller-0139"
+      ]
+    }
+  },
+  "127": {
+    "key": "selective_action_senses",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "action",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-action_physicality-0471"
+      ]
+    }
+  },
+  "128": {
+    "key": "dont_slow_every_movement",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "action",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-action_physicality-0471"
+      ]
+    }
+  },
+  "129": {
+    "key": "slow_at_importance",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "pacing",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-action_physicality-0471"
+      ]
+    }
+  },
+  "130": {
+    "key": "speed_through_predictable",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "pacing",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-action_physicality-0471"
+      ]
+    }
+  },
+  "131": {
+    "key": "combat_reveals_character",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "character",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-action_physicality-0471"
+      ]
+    }
+  },
+  "132": {
+    "key": "different_characters_fight_differently",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "character",
+    "records": 211,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-action_physicality-0471"
+      ]
+    }
+  },
+  "133": {
+    "key": "adapt_when_plan_fails",
+    "group": "action_and_combat",
+    "category": "conflict_escalation",
+    "lens": "action",
+    "records": 1505,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "t-conflict_escalation-2260"
+      ],
+      "ideation": [
+        "r-idea_shaping-0750",
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "n-conflict_escalation-0469",
+        "n-arc_mapping-0198"
+      ]
+    }
+  },
+  "134": {
+    "key": "power_doesnt_solve_all",
+    "group": "action_and_combat",
+    "category": "conflict_escalation",
+    "lens": "outline_obedience",
+    "records": 1505,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "t-conflict_escalation-2260"
+      ],
+      "ideation": [
+        "r-idea_shaping-0750",
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "n-conflict_escalation-0469",
+        "n-arc_mapping-0198"
+      ]
+    }
+  },
+  "135": {
+    "key": "abilities_have_limits",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "outline_obedience",
+    "records": 580,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "r-genre_thriller-0610",
+        "n-genre_thriller-0125",
+        "n-genre_thriller-0139"
+      ]
+    }
+  },
+  "136": {
+    "key": "no_convenient_abilities",
+    "group": "action_and_combat",
+    "category": "action_physicality",
+    "lens": "outline_obedience",
+    "records": 580,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-action_physicality-0459",
+        "n-action_physicality-1245",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "r-genre_thriller-0610",
+        "n-genre_thriller-0125",
+        "n-genre_thriller-0139"
+      ]
+    }
+  },
+  "137": {
+    "key": "worldbuilding_through_story",
+    "group": "worldbuilding",
+    "category": "worldbuilding_scale",
+    "lens": "worldbuilding",
+    "records": 1704,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-epic_scale-3431",
+        "t-epic_scale-3463",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "r-idea_shaping-0750",
+        "r-idea_shaping-0734",
+        "n-idea_shaping-0996"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198",
+        "n-scene_planning-0070"
+      ]
+    }
+  },
+  "138": {
+    "key": "no_encyclopedia_stops",
+    "group": "worldbuilding",
+    "category": "worldbuilding_scale",
+    "lens": "worldbuilding",
+    "records": 1295,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-epic_scale-3431",
+        "t-epic_scale-3463",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "r-idea_shaping-0750",
+        "r-idea_shaping-0734",
+        "n-idea_shaping-0996"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "139": {
+    "key": "world_touches_ordinary_life",
+    "group": "worldbuilding",
+    "category": "worldbuilding_scale",
+    "lens": "worldbuilding",
+    "records": 1295,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-epic_scale-3431",
+        "t-epic_scale-3463",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "r-idea_shaping-0750",
+        "r-idea_shaping-0734",
+        "n-idea_shaping-0996"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "140": {
+    "key": "fantastical_consequences",
+    "group": "worldbuilding",
+    "category": "worldbuilding_scale",
+    "lens": "worldbuilding",
+    "records": 1295,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-epic_scale-3431",
+        "t-epic_scale-3463",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "r-idea_shaping-0750",
+        "r-idea_shaping-0734",
+        "n-idea_shaping-0996"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "141": {
+    "key": "magic_is_of_the_world",
+    "group": "worldbuilding",
+    "category": "worldbuilding_scale",
+    "lens": "worldbuilding",
+    "records": 1295,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-epic_scale-3431",
+        "t-epic_scale-3463",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "r-idea_shaping-0750",
+        "r-idea_shaping-0734",
+        "n-idea_shaping-0996"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "142": {
+    "key": "rules_before_solutions",
+    "group": "worldbuilding",
+    "category": "worldbuilding_scale",
+    "lens": "outline_obedience",
+    "records": 981,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-epic_scale-3431",
+        "t-epic_scale-3463",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_epic_fantasy-0858",
+        "n-genre_scifi-0909"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "143": {
+    "key": "rules_stay_consistent",
+    "group": "worldbuilding",
+    "category": "worldbuilding_scale",
+    "lens": "continuity",
+    "records": 981,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-epic_scale-3431",
+        "t-epic_scale-3463",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_epic_fantasy-0858",
+        "n-genre_scifi-0909"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "144": {
+    "key": "terminology_consistent",
+    "group": "worldbuilding",
+    "category": "worldbuilding_scale",
+    "lens": "style_consistency",
+    "records": 981,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-epic_scale-3431",
+        "t-epic_scale-3463",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_epic_fantasy-0858",
+        "n-genre_scifi-0909"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "145": {
+    "key": "reinforce_by_use",
+    "group": "worldbuilding",
+    "category": "worldbuilding_scale",
+    "lens": "worldbuilding",
+    "records": 981,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-epic_scale-3431",
+        "t-epic_scale-3463",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_epic_fantasy-0858",
+        "n-genre_scifi-0909"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "146": {
+    "key": "uneven_world_knowledge",
+    "group": "worldbuilding",
+    "category": "worldbuilding_scale",
+    "lens": "pov",
+    "records": 981,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-epic_scale-3431",
+        "t-epic_scale-3463",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_epic_fantasy-0858",
+        "n-genre_scifi-0909"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "147": {
+    "key": "no_walking_encyclopedias",
+    "group": "worldbuilding",
+    "category": "worldbuilding_scale",
+    "lens": "character",
+    "records": 981,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-epic_scale-3431",
+        "t-epic_scale-3463",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_epic_fantasy-0858",
+        "n-genre_scifi-0909"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "148": {
+    "key": "mystery_is_valuable",
+    "group": "worldbuilding",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 615,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_scifi-2403",
+        "t-genre_scifi-2448",
+        "t-information_management-1698"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_scifi-0909",
+        "n-genre_scifi-0910"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "149": {
+    "key": "dont_explain_strange_at_once",
+    "group": "worldbuilding",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 615,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_scifi-2403",
+        "t-genre_scifi-2448",
+        "t-information_management-1698"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_scifi-0909",
+        "n-genre_scifi-0910"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "150": {
+    "key": "not_every_mystery_answered",
+    "group": "worldbuilding",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 615,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_scifi-2403",
+        "t-genre_scifi-2448",
+        "t-information_management-1698"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_scifi-0909",
+        "n-genre_scifi-0910"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "151": {
+    "key": "personalities_not_roles",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "character",
+    "records": 2151,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198",
+        "r-genre_scifi-0552"
+      ]
+    }
+  },
+  "152": {
+    "key": "no_sitcom_roles",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "character",
+    "records": 2151,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198",
+        "r-genre_scifi-0552"
+      ]
+    }
+  },
+  "153": {
+    "key": "conflicting_traits",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "character",
+    "records": 1782,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198",
+        "r-genre_scifi-0552"
+      ]
+    }
+  },
+  "154": {
+    "key": "behavior_varies_by_company",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "character",
+    "records": 1782,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198",
+        "r-genre_scifi-0552"
+      ]
+    }
+  },
+  "155": {
+    "key": "relationships_change",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "continuity",
+    "records": 1416,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-character_decisions-3094",
+        "t-character_decisions-3235"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ],
+      "outline": [
+        "n-arc_mapping-0198",
+        "r-arc_mapping-0480",
+        "n-arc_mapping-0195"
+      ]
+    }
+  },
+  "156": {
+    "key": "characters_remember",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "continuity",
+    "records": 1416,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-character_decisions-3094",
+        "t-character_decisions-3235"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ],
+      "outline": [
+        "n-arc_mapping-0198",
+        "r-arc_mapping-0480",
+        "n-arc_mapping-0195"
+      ]
+    }
+  },
+  "157": {
+    "key": "arguments_have_consequences",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "continuity",
+    "records": 731,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-character_decisions-3094",
+        "t-character_decisions-3235"
+      ],
+      "ideation": [
+        "r-idea_shaping-0750",
+        "r-idea_shaping-0734",
+        "n-idea_shaping-0996"
+      ],
+      "outline": [
+        "n-arc_mapping-0198",
+        "r-arc_mapping-0480",
+        "n-arc_mapping-0195"
+      ]
+    }
+  },
+  "158": {
+    "key": "trust_develops_gradually",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "character",
+    "records": 731,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-character_decisions-3094",
+        "t-character_decisions-3235"
+      ],
+      "ideation": [
+        "r-idea_shaping-0750",
+        "r-idea_shaping-0734",
+        "n-idea_shaping-0996"
+      ],
+      "outline": [
+        "n-arc_mapping-0198",
+        "r-arc_mapping-0480",
+        "n-arc_mapping-0195"
+      ]
+    }
+  },
+  "159": {
+    "key": "characters_misunderstand_each_other",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "character",
+    "records": 526,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-character_decisions-3094",
+        "t-character_decisions-3235"
+      ],
+      "ideation": [
+        "r-idea_shaping-0750",
+        "r-idea_shaping-0734",
+        "n-idea_shaping-0996"
+      ]
+    }
+  },
+  "160": {
+    "key": "friendships_have_friction",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "character",
+    "records": 842,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-character_decisions-3094",
+        "t-character_decisions-3235"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ]
+    }
+  },
+  "161": {
+    "key": "preferences_unrelated_to_plot",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "character",
+    "records": 842,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-character_decisions-3094",
+        "t-character_decisions-3235"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ]
+    }
+  },
+  "162": {
+    "key": "habits_and_irritations",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "character",
+    "records": 733,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-character_decisions-3094",
+        "t-character_decisions-3235"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_generation-0968",
+        "n-idea_generation-0708"
+      ],
+      "outline": [
+        "n-arc_mapping-0198",
+        "r-arc_mapping-0480",
+        "n-arc_mapping-0195"
+      ]
+    }
+  },
+  "163": {
+    "key": "not_everyone_insightful",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "character",
+    "records": 528,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-character_decisions-3094",
+        "t-character_decisions-3235"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_generation-0968",
+        "n-idea_generation-0708"
+      ]
+    }
+  },
+  "164": {
+    "key": "characters_can_be_wrong",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "character",
+    "records": 528,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-character_decisions-3094",
+        "t-character_decisions-3235"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_generation-0968",
+        "n-idea_generation-0708"
+      ]
+    }
+  },
+  "165": {
+    "key": "characters_can_be_selfish",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "character",
+    "records": 842,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-character_decisions-3094",
+        "t-character_decisions-3235"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ]
+    }
+  },
+  "166": {
+    "key": "stupid_decisions_not_stupid_people",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "character",
+    "records": 2151,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198",
+        "r-genre_scifi-0552"
+      ]
+    }
+  },
+  "167": {
+    "key": "decide_from_their_knowledge",
+    "group": "characterization",
+    "category": "character_decisions",
+    "lens": "continuity",
+    "records": 2151,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "n-character_decisions-1373",
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198",
+        "r-genre_scifi-0552"
+      ]
+    }
+  },
+  "168": {
+    "key": "humor_from_character_timing",
+    "group": "humor",
+    "category": "humor_craft",
+    "lens": "humor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "169": {
+    "key": "no_jokes_to_defuse_seriousness",
+    "group": "humor",
+    "category": "humor_craft",
+    "lens": "humor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "170": {
+    "key": "humor_can_fail",
+    "group": "humor",
+    "category": "humor_craft",
+    "lens": "humor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "171": {
+    "key": "different_senses_of_humor",
+    "group": "humor",
+    "category": "humor_craft",
+    "lens": "character",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "172": {
+    "key": "humor_as_characterization",
+    "group": "humor",
+    "category": "humor_craft",
+    "lens": "humor",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "173": {
+    "key": "not_one_joke_deliverer",
+    "group": "humor",
+    "category": "humor_craft",
+    "lens": "character",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "174": {
+    "key": "serious_can_be_funny",
+    "group": "humor",
+    "category": "humor_craft",
+    "lens": "character",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "175": {
+    "key": "dont_undercut_emotion_with_joke",
+    "group": "humor",
+    "category": "humor_craft",
+    "lens": "emotion",
+    "records": 210,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-dialogue_voice-0941",
+        "t-dialogue_voice-0977",
+        "t-dialogue_voice-0998"
+      ]
+    }
+  },
+  "176": {
+    "key": "no_maximum_excitement_always",
+    "group": "pacing_and_chapters",
+    "category": "tension",
+    "lens": "pacing",
+    "records": 2326,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "t-genre_scifi-2403"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_scifi-0886"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "177": {
+    "key": "rising_and_falling_tension",
+    "group": "pacing_and_chapters",
+    "category": "tension",
+    "lens": "pacing",
+    "records": 2326,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "t-genre_scifi-2403"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_scifi-0886"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "178": {
+    "key": "major_events_have_aftermath",
+    "group": "pacing_and_chapters",
+    "category": "plot_architecture",
+    "lens": "pacing",
+    "records": 2022,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "r-plot_architecture-1151",
+        "r-plot_architecture-1152",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ]
+    }
+  },
+  "179": {
+    "key": "dont_skip_consequences",
+    "group": "pacing_and_chapters",
+    "category": "plot_architecture",
+    "lens": "continuity",
+    "records": 2022,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "r-plot_architecture-1151",
+        "r-plot_architecture-1152",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ]
+    }
+  },
+  "180": {
+    "key": "no_artificial_cliffhangers",
+    "group": "pacing_and_chapters",
+    "category": "chapter_arcs",
+    "lens": "ai_patterns",
+    "records": 1026,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "t-chapter_arcs-3360"
+      ],
+      "ideation": [
+        "n-genre_epic_fantasy-0858",
+        "r-genre_epic_fantasy-1069",
+        "r-genre_epic_fantasy-1045"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ]
+    }
+  },
+  "181": {
+    "key": "quiet_chapter_endings",
+    "group": "pacing_and_chapters",
+    "category": "chapter_arcs",
+    "lens": "pacing",
+    "records": 1026,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "t-chapter_arcs-3360"
+      ],
+      "ideation": [
+        "n-genre_epic_fantasy-0858",
+        "r-genre_epic_fantasy-1069",
+        "r-genre_epic_fantasy-1045"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ]
+    }
+  },
+  "182": {
+    "key": "reveals_need_setup",
+    "group": "pacing_and_chapters",
+    "category": "setup_payoff",
+    "lens": "outline_obedience",
+    "records": 1590,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "r-setup_payoff-1329"
+      ],
+      "ideation": [
+        "n-genre_epic_fantasy-0858",
+        "r-genre_epic_fantasy-1069",
+        "r-genre_epic_fantasy-1045"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "183": {
+    "key": "foreshadowing_natural_in_retrospect",
+    "group": "pacing_and_chapters",
+    "category": "setup_payoff",
+    "lens": "reader_trust",
+    "records": 1590,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "r-setup_payoff-1329"
+      ],
+      "ideation": [
+        "n-genre_epic_fantasy-0858",
+        "r-genre_epic_fantasy-1069",
+        "r-genre_epic_fantasy-1045"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "184": {
+    "key": "dont_over_foreshadow",
+    "group": "pacing_and_chapters",
+    "category": "setup_payoff",
+    "lens": "reader_trust",
+    "records": 1386,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "r-setup_payoff-1329"
+      ],
+      "ideation": [
+        "n-genre_epic_fantasy-0858",
+        "r-genre_epic_fantasy-1069",
+        "r-genre_epic_fantasy-1045"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "185": {
+    "key": "no_twists_against_characterization",
+    "group": "pacing_and_chapters",
+    "category": "setup_payoff",
+    "lens": "outline_obedience",
+    "records": 1026,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "r-setup_payoff-1329"
+      ],
+      "ideation": [
+        "n-genre_epic_fantasy-0858",
+        "r-genre_epic_fantasy-1069",
+        "r-genre_epic_fantasy-1045"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ]
+    }
+  },
+  "186": {
+    "key": "accumulate_mysteries",
+    "group": "pacing_and_chapters",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 1182,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-information_management-1698",
+        "r-information_management-1405",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-information_management-0412",
+        "n-outline_design-0348"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "187": {
+    "key": "trust_the_reader",
+    "group": "reader_trust",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 975,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_scifi-2403",
+        "t-genre_scifi-2448",
+        "t-information_management-1698"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_scifi-0909",
+        "n-genre_scifi-0910"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "188": {
+    "key": "no_show_then_explain",
+    "group": "reader_trust",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 975,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_scifi-2403",
+        "t-genre_scifi-2448",
+        "t-information_management-1698"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_scifi-0909",
+        "n-genre_scifi-0910"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "189": {
+    "key": "no_repetition_of_information",
+    "group": "reader_trust",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 615,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_scifi-2403",
+        "t-genre_scifi-2448",
+        "t-information_management-1698"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_scifi-0909",
+        "n-genre_scifi-0910"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "190": {
+    "key": "dont_dictate_feeling",
+    "group": "reader_trust",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 615,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_scifi-2403",
+        "t-genre_scifi-2448",
+        "t-information_management-1698"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_scifi-0909",
+        "n-genre_scifi-0910"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577"
+      ]
+    }
+  },
+  "191": {
+    "key": "dont_emphasize_importance",
+    "group": "reader_trust",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-information_management-1698",
+        "r-information_management-1405",
+        "t-information_management-1642"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "n-information_management-0415",
+        "n-information_management-0400"
+      ]
+    }
+  },
+  "192": {
+    "key": "dont_underline_symbolism",
+    "group": "reader_trust",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-information_management-1698",
+        "r-information_management-1405",
+        "t-information_management-1642"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "n-information_management-0415",
+        "n-information_management-0400"
+      ]
+    }
+  },
+  "193": {
+    "key": "let_readers_connect",
+    "group": "reader_trust",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-information_management-1698",
+        "r-information_management-1405",
+        "t-information_management-1642"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "n-information_management-0415",
+        "n-information_management-0400"
+      ]
+    }
+  },
+  "194": {
+    "key": "no_artificial_ignorance",
+    "group": "reader_trust",
+    "category": "information_management",
+    "lens": "outline_obedience",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-information_management-1698",
+        "r-information_management-1405",
+        "t-information_management-1642"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "n-information_management-0415",
+        "n-information_management-0400"
+      ]
+    }
+  },
+  "195": {
+    "key": "no_unnatural_concealment",
+    "group": "reader_trust",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-information_management-1698",
+        "r-information_management-1405",
+        "t-information_management-1642"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "n-information_management-0415",
+        "n-information_management-0400"
+      ]
+    }
+  },
+  "196": {
+    "key": "mystery_from_uncertainty",
+    "group": "reader_trust",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-information_management-1698",
+        "r-information_management-1405",
+        "t-information_management-1642"
+      ],
+      "outline": [
+        "n-information_management-0412",
+        "n-information_management-0415",
+        "n-information_management-0400"
+      ]
+    }
+  },
+  "197": {
+    "key": "no_repetitive_templates",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "198": {
+    "key": "avoid_not_x_but_y",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "199": {
+    "key": "avoid_rhetorical_questions",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "200": {
+    "key": "avoid_em_dash_overuse",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "201": {
+    "key": "avoid_constant_fragments",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "202": {
+    "key": "avoid_filler_hedges",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "203": {
+    "key": "avoid_eye_heart_breath_cliches",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "204": {
+    "key": "avoid_felt_seemed_something",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "205": {
+    "key": "avoid_atmospheric_filler",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "206": {
+    "key": "pronoun_over_name_repetition",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "207": {
+    "key": "avoid_adverb_padding",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "208": {
+    "key": "avoid_tricolons",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "209": {
+    "key": "no_dramatic_paragraph_enders",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "210": {
+    "key": "no_trailer_chapters",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "211": {
+    "key": "no_foreshadowing_language",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "212": {
+    "key": "no_importance_announcements",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "213": {
+    "key": "plain_vocabulary_over_fancy",
+    "group": "ai_pattern_avoidance",
+    "category": "prose_discipline",
+    "lens": "ai_patterns",
+    "records": 932,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "214": {
+    "key": "outline_is_constraint",
+    "group": "plot_and_outline_obedience",
+    "category": "continuity_outline",
+    "lens": "outline_obedience",
+    "records": 2282,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "t-genre_scifi-2403"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_generation-0968",
+        "r-genre_thriller-0672"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ]
+    }
+  },
+  "215": {
+    "key": "no_plot_rewrites",
+    "group": "plot_and_outline_obedience",
+    "category": "continuity_outline",
+    "lens": "outline_obedience",
+    "records": 2077,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "t-genre_scifi-2403"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_generation-0968",
+        "r-genre_thriller-0672"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-scene_planning-0070"
+      ]
+    }
+  },
+  "216": {
+    "key": "no_competing_arcs",
+    "group": "plot_and_outline_obedience",
+    "category": "continuity_outline",
+    "lens": "outline_obedience",
+    "records": 1709,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_scifi-2403",
+        "t-genre_scifi-2448",
+        "t-genre_thriller-1840"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_generation-0968",
+        "r-genre_thriller-0672"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-scene_planning-0070",
+        "n-scene_planning-0046"
+      ]
+    }
+  },
+  "217": {
+    "key": "no_relationship_rewrites",
+    "group": "plot_and_outline_obedience",
+    "category": "continuity_outline",
+    "lens": "outline_obedience",
+    "records": 1230,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "r-genre_epic_fantasy-1145"
+      ],
+      "ideation": [
+        "n-genre_epic_fantasy-0858",
+        "r-genre_epic_fantasy-1069",
+        "r-genre_epic_fantasy-1045"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ]
+    }
+  },
+  "218": {
+    "key": "no_world_rule_changes",
+    "group": "plot_and_outline_obedience",
+    "category": "continuity_outline",
+    "lens": "outline_obedience",
+    "records": 862,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-arc_mapping-0198",
+        "n-scene_planning-0070"
+      ]
+    }
+  },
+  "219": {
+    "key": "track_open_threads",
+    "group": "plot_and_outline_obedience",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "220": {
+    "key": "track_clues_to_explanations",
+    "group": "plot_and_outline_obedience",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "221": {
+    "key": "track_character_knowledge",
+    "group": "plot_and_outline_obedience",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "222": {
+    "key": "track_state_ledger",
+    "group": "plot_and_outline_obedience",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "223": {
+    "key": "establish_how_it_matters",
+    "group": "plot_and_outline_obedience",
+    "category": "continuity_outline",
+    "lens": "outline_obedience",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "224": {
+    "key": "resolution_follows_established",
+    "group": "plot_and_outline_obedience",
+    "category": "plot_architecture",
+    "lens": "outline_obedience",
+    "records": 1341,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "r-plot_architecture-1151",
+        "r-plot_architecture-1152",
+        "t-plot_architecture-1390"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_generation-0968",
+        "r-genre_thriller-0672"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-scene_planning-0070",
+        "n-scene_planning-0046"
+      ]
+    }
+  },
+  "225": {
+    "key": "no_coincidence_solutions",
+    "group": "plot_and_outline_obedience",
+    "category": "plot_architecture",
+    "lens": "outline_obedience",
+    "records": 2077,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "r-plot_architecture-1151",
+        "r-plot_architecture-1152",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_generation-0968",
+        "r-genre_thriller-0672"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ]
+    }
+  },
+  "226": {
+    "key": "no_exactly_right_discovery",
+    "group": "plot_and_outline_obedience",
+    "category": "plot_architecture",
+    "lens": "outline_obedience",
+    "records": 2077,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "r-plot_architecture-1151",
+        "r-plot_architecture-1152",
+        "t-genre_epic_fantasy-0603"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_generation-0968",
+        "r-genre_thriller-0672"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ]
+    }
+  },
+  "227": {
+    "key": "maintain_story_bible",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 1746,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "r-genre_epic_fantasy-1145"
+      ],
+      "ideation": [
+        "n-genre_epic_fantasy-0858",
+        "r-genre_epic_fantasy-1069",
+        "r-genre_epic_fantasy-1045"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "228": {
+    "key": "track_major_characters",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 1386,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "r-genre_epic_fantasy-1145"
+      ],
+      "ideation": [
+        "n-genre_epic_fantasy-0858",
+        "r-genre_epic_fantasy-1069",
+        "r-genre_epic_fantasy-1045"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "229": {
+    "key": "track_physical_descriptions",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 658,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-arc_mapping-0198",
+        "r-arc_mapping-0480"
+      ]
+    }
+  },
+  "230": {
+    "key": "track_personalities_relationships",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 1026,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "r-genre_epic_fantasy-1145"
+      ],
+      "ideation": [
+        "n-genre_epic_fantasy-0858",
+        "r-genre_epic_fantasy-1069",
+        "r-genre_epic_fantasy-1045"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ]
+    }
+  },
+  "231": {
+    "key": "track_locations",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 1386,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "r-genre_epic_fantasy-1145"
+      ],
+      "ideation": [
+        "n-genre_epic_fantasy-0858",
+        "r-genre_epic_fantasy-1069",
+        "r-genre_epic_fantasy-1045"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "232": {
+    "key": "track_chronology",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 968,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "233": {
+    "key": "track_objects_possession",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "234": {
+    "key": "track_abilities_limits",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "235": {
+    "key": "track_secrets_and_who_knows",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "236": {
+    "key": "track_clues_and_mysteries",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "237": {
+    "key": "track_injuries_recovery",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "238": {
+    "key": "track_promises_commitments",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "239": {
+    "key": "track_previous_conversations",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "240": {
+    "key": "no_contradicting_earlier_chapters",
+    "group": "continuity",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "241": {
+    "key": "style_rules_apply_throughout",
+    "group": "style_consistency",
+    "category": "prose_discipline",
+    "lens": "style_consistency",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "242": {
+    "key": "no_generic_drift",
+    "group": "style_consistency",
+    "category": "prose_discipline",
+    "lens": "style_consistency",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "243": {
+    "key": "no_statistical_default_prose",
+    "group": "style_consistency",
+    "category": "prose_discipline",
+    "lens": "style_consistency",
+    "records": 572,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "244": {
+    "key": "style_guide_is_constraint",
+    "group": "style_consistency",
+    "category": "prose_discipline",
+    "lens": "style_consistency",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "245": {
+    "key": "explicit_rules_win_conflicts",
+    "group": "style_consistency",
+    "category": "prose_discipline",
+    "lens": "style_consistency",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "246": {
+    "key": "no_author_imitation",
+    "group": "style_consistency",
+    "category": "prose_discipline",
+    "lens": "style_consistency",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "247": {
+    "key": "consistent_voice_over_showpieces",
+    "group": "style_consistency",
+    "category": "prose_discipline",
+    "lens": "style_consistency",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  },
+  "248": {
+    "key": "character_before_description",
+    "group": "overarching",
+    "category": "concrete_grounding",
+    "lens": "concrete",
+    "records": 3279,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "t-genre_scifi-2403"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "249": {
+    "key": "concrete_before_abstract",
+    "group": "overarching",
+    "category": "concrete_grounding",
+    "lens": "concrete",
+    "records": 1665,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_thriller-1840",
+        "t-genre_thriller-1831",
+        "t-concrete_grounding-1974"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_generation-0968",
+        "r-genre_thriller-0672"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-scene_planning-0070",
+        "n-scene_planning-0046"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "250": {
+    "key": "specific_before_generic",
+    "group": "overarching",
+    "category": "concrete_grounding",
+    "lens": "concrete",
+    "records": 1098,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_scifi-2403",
+        "t-genre_scifi-2448",
+        "t-genre_scifi-2521"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_generation-0968",
+        "n-idea_generation-0708"
+      ],
+      "outline": [
+        "n-scene_planning-0070",
+        "n-scene_planning-0046",
+        "r-genre_scifi-0552"
+      ]
+    }
+  },
+  "251": {
+    "key": "behavior_before_explanation",
+    "group": "overarching",
+    "category": "emotion_craft",
+    "lens": "concrete",
+    "records": 2151,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "t-genre_scifi-2403"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198",
+        "r-genre_scifi-0552"
+      ]
+    }
+  },
+  "252": {
+    "key": "subtext_before_exposition",
+    "group": "overarching",
+    "category": "dialogue_voice",
+    "lens": "dialogue",
+    "records": 1780,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "t-genre_scifi-2403"
+      ],
+      "ideation": [
+        "r-idea_generation-0929",
+        "r-idea_shaping-0750",
+        "r-idea_generation-0968"
+      ],
+      "outline": [
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198",
+        "r-genre_scifi-0552"
+      ]
+    }
+  },
+  "253": {
+    "key": "restraint_before_excess",
+    "group": "overarching",
+    "category": "prose_discipline",
+    "lens": "prose",
+    "records": 1982,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-genre_scifi-2403"
+      ],
+      "ideation": [
+        "r-idea_shaping-0750",
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675"
+      ],
+      "outline": [
+        "r-genre_scifi-0552",
+        "n-genre_scifi-0577",
+        "r-genre_scifi-0569"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603"
+      ]
+    }
+  },
+  "254": {
+    "key": "consistency_before_improvisation",
+    "group": "overarching",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 1386,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "r-genre_epic_fantasy-1145"
+      ],
+      "ideation": [
+        "n-genre_epic_fantasy-0858",
+        "r-genre_epic_fantasy-1069",
+        "r-genre_epic_fantasy-1045"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-arc_mapping-0198"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "255": {
+    "key": "naturalness_before_cleverness",
+    "group": "overarching",
+    "category": "prose_discipline",
+    "lens": "style_consistency",
+    "records": 1512,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-prose_discipline-0034",
+        "t-genre_epic_fantasy-0573"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_epic_fantasy-0858",
+        "n-genre_scifi-0909"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "r-genre_scifi-0552"
+      ],
+      "revision": [
+        "n-revision_craft-1722",
+        "n-revision_craft-1651",
+        "r-revision_craft-1514"
+      ]
+    }
+  },
+  "256": {
+    "key": "consequences_before_resets",
+    "group": "overarching",
+    "category": "continuity_outline",
+    "lens": "outline_obedience",
+    "records": 1394,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_epic_fantasy-0603",
+        "t-genre_epic_fantasy-0573",
+        "r-genre_epic_fantasy-1145"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_epic_fantasy-0858"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-genre_epic_fantasy-0495",
+        "n-scene_planning-0070"
+      ]
+    }
+  },
+  "257": {
+    "key": "reader_trust_before_explanation",
+    "group": "overarching",
+    "category": "information_management",
+    "lens": "reader_trust",
+    "records": 1180,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline",
+      "revision"
+    ],
+    "examples": {
+      "drafting": [
+        "t-genre_scifi-2403",
+        "t-genre_scifi-2448",
+        "t-information_management-1698"
+      ],
+      "ideation": [
+        "n-genre_scifi-0886",
+        "n-genre_scifi-0909",
+        "n-genre_scifi-0910"
+      ],
+      "outline": [
+        "n-outline_design-0296",
+        "n-information_management-0412",
+        "r-genre_scifi-0552"
+      ],
+      "revision": [
+        "r-revision_diagnosis-1638",
+        "n-revision_diagnosis-1603",
+        "r-revision_diagnosis-1729"
+      ]
+    }
+  },
+  "258": {
+    "key": "character_knowledge_before_author",
+    "group": "overarching",
+    "category": "continuity_outline",
+    "lens": "continuity",
+    "records": 248,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "t-continuity_outline-0688",
+        "t-continuity_outline-0847",
+        "n-continuity_outline-1223"
+      ],
+      "outline": [
+        "r-continuity_outline-0384",
+        "r-continuity_outline-0373",
+        "r-continuity_outline-0367"
+      ]
+    }
+  },
+  "259": {
+    "key": "strong_moments_earned",
+    "group": "overarching",
+    "category": "tension",
+    "lens": "pacing",
+    "records": 617,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting",
+      "ideation",
+      "outline"
+    ],
+    "examples": {
+      "drafting": [
+        "n-tension-1426",
+        "t-genre_thriller-1840",
+        "t-tension-1081"
+      ],
+      "ideation": [
+        "r-genre_thriller-0672",
+        "r-genre_thriller-0675",
+        "n-genre_thriller-0668"
+      ],
+      "outline": [
+        "n-tension-0434",
+        "r-tension-0409",
+        "r-genre_thriller-0610"
+      ]
+    }
+  },
+  "260": {
+    "key": "prose_serves_story",
+    "group": "overarching",
+    "category": "prose_discipline",
+    "lens": "prose",
+    "records": 212,
+    "types": [
+      "negative",
+      "reasoning",
+      "transition"
+    ],
+    "stages": [
+      "drafting"
+    ],
+    "examples": {
+      "drafting": [
+        "t-prose_discipline-0034",
+        "t-prose_discipline-0042",
+        "t-prose_discipline-0096"
+      ]
+    }
+  }
+}
